@@ -1,8 +1,8 @@
-#Nervos CKB 加密经济模型提案 - 中文翻译 WIP
+# Nervos CKB 加密经济模型提案 - 中文翻译(20190308)
 
 ---
 
-##1. 代币经济学的设计目标
+## 1. 代币经济学的设计目标
 
  Public permission-less blockchains are open and distributed systems with diverse groups of participants. A well designed crypto-economics model is to provide incentives so that participants’ pursuit of own economic interests leads to desired emergent behaviors in alignment with the protocol, to contribute to the blockchain network’s success.
 
@@ -21,7 +21,7 @@
 - 经济模型如何将不同参与者的经济目标与提高整个网络价值的目标对齐?
 
 
-##2. 比特币的加密经济模型
+## 2. 比特币的加密经济模型
 
  The Bitcoin protocol uses its native currency to incentivize miners to validate and produce blocks. The Nakamoto Consensus considers the longest chain as the valid chain, which encourages block producing miners to propagate new blocks as soon as they produce them, validate blocks as soon as they receive them to have the whole network achieve consensus on the global state. 
 
@@ -35,9 +35,7 @@
 
  在比特币协议中，对区块大小的限制制约了整个网络的交易处理能力，用户需要通过类似拍卖的机制竞争有限的交易处理资源。拍卖价格也就是交易费由实际的交易需求决定，当交易需求增加时，为了击败竞拍对手，交易费的价格也会水涨船高。
 
-Bitcoin as a Medium of Exchange Network
-
-###2.1 比特币作为交易媒介网络
+### 2.1 比特币作为交易媒介网络
 
   The Medium of Exchange use case views the Bitcoin network primarily as a peer to peer value transfer network. MoE users don’t have to hold bitcoins to benefit from the network - it’s the transactions in themselves that provide value. In fact, there are specialized Bitcoin payment services to provide access to liquidity and allow senders and receivers to acquire and dispose of Bitcoins just in time to perform the value transfer, without having to hold the cryptocurrency. MoE users are not concerned with price, or the movement of price, but care about the fiat equivalent cost of the transaction fees. 
 
@@ -47,9 +45,8 @@ Bitcoin as a Medium of Exchange Network
 
  比特币要成为一个 MoE 主导的网络是很有挑战性的。如果协议限制了出块时间和区块大小，那么网络的交易处理能力会非常受限，因此网络的繁荣必然会导致交易成本增加，而这将反过来降低网络的竞争力，这种情况也存在于其他类似的区块链协议以及比特币分叉链中。如果协议致力于维持较低的交易成本，通过设置更快的出块时间或更大的区块大小来提高交易处理能力，这会导致更频繁的分叉或者更高的参与共识成本，实际上这相当于在去中心化与安全性上做了妥协。
 
-Bitcoin as a Store of Value Network
 
-###2.2 比特币作为价值存储的网络
+### 2.2 比特币作为价值存储的网络
 
  Store of Value users view the Bitcoin network as a protocol to provide security to its native cryptocurrency as an asset that can preserve value over time. They see the Medium of Exchange use case as the necessary function to go in and out of this asset. A store of value user, especially the ones who hold the cryptocurrency for a long time, doesn’t care much about the transaction cost, as they can amortize it over time. They do care about the value of a Bitcoin, which depends on the network’s security and decentralization - if the network becomes less secure and can be attacked easily, it’ll stop being perceived as a store of value and the tokens will lose value; if the network becomes centralized, Bitcoin as an asset no longer has independent value, but has to assume counter-party risk. 
 
@@ -59,9 +56,7 @@ Bitcoin as a Store of Value Network
 
  如果比特币要成为一个 SoV 主导的网络，其必须继续坚持当前的货币政策，维护网络的安全性以及保持一定程度的去中心化。然而，比特币的发行总量有限，当所有的比特币被开采一空后，给矿工的激励只剩下交易费。这种模式是否可持续仍然是一个问号，特别是在一个 SoV 主导的网络里往往不会产生许多交易。
 
-Who Compensates the Miners Over the Long Run?
-
-###2.3 谁能长期补贴矿工？
+### 2.3 谁能长期补贴矿工？
 
  Security and decentralization are two essential properties of a blockchain network, and they come with a high cost that has to be paid to the operators of the network. Bitcoin’s current model has network security entirely paid with transaction fees after all the coins are mined. However, the MoE users have very limited time exposure to the network’s security risk, therefore won’t be willing to pay for it; the SoV users have prolonged exposure to the network’s security risk and are willing to pay for it, but they produce nearly no transactions.
 
@@ -75,7 +70,7 @@ Who Compensates the Miners Over the Long Run?
 
  而在 SoV 网络中，如果依靠通胀来为网络安全提供资金对矿工的激励更持久，对用户也更友好。基于通胀的区块奖励暗含用户间接地向安全提供者支付费用，并且费用多少与其享受安全服务的时间成正比。
 
-##3. 可保值和交易的智能合约平台
+## 3. 可保值和交易的智能合约平台
 
   Smart contract platforms like Ethereum come with Turing-complete programmability and can support a much wider variety of use cases. The native tokens are typically used to price and pay for the cost of decentralized computation. Like the Bitcoin network, smart contract platforms also have the dual functions of preserving value and performing transactions. They differ from the payment networks in that the value they preserve is not only their own native tokens, but also the internal states of decentralized applications, for example, crypto-assets ownership in ERC20 smart contracts. 
 
@@ -102,7 +97,7 @@ Who Compensates the Miners Over the Long Run?
  但是，有竞争力的保值平台需要具有可持续的安全性和抗审查性。因此需要设计一种不是基于即时交易而是基于对世界状态的占用而设计的经济模型，让用户为网络基础设施的关键资源的消耗付费。
 
 
-##4. 资产存储
+## 4. 资产存储
 
  One of the most important use cases for smart contract platforms is to issue tokens to represent ownership of assets. These crypto-assets can have their own communities and markets, and their values are independent from the value of their platform tokens. On the other hand, these assets depend on the platform to process transactions and provide security. Payment networks like Bitcoin can be seen as single asset platforms, where smart contract platforms are multi-asset platforms. Similar to the concept of “Store of Value” in the context of Bitcoin, we call the utility that smart contract platforms preserve the value of its crypto-assets “Store of Assets”. 
 
@@ -128,7 +123,7 @@ Who Compensates the Miners Over the Long Run?
 
  去中心化的多资产智能合约平台必须持续的做好「资产存储」的功能。
 
-##5. 去中心化与状态限制的需求
+## 5. 去中心化与状态限制的需求
 
  Like other long term store of value systems, a Store of Assets platform has to be neutral and free of risks of censorship and confiscation. These are the properties that made gold the world’s favorite the store of value for thousands of years. For open, permission-less blockchain networks, censorship resistance comes down to having the broadest consensus scope with a low barrier for consensus and full node participation. Comparing to payment networks, running a full node for a smart contract system is more resource intensive, therefore a Store of Assets platform has to take measures to protect the operating cost of full nodes to keep the network sufficiently decentralized. 
 
@@ -188,17 +183,13 @@ Who Compensates the Miners Over the Long Run?
 
  Nervos Common Knowledge Base（简称 Nervos CKB）是一个以保存价值为重点的「资产存储」区块链。在架构上，是为了要最好地支持链上的状态和链外计算。在经济上，是为了要提供可持续的安全性和去中心化。 Nervos CKB 是整个网络的基础层。
 
-Native Tokens
-
-###6.1  原生代币
+### 6.1  原生代币
 
  The native token for the Nervos CKB is the “Common Knowledge Byte”, or “CK Byte” for short. The CK Bytes represent cell capacity in bytes and they give owners the ability to occupy a piece of the blockchain’s overall global state. For example, if Alice owns 1000 CK Bytes, she can create a cell with 1000 bytes in capacity, or multiple cells that add up to 1000 bytes in capacity. She can use the 1000 bytes to store assets, application state, or other types of common knowledge. 
 
  Nervos CKB 的原生代币是 「Common Knowledge Byte」，简称「CK Byte」。 CK Byte 代表 Cell 空间，它们让拥有者能够占用区块链的全球状态。例如，如果 Alice 拥有 1000 个 CK Byte，她可以创建一个空间为 1000 Byte 的单元，或者空间合计最多为 1000 Byte 的多个 Cell。她可以使用 1000 个 Byte 来存储资产，App 状态或是其他类型的数据资料。
 
-Token Issuance
-
-###6.2 代币发行政策
+### 6.2 代币发行政策
 
   There are two types of native token issuance. The “base issuance” has a finite total supply with a Bitcoin like issuance schedule - the number of base issuance halves approximately every 4 years until all the base issuance tokens are mined out. All base issuance tokens are rewarded to the miners as incentives to protect the network. 
 
@@ -208,9 +199,8 @@ Token Issuance
 
   「二级发行」的设计则是为了收取状态租金，每年的发行数量是不变的。「基础发行」停止后，「二级发行」仍会继续。
 
-Collecting State Rent with Secondary Issuance and the NervosDAO
 
-###6.3 收取二级发行的状态租金和 NervosDAO 设计
+### 6.3 收取二级发行的状态租金和 NervosDAO 设计
 
   Since the native tokens represent right to expand the global state, the issuance policy of the natives tokens bounds the state growth. As state storage is bounded and becomes a scarce resource like bandwidth in Bitcoin and computation throughput in Ethereum, they can be market priced and traded. State rent adds the necessary time dimension to the fee structure of state storage occupation. Instead of mandating periodic rent payments, we use a two step approach as a “targeted inflation” scheme to collect this rent: 
 
@@ -229,17 +219,14 @@ Collecting State Rent with Secondary Issuance and the NervosDAO
 
  对于长期代币的持有者，只要他们将代币锁定在 NervosDAO 合约中，「二次发行」的通胀效应只是名义上的。对他们而言，就像二次发行不存在一样，他们持有的代币，就会像比特币这样有硬顶的设计。
 
-Miner Compensation 
 
-###6.4 矿工补偿
+### 6.4 矿工补偿
 
  Miners are compensated with both block rewards and transaction fees. They receive all of the base issuance, and part of the secondary issuance. In the long term when base issuance stops, miners still receive state rent income that’s independent of transactions but tied to the adoption of the common knowledge base. 
 
  矿工会获得两种出块奖励和交易手续费。他们将会收到所有的「基本发行」，以及部分的「二级发行」。长期来看，当「基础发行」停止后，矿工仍然可以获得状态租赁的收入。
 
-Paying for Transaction Fees
-
-###6.5 交易手续费支付
+### 6.5 交易手续费支付
 
   A decentralized blockchain network’s transaction capacity is always limited and its resources are constrained. Transaction fees serve the dual purposes of establishing a market for the limited transaction capacity and as protection against spams. In Bitcoin, transaction fees are expressed with the difference between the outputs and inputs; In Ethereum, processing transactions requires miners to perform computations that can’t be estimated efficiently, therefore transaction fees are expressed as cost of unit of computation or as “gas price”. Ethereum transactions include both properties of “gas price” and “gas limit”, and the real transaction fee is  multiplied by amount of gas used, up to the specified . 
 
@@ -257,9 +244,8 @@ Paying for Transaction Fees
 
  在 Nervos CKB 中，可以使用原生代币，或者「用户自定义代币」来支付交易手续费，而两种的结合也可以用来支付手续费。
 
-Paying for Transaction Fees with User Defined Tokens
 
-###6.6 使用「用户自定义代币 UDT」支付交易手续费
+### 6.6 使用「用户自定义代币 UDT」支付交易手续费
 
   Users are also free to user other tokens (for example, stable coins) to pay transactions fees, a concept known as “Economic Abstraction”. Note that even without explicit protocol support, it’s always possible to have users make arrangements with miners to pay transaction fees in other tokens outside of the protocol. This is often seen as a threat for many platforms - if the platform’s native tokens are purely to facilitate transactions, this would take away its intrinsic value and cause a collapse. 
 
@@ -273,7 +259,7 @@ Paying for Transaction Fees with User Defined Tokens
 
  更多的手续费分析详见附件 1。
 
-##7. 用于保存价值的经济模型
+## 7. 用于保存价值的经济模型
 
   The economic model of the Nervos CKB is designed specifically to preserve assets and other types of common knowledge. Let’s bring back the 3 high level design goals and examine our design in this context: 
 
@@ -286,9 +272,8 @@ Paying for Transaction Fees with User Defined Tokens
 - 经济模式如何确保协议的长期可持续性？
 - 经济模型如何让不同参与者拥有共同的目标，以促进整个网络的价值？
 
-Security and Sustainability of the Protocol
 
-###7.1 协议的安全性和可持续性
+### 7.1 协议的安全性和可持续性
 
   The main design choices we made to ensure security of the Nervos CKB as a “Store of Assets” protocol are:
 
@@ -304,9 +289,8 @@ Security and Sustainability of the Protocol
 
  为了保持网络的去中心化和抗审查能力，我们认为降低参与共识以及成为主节点所需要的资源门槛是非常重要的。我们通过调节计算和带宽的吞吐量来保护节点的运营成本，类似于比特币和以太坊的实现方式。我们透过「总量管制」的定价框架，与基于存储用户的成本模型的机会成本这两种方式，来管制了状态存储。
 
-Aligning the Interests of Network Participants
 
-###7.2 让网络中每一类参与者的利益一致
+### 7.2 让网络中每一类参与者的利益一致
 
   In a typical smart contract platform, participants of the network have different interests - users want cheaper transactions, developers want adoption of their applications, miners want higher income, and holders want appreciation of their tokens. Those interests are not well aligned, and oftentimes in conflict - for example, more adoption won’t give cheaper transactions (they’ll be more expensive as more demand is put on the blockchain); cheaper transactions won’t give more income to the miners; higher token price won’t help with transaction cost (the opposite could happen if users don’t adjust their local transaction fee setting). Decentralized computation platforms provide value through processing transactions. The price of their tokens doesn’t materially change the intrinsic value of the network. For example, Ether’s price doubling doesn’t increase or decrease Ethereum’s intrinsic value as a decentralized computation platform. Assuming the gas price doesn’t change, a user can accomplish the same task with the same cost on the network. This makes token holders of Ethereum only take the role of an investor, instead of active contributors.
 
@@ -316,9 +300,8 @@ Aligning the Interests of Network Participants
 
  在 Nervos CKB 中，资产存储用户希望其资产安全；开发者希望 App 更多的被使用，反映在更多的资产价值保存；矿工希望获得更高的收入，而代币持有者希望他们的代币价格升值。更高的代币价格支持每个人的利益 - 网络将更安全，矿工获得更高的收入，并且代币持有者获得更好的回报。将所有参与者的激励措施对齐，使网络能够最好地利用网络效应来增强其内在价值。它还产生了一个更具凝聚力的社区，使得该系统面临更少的治理挑战。
 
-Bootstrapping Network Effect and Network Growth
 
-###7.3 引导网络效应和网络增长
+### 7.3 引导网络效应和网络增长
 
  As the network grows to secure more assets and common knowledge, more native tokens of the Nervos CKB are going to become occupied. This accrues value to the native tokens by reducing circulating supply and providing positive support to the market price of the tokens. The higher price and increased share of secondary issuance motivate miners to expand operations and make the network more secure, increasing the intrinsic value of the network and the native tokens, attracting more and higher value preservation usage.
 
@@ -328,9 +311,7 @@ Bootstrapping Network Effect and Network Growth
 
  网络采用的顺向循环和网络的内在价值为其本身提供了强大的增长引擎。连同网络如何逐渐累积价值，到原生代币如何被长期持有者捕获，都使得网络中的原生代币成为价值存储的绝佳候选者。与比特币作为货币存储价值相比，Nervos CKB 同样设计为安全且长期去中心化的。我们认为 Nervos CKB 拥有比比特币更加平衡和可持续的经济模型，并且还具有保护加密资产及数据的功用。
 
-Developer’s Cost in a “First Class Asset” Platform
-
-###7.4 开发者在「一级资产」平台中的成本
+### 7.4 开发者在「一级资产」平台中的成本
 
   In Ethereum, the top level abstraction is its accounts. Assets are expressed as state owned by smart contract accounts. In the Nervos CKB, assets are the first class abstraction with cells, where ownership is expressed with the lock script of a transaction output, a concept known as “First-Class Assets”. In other words, just like Bitcoin, assets in the Common Knowledge Base are owned by users directly instead of being kept custody in a smart contract. 
 
@@ -348,9 +329,7 @@ Developer’s Cost in a “First Class Asset” Platform
 
  在未来这些开发成本变得非常昂贵的情况下，开发者仍然可以依靠租赁来继续他们的项目，如果他们愿意采取对应的取舍，用户可以将他们的资产从 CKB 转移到 Nervos Network 中的其他交易区块链。相关信息请参考「7.6 Nervos Network」部分。
 
-Lending 
-
-###7.5 租赁
+### 7.5 租赁
 
  Even Nervos CKB will support native token lending to improve the liquidity of the CK Bytes, thanks to the programming ability provided by CKB-VM and the Cell model. Since the utility of the native token is realized through possession instead of transactions, it’s possible to have risk-free un-collateralized lending for CK Bytes locked for known duration of time. Entrepreneurs can borrow the CK Bytes they need with much lower capital cost for a period such as 6 months to work on prototypes and prove their business model. Long term users can lend out their tokens to earn extra income. 
 
@@ -360,7 +339,7 @@ Lending
 
  租赁的实际利率由市场供求决定，但代币的占用状况也有著重要的影响。如果全球状态利用率高，代表可用于贷款的代币就更少了。这将使得贷款利息更高，并且使得在 NervosDAO 合约中锁定状态，以获得收入更具吸引力。这有助于减少全球状态。而较低的全球状态利用率代表着有更多的代币可以出租。这将使得贷款利率降低以鼓励使用。
 
-###7.6 Nervos Network
+### 7.6 Nervos Network
 
  The Nervos CKB is the base layer of the Nervos Network with the highest security, decentralization, transaction cost and state storage cost. Just like how Bitcoin and Ethereum could scale off-chain with lightening network and plasma solutions, Nervos CKB also embraces off-chain scaling solutions and allow users to preserve and transact assets off-chain. When using off-chain solutions, users and developers can choose their own trade-offs between cost, security, latency and liveness properties. 
 
@@ -375,7 +354,7 @@ Lending
  如果交易区块链的系统不想引入额外的安全证明，他们可以在 CKB 上抵押高价值的资产，并在交易区块链上发行低价值资产。然后，他们可以在 CKB 上使用 CK Bytes 来存储周期性的区块提交，这是交易区块链的挑战和证明 - 这是链下交易安全的关键常识。如果交易链不介意使用基于委员会的共识协议引入额外的安全性证明层，他们也可以让他们的验证节点在 CKB 上绑定 CK Bytes 以明确地调整安全的参数。
 
 
-##8. 代币经济学的应用
+## 8. 代币经济学的应用
 
  The economic model of the Nervos CKB provides building blocks that application developers can use directly as part of their own economic model. We’ll list subscriptions and liquidity income as two such possible building blocks.
 
