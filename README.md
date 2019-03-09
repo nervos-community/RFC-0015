@@ -179,7 +179,7 @@
 
  就像比特币如何限制带宽，以及以太坊限制计算的定价，来保持区块链网络长期去中心化和可持续，我们必须提出一种约束与全球状态的定价方法。这对于以保护资产为重点的「资产存储」平台来说，这是特别重要的，（其中对于网络中的交易使用不总是发生在线下），而是持续占用全球状态的成本。
 
-##6. Nervos CKB 的经济模型
+## 6. Nervos CKB 的经济模型
 
   The Nervos Common Knowledge Base (Nervos CKB for short) is a preservation focused, “Store of Assets” blockchain. Architecturally, it’s designed to best support on-chain state and off-chain computation; economically, it’s designed to provide sustainable security and decentralization. Nervos CKB is the base layer of the overall Nervos Network.
 
