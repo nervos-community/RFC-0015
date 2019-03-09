@@ -1,5 +1,9 @@
 # Nervos CKB 加密经济模型提案 - 中文翻译(20190308)
 
+> [此版本与最新版有部分差异，以原版为主](https://github.com/nervosnetwork/rfcs/blob/55ba3a38ed6d5ec028340af40b8c115add6ee897/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md)
+
+> 欢迎各位提交 PR 一起修正这一份文档
+
 ---
 
 ## 1. 代币经济学的设计目标
