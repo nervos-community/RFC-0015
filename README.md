@@ -217,9 +217,9 @@
 - 在「基础发行」的基础上，我们添加了「二次发行」，可以将其视为对所有代币持有者的「通胀税」。对于使用CK Byte 存储状态的用户，这种定期的通胀税是他们向矿工支付状态租金的方式。
 - 然而，由于我们对于那些没有使用 CK Byte 存储状态的所有者也收取了租金，所以我们需要将租金归还。我们允许这些用户将他们的原生代币存入并锁定到一个特殊合约中，我们称它为 NervosDAO。 NervosDAO 将接受部分「二级发行」的补偿，以弥补因为不公平造成的稀释。
 
- Let’s suppose at the time of a secondary issuance event, 60% of all CK Bytes are used to store state, 35% of all CK Bytes are deposited and locked in the NervosDAO, and 5% of all CK Bytes are kept liquid. Then 60% of the secondary issuance goes to the miners, 35% of the issuance goes to the NervosDAO to be distributed to the locked tokens proportionally, and 5% of the tokens are burned. 
+ Let's suppose at the time of a secondary issuance event, 60% of all CK Bytes are used to store state, 35% of all CK Bytes are deposited and locked in the NervosDAO, and 5% of all CK Bytes are kept liquid. Then 60% of the secondary issuance goes to the miners, 35% of the issuance goes to the NervosDAO to be distributed to the locked tokens proportionally. The use of the rest of the secondary issuance - in this example, 5% of the that issuance - is determined by the community through the governance mechanism. Before the community can reach agreement, this part of the secondary issuance is going to be burned.
 
- 假设在「二级发行」时，所有 CK Byte 的 60％ 用于存储状态，所有 CK Byte 的 35％ 被存放并锁定在 NervosDAO 的合约中，剩下的 CK Byte 中的 5％ 保持流动性。那每次进行二级发行出块奖励的时候，60％ 的「二级发行」会奖励给矿工，35％ 的会进入 NervosDAO 按比例分配给锁定的代币（用户），最后剩下的 5％ 会被销毁。
+ 假设在「二级发行」时，所有 CK Byte 的 60％ 用于存储状态，所有 CK Byte 的 35％ 被存放并锁定在 NervosDAO 的合约中，剩下的 CK Byte 中的 5％ 保持流动性。那每次进行二级发行出块奖励的时候，60％ 的「二级发行」会奖励给矿工，35％ 的会进入 NervosDAO 按比例分配给锁定的代币（用户），最后剩下的 5％ 既没有占用也没有锁币的部分是归交治理机制处理；在治理没有完善的方案前烧掉。
 
  For long term token holders, as long as they lock their tokens in the NervosDAO, the inflationary effect of secondary issuance is only nominal. For them it’s as if the secondary issuance doesn’t exist and they’re holding hard-capped tokens like Bitcoin. 
 
