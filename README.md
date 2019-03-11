@@ -475,7 +475,7 @@ Because CKB transactions include the result of the transactions as outputs, ther
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/39.png)
 
 ### Cycles as Measurement Units of Computation Complexity
-### 循环作为计算复杂度的度量单位
+### "计算周期"作为计算复杂度的度量单位
 
 We introduce "cycle" as a unit of measurement for computation complexity in the CKB, similar to the "gas" concept in Ethereum. Nervos CKB's VM is a RISC-V CPU simulator, therefore cycles here refer to real CPU computation cycles in the VM. The cycle number for an instruction represents the relative computation cost of that instruction. Transactions in the Nervos CKB require the sender to specify the number of cycles required for its verification. Nodes can opt to set an acceptable cycle upper bound *cyclemax*, and only process transactions with fewer cycles. We'll also introduce *cycles* to a block, with its value equal to the sum of all specified transaction cycles.  The value of *cycles* in a block can't exceed the value *blockcyclesmax*, which are set and can be automatically adjusted by the system.
 
