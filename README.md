@@ -416,6 +416,7 @@ We use CPC and EVC to represent Complete Processing Cost and Estimation and Veri
   - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/008.png)
 
 ### Bitcoin's Transaction Cost Analysis
+### 比特币的交易成本分析
 
 Bitcoin allows flexible authorization verification with the Bitcoin Script. Users can script the authorization rules and build smart contracts through ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/009.png) when creating transactions. Bitcoin has a fixed state transition semantic, which is to spend and create new UTXOs. In Bitcoin, the result of the state transitions are already included in transactions, therefore the State Transition Cost (STC) is 0.
 
@@ -429,6 +430,7 @@ In total, Bitcoin's cost of processing a transaction roughly scales to the size 
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/019.png)
 
 ### Ethereum's Transaction Cost Analysis
+### 以太坊的交易成本分析
 
 Ethereum comes with Turing-complete scriptability, and gives users more flexibility to customize state transition rules with smart contracts. Ethereum transactions include *gaslimit* and *gasprice*, and the transaction fees are calculated using the product of their multiplication. Therefore, ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/020.png) is ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/021.png).
 
@@ -456,6 +458,7 @@ Ethereum comes with a Turing complete VM, and the computation of the result stat
 Different from Bitcoin, ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/33.png) for the Ethereum nodes is less than ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/34.png). This is because Ethereum nodes only compute the result state after transactions are included in the block. This is also the reason that transaction results on Ethereum could be invalid, (e.g. exceptions in contract invocation or the gas limit is exceeded),  but the Bitcoin blockchain only has successfully executed transactions and valid results.
 
 ### Nervos CKB's Transaction Cost Analysis
+### Nervos CKB 的交易成本分析
 
 Nervos CKB's transactions are structured with inputs and outputs, similar to Bitcoin's. Therefore, the ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/35.png) and ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/36.png) for the Nervos CKB are the same as those of Bitcoin's:
 
@@ -468,6 +471,7 @@ Because CKB transactions include the result of the transactions as outputs, ther
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/39.png)
 
 ### Cycles as Measurement Units of Computation Complexity
+### 循环作为计算复杂度的度量单位
 
 We introduce "cycle" as a unit of measurement for computation complexity in the CKB, similar to the "gas" concept in Ethereum. Nervos CKB's VM is a RISC-V CPU simulator, therefore cycles here refer to real CPU computation cycles in the VM. The cycle number for an instruction represents the relative computation cost of that instruction. Transactions in the Nervos CKB require the sender to specify the number of cycles required for its verification. Nodes can opt to set an acceptable cycle upper bound *cyclemax*, and only process transactions with fewer cycles. We'll also introduce *cycles* to a block, with its value equal to the sum of all specified transaction cycles.  The value of *cycles* in a block can't exceed the value *blockcyclesmax*, which are set and can be automatically adjusted by the system.
 
