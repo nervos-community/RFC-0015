@@ -195,7 +195,7 @@
  
  A cell's occupied capacity could be equal to or less than its specified capacity. For example, for a 1000 byte cell, 4 bytes would be used to specify its own capacity, 64 bytes for the lock script and 128 bytes for storing state. Then the cell's current occupied capacity is 196 bytes, but with room to grow up to 1000 bytes.
  
- [待翻译]
+ 一个 Cell 占用的空间可以等于或小于其指定空间。例如，对于一个 1000 Byte 的 Cell，使用 4 Bytes 来指定自己的空间，锁定脚本使用 64 Bytes，存储状态使用 128 Bytes。因此这个 Cell 实际占用 196 Bytes，但是有充足的空间增长到 1000 Bytes。
 
 ### 6.2 代币发行政策
 
