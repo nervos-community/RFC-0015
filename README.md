@@ -390,64 +390,116 @@
 ## 附件1 : 交易成本分析
 ## Appendix 1: Transaction Cost Analysis
 
-[待翻译，有空的朋友一起来翻一下吧]
-
 
 Nervos CKB uses Proof of Work based Nakamoto consensus, similar to what's used in Bitcoin - for more details, please see the "Nervos Consensus Paper"
 
+Nervos CKB采用的是基于中本聪共识的工作量证明（PoW）共识机制，这一点上类似于比特币。欲了解更多关于Nervos CKB共识机制的细节，请参阅“Nervos Consensus Paper”。
+
 The economics of the consensus process is designed to incentivize nodes to participate in the consensus process and provide measurements that nodes can use to prioritize transactions.  At the core, it's designed to help consensus nodes answer the question: "Is this transaction worth to be included in the next block if I had the opportunity to produce the block?"
+
+在达成共识过程中的经济学设计，旨在激励所有参与共识达成的节点，并向节点提供可以用来确认事务优先级的衡量标准。其核心内容，应该是帮助共识节点回答这样一个问题：“如果我有机会生产下一个区块，那么这笔交易应不应该被加入这个区块中。”
 
 A block producing node can do a cost/benefit analysis to answer this question. The benefit of including a transaction is to be able to collect its transaction fee, and the cost of including a transaction in a block has three parts:
 
+为了回答这个问题，出块节点可以进行一个成本/收益分析。节点在下一个块中加入这笔交易能够获得的收益，就是这笔交易的转账手续费。而把这笔交易加入块中需要付出的成本主要包含以下三个部分：
 
 - Fee Estimation Cost (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) ): this is the cost to estimate the maximum possible income if a node where to include a transaction
+
+- 手续费估算成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) )：这是节点在将未完成交易加入下一个块的过程中，评估具体打包哪一笔未完成交易可以获得最大收入的成本。
+
 - Transaction Verification Cost (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) ): blocks containing invalid transactions will be rejected by the consensus process, therefore block producing nodes have to verify transactions before including them in a new block.
+
+- 交易验证成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) )：如果块中包含无效交易将在共识过程中被拒绝，因此出块节点必须在把未完成交易加入新块之前验证每笔交易。
+
 - State Transition Cost (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/003.png)）: after a block is produced, the block producing node has to perform local state transitions defined by state machines of the transactions in the block.
+
+- 状态转换成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/003.png))：在一个新块生成后，出块节点必须根据该区块中包含的所有交易转账内容，通过状态机完成本地状态转换。
 
 In particular, transaction verification, ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/004.png)  has two possible steps:
 
+特别的，在转账验证中，![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/004.png) 可能包含以下两个步骤：
+
 - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/005.png): Authorization Verification Cost
+
+- ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/005.png):授权验证成本
 
 - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/006.png): State Transition Verification Cost
 
+- ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/006.png):状态转换验证成本
+
 We use CPC and EVC to represent Complete Processing Cost and Estimation and Verification Cost:
+
+我们采用CPC和EVC来表示全部处理成本和估算验证成本：
 
 - CPC: Complete Processing Cost
   - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/007.png)
 - EVC: Estimation and Verification Cost;
   - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/008.png)
 
+- CPC：完整处理成本
+  - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/007.png)
+- EVC：估算及验证成本
+  - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/008.png)
+  
 ### Bitcoin's Transaction Cost Analysis
+### 比特币的交易成本分析
 
 Bitcoin allows flexible authorization verification with the Bitcoin Script. Users can script the authorization rules and build smart contracts through ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/009.png) when creating transactions. Bitcoin has a fixed state transition semantic, which is to spend and create new UTXOs. In Bitcoin, the result of the state transitions are already included in transactions, therefore the State Transition Cost (STC) is 0.
 
+比特币通过Bitcoin Script（比特币脚本）完成授权验证。用户在构建交易时可以通过scriptPubKey编写授权规则，创建智能合约。比特币有固定的状态转换语句，也就是我们通常所说的UTXO模型，我们可以通过花费和创建新的UTXO来实现状态转换。在比特币中，状态转换的结果其实已经被包含在交易中了，因此状态转换成本（STC）为0。
+
 Bitcoin uses the amount difference of the inputs and outputs to express transaction fees. Therefore, the cost of estimating transaction fees scales to ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/010.png) where ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/011.png) is the total number of inputs and outputs.
+
+比特币通过输入和输出间的金额差异来表示该笔交易的交易手续费。因此手续费估算成本记为![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/010.png)，其中![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/011.png)是输入和输出总的数量。
 
 Authorization verification in Bitcoin requires running scripts of all inputs. Because the Bitcoin Script prohibits JUMP/looping, the computation complexity can roughly scale to the length of the input scripts, as![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/012.gif), where ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/013.png) is the number of inputs and ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/014.gif) is the average script length of an input. Therefore, the total cost of ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/015.png) roughly scales to the size of total transaction.
 
+比特币的授权验证需要运行所有输入的脚本，因为比特币脚本禁止跳过和循环，所以计算复杂度可以通过输入脚本的总长度![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/012.gif)进行估算，其中![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/013.png)是输入的数量，![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/014.gif)是每个输入的平均脚本长度。因此总的授权验证成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/015.png)可以粗略的通过全部交易的大小![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/012.gif)来进行估算。
+
 Bitcoin's state transition rules are simple, and nodes only have to verify the total input amount is the same as the total output amount. Therefore, the ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/016.png) in Bitcoin is the same as ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/017.png), also scaling to ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/018.gif).
+
+比特币状态转换的规则十分简单，节点只需要验证输入的总数是不是和输出的总数相等即可。因此比特币的状态转换验证成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/016.png)和![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/017.png)一样，约等于![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/018.gif)。
 
 In total, Bitcoin's cost of processing a transaction roughly scales to the size of the transaction:
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/019.png)
 
+综上，比特币处理交易的总成本就可以通过交易大小去进行一个粗略计算：
+![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/019.png)
+
 ### Ethereum's Transaction Cost Analysis
+### 以太坊的交易成本分析
 
 Ethereum comes with Turing-complete scriptability, and gives users more flexibility to customize state transition rules with smart contracts. Ethereum transactions include *gaslimit* and *gasprice*, and the transaction fees are calculated using the product of their multiplication. Therefore, ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/020.png) is ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/021.png).
 
+以太坊具有图灵完备的脚本语言，允许用户通过智能合约自定义状态转换规则。以太坊的转账交易包括Gas Limit和Gas Price，交易手续费为这两者的乘积。因此![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/020.png)等于![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/021.png)。
+
 Unlike Bitcoin, Ethereum's transactions only include the computation commands of state transitions, instead of the results of the state transitions. Therefore, Ethereum's transaction verification is limited to authorization verification, and doesn't have state transition verification. The rules of authorization verification in Ethereum are:
 
+与比特币不同，以太坊的转账交易只包括状态转换的计算命令，而不包含状态转换的结果。因此，以太坊的交易验证仅限于授权验证，而没有状态转换验证。以太坊的授权验证规则如下：
 
 - Verify the validility of the Secp256k1 signatures, with computation complexity of ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/022.gif)
 - Verify the nonce match of the transaction and the account that starts the transaction, with computation complexity of ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/023.png)
 - Verify the account that starts transaction has enough ether to pay for the transaction fees and the amount transferred. This requires access to the account's current balance. Ignoring the global state size's impact on account access, we can assume the complexity of this step is also ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/023.png).
 
+- 验证Secp256k1签名的有效性，计算复杂度为![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/022.gif)，
+-	验证开启交易的账户和交易之间的nonce是否一致，计算复杂度为![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/023.png)，
+-	验证启动交易的账户是否有足够的余额支付转帐手续费和转帐金额。这需要访问账户的当前余额。忽略全局状态大小对账户访问的影响，我们可以假定这个步骤的复杂度也是![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/023.png)。
+
 Based on the above, the overall authorization verification complexity in Ethereum is ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/024.gif).
+
+综上所述，以太坊中总的授权验证复杂度为![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/024.gif)。
 
 Since every byte of the transaction data comes with cost ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png), the larger ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png) is, the more gas it needs, up to the *gaslimit* ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)specified. Therefore,
 
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/54.png)
 
+由于交易数据的每个字节都有成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png)，![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png)越大，需要的gas也就越多，但是最多不超过Gas Limint![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)specified，因此：
+
+![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/54.png)
+
 Ethereum comes with a Turing complete VM, and the computation of the result state could include logic of any complexity. Ethereum transaction's ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/028.png) caps the upper bound of computation, therefore ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/029.png)。To summarize all the above:
+
+以太坊具备图灵完备的虚拟机，其状态结果的计算可以包括任何复杂逻辑，以太坊交易中的Gas Limit成了计算进行的上限，因此![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/029.png)。综上所述：
 
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/030.png)
 
@@ -457,9 +509,14 @@ Ethereum comes with a Turing complete VM, and the computation of the result stat
 
 Different from Bitcoin, ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/33.png) for the Ethereum nodes is less than ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/34.png). This is because Ethereum nodes only compute the result state after transactions are included in the block. This is also the reason that transaction results on Ethereum could be invalid, (e.g. exceptions in contract invocation or the gas limit is exceeded),  but the Bitcoin blockchain only has successfully executed transactions and valid results.
 
+不同于比特币，以太坊节点的![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/33.png)小于![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/34.png)。这是因为以太坊节点只在交易被包含在块中之后才会计算状态结果。这也是以太坊中交易结果可能无效的原因（比如会出现合约调用异常或者计算超出Gas Limit），而比特币在出块中就会执行转帐过程并生成有效结果。
+
 ### Nervos CKB's Transaction Cost Analysis
+### Nervos CKB 的交易成本分析
 
 Nervos CKB's transactions are structured with inputs and outputs, similar to Bitcoin's. Therefore, the ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/35.png) and ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/36.png) for the Nervos CKB are the same as those of Bitcoin's:
+
+Nervos CKB交易也是由输入和输出组成，类似于比特币。因此Nervos CKB的![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/35.png)和![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/36.png)与比特币相同：
 
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/37.png)
 
@@ -467,15 +524,24 @@ Nervos CKB's transactions are structured with inputs and outputs, similar to Bit
 
 Because CKB transactions include the result of the transactions as outputs, therefore:
 
+因为在Nervos CKB交易的输出中包含交易结果，因此：
+
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/39.png)
 
 ### Cycles as Measurement Units of Computation Complexity
+### *cycles* 作为计算复杂度的度量单位
 
 We introduce "cycle" as a unit of measurement for computation complexity in the CKB, similar to the "gas" concept in Ethereum. Nervos CKB's VM is a RISC-V CPU simulator, therefore cycles here refer to real CPU computation cycles in the VM. The cycle number for an instruction represents the relative computation cost of that instruction. Transactions in the Nervos CKB require the sender to specify the number of cycles required for its verification. Nodes can opt to set an acceptable cycle upper bound *cyclemax*, and only process transactions with fewer cycles. We'll also introduce *cycles* to a block, with its value equal to the sum of all specified transaction cycles.  The value of *cycles* in a block can't exceed the value *blockcyclesmax*, which are set and can be automatically adjusted by the system.
 
+我们引入*cycles* 作为CKB中计算复杂度的衡量单位，类似于以太坊中“Gas”的概念。Nervos CKB的虚拟机是RISC-V CPU模拟器，这里指的*cycles* 其实就是虚拟机中实际CPU工作的计算周期。执行一个指令的所需的*cycles* 数量，就是该指令的相对计算成本。在Nervos CKB中的交易需要发送方指定其所需要验证的*cycles* 数量，节点可以选择设置接受*cycles* 数量的上限“cyclemax”，进而只处理具有需要较少*cycles* 运算的转帐交易。我们还将在块中引入*cycles* ，其值等于所有指定事务的*cycles* 总和。块中*cycles* 的值不能超过“blockcyclemax”的值，这些值已经被初始设置并且可以随着系统自动调整。
+
 Nodes can set their *cyclemax* to different values. *cyclemax* only impacts how a block producing node accepts new transactions, not how a node accepts transactions in a new block. Therefore, it's not going to cause inconsistency in the validation of blocks. A valid block needs valid proof of work, and this cost discourages a block producing node to include an invalid transaction with high *cycles* value.
 
+节点可以将其*cyclemax*设定为不同的值，*cyclemax*仅影响当前的出块节点是否接受打包这笔交易，而不影响其他节点接受新块中的交易，因此，它并不会导致区块验证的不一致。一个有效的块需要有效的工作量证明，因此并不鼓励出块节点去接受一个具有很高“cycles”值，但是无效的转帐交易。
+
 The following table shows the runtime differences in Bitcoin, Ethereum and the Nervos CKB.
+
+下表显示了比特币、以太坊和Nervos CKB在运行时的差异：
 
 |          | Authorization (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/40.png)） | State Validation (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/41.png)) | State Transition（![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/42.png)） |
 | -------- | ---------------------------- | ----------------------------- | ------------------------ |
@@ -485,6 +551,8 @@ The following table shows the runtime differences in Bitcoin, Ethereum and the N
 
 
 Here's a summary of the computational complexity of different parts of the consensus process for Bitcoin, Ethereum and Nervos CKB (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png) means cycle limit)
+
+以下是比特币、以太坊和Nervos CKB在达成共识过程中不同部分的计算复杂性总结（![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png)指“cycle”上限）
 
 |          |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/43.png)     |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/44.png)         |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/45.png)          |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/46.png)          | ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/47.png)         |
 | -------- | ------------- | ---------------- | ---------------- | ---------------- | ---------------- |
