@@ -432,15 +432,13 @@ We use CPC and EVC to represent Complete Processing Cost and Estimation and Veri
 我们采用CPC和EVC来表示全部处理成本和估算验证成本：
 
 - CPC: Complete Processing Cost
-  - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/007.png)
-- EVC: Estimation and Verification Cost;
-  - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/008.png)
-
 - CPC：完整处理成本
   - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/007.png)
+- EVC: Estimation and Verification Cost;
 - EVC：估算及验证成本
   - ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/008.png)
-  
+
+
 ### Bitcoin's Transaction Cost Analysis
 ### 比特币的交易成本分析
 
@@ -461,10 +459,10 @@ Bitcoin's state transition rules are simple, and nodes only have to verify the t
 比特币状态转换的规则十分简单，节点只需要验证输入的总数是不是和输出的总数相等即可。因此比特币的状态转换验证成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/016.png)和![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/017.png)一样，约等于![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/018.gif)。
 
 In total, Bitcoin's cost of processing a transaction roughly scales to the size of the transaction:
+综上，比特币处理交易的总成本就可以通过交易大小去进行一个粗略计算：
+
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/019.png)
 
-综上，比特币处理交易的总成本就可以通过交易大小去进行一个粗略计算：
-![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/019.png)
 
 ### Ethereum's Transaction Cost Analysis
 ### 以太坊的交易成本分析
@@ -491,8 +489,6 @@ Based on the above, the overall authorization verification complexity in Ethereu
 
 Since every byte of the transaction data comes with cost ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png), the larger ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png) is, the more gas it needs, up to the *gaslimit* ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)specified. Therefore,
 
-![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/54.png)
-
 由于交易数据的每个字节都有成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png)，![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png)越大，需要的gas也就越多，但是最多不超过Gas Limint![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)specified，因此：
 
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/54.png)
@@ -511,6 +507,7 @@ Different from Bitcoin, ![](https://raw.githubusercontent.com/Jack0814/Picture/m
 
 不同于比特币，以太坊节点的![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/33.png)小于![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/34.png)。这是因为以太坊节点只在交易被包含在块中之后才会计算状态结果。这也是以太坊中交易结果可能无效的原因（比如会出现合约调用异常或者计算超出Gas Limit），而比特币在出块中就会执行转帐过程并生成有效结果。
 
+
 ### Nervos CKB's Transaction Cost Analysis
 ### Nervos CKB 的交易成本分析
 
@@ -527,6 +524,7 @@ Because CKB transactions include the result of the transactions as outputs, ther
 因为在Nervos CKB交易的输出中包含交易结果，因此：
 
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/39.png)
+
 
 ### Cycles as Measurement Units of Computation Complexity
 ### *cycles* 作为计算复杂度的度量单位
@@ -552,7 +550,7 @@ The following table shows the runtime differences in Bitcoin, Ethereum and the N
 
 Here's a summary of the computational complexity of different parts of the consensus process for Bitcoin, Ethereum and Nervos CKB (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png) means cycle limit)
 
-以下是比特币、以太坊和Nervos CKB在达成共识过程中不同部分的计算复杂性总结（![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png)指*cycle*上限）
+下表是比特币、以太坊和Nervos CKB在达成共识过程中不同部分的计算复杂性总结（![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png)指*cycles*上限）
 
 |          |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/43.png)     |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/44.png)         |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/45.png)          |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/46.png)          | ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/47.png)         |
 | -------- | ------------- | ---------------- | ---------------- | ---------------- | ---------------- |
