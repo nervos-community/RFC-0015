@@ -533,11 +533,11 @@ Because CKB transactions include the result of the transactions as outputs, ther
 
 We introduce "cycle" as a unit of measurement for computation complexity in the CKB, similar to the "gas" concept in Ethereum. Nervos CKB's VM is a RISC-V CPU simulator, therefore cycles here refer to real CPU computation cycles in the VM. The cycle number for an instruction represents the relative computation cost of that instruction. Transactions in the Nervos CKB require the sender to specify the number of cycles required for its verification. Nodes can opt to set an acceptable cycle upper bound *cyclemax*, and only process transactions with fewer cycles. We'll also introduce *cycles* to a block, with its value equal to the sum of all specified transaction cycles.  The value of *cycles* in a block can't exceed the value *blockcyclesmax*, which are set and can be automatically adjusted by the system.
 
-我们引入*cycles* 作为CKB中计算复杂度的衡量单位，类似于以太坊中“Gas”的概念。Nervos CKB的虚拟机是RISC-V CPU模拟器，这里指的*cycles* 其实就是虚拟机中实际CPU工作的计算周期。执行一个指令的所需的*cycles* 数量，就是该指令的相对计算成本。在Nervos CKB中的交易需要发送方指定其所需要验证的*cycles* 数量，节点可以选择设置接受*cycles* 数量的上限“cyclemax”，进而只处理具有需要较少*cycles* 运算的转帐交易。我们还将在块中引入*cycles* ，其值等于所有指定事务的*cycles* 总和。块中*cycles* 的值不能超过“blockcyclemax”的值，这些值已经被初始设置并且可以随着系统自动调整。
+我们引入*cycles* 作为CKB中计算复杂度的衡量单位，类似于以太坊中“Gas”的概念。Nervos CKB的虚拟机是RISC-V CPU模拟器，这里指的*cycles* 其实就是虚拟机中实际CPU工作的计算周期。执行一个指令的所需的*cycles* 数量，就是该指令的相对计算成本。在Nervos CKB中的交易需要发送方指定其所需要验证的*cycles* 数量，节点可以选择设置接受*cycles* 数量的上限*cyclemax*，进而只处理具有需要较少*cycles* 运算的转帐交易。我们还将在块中引入*cycles* ，其值等于所有指定事务的*cycles* 总和。块中*cycles* 的值不能超过*blockcyclemax*的值，这些值已经被初始设置并且可以随着系统自动调整。
 
 Nodes can set their *cyclemax* to different values. *cyclemax* only impacts how a block producing node accepts new transactions, not how a node accepts transactions in a new block. Therefore, it's not going to cause inconsistency in the validation of blocks. A valid block needs valid proof of work, and this cost discourages a block producing node to include an invalid transaction with high *cycles* value.
 
-节点可以将其*cyclemax*设定为不同的值，*cyclemax*仅影响当前的出块节点是否接受打包这笔交易，而不影响其他节点接受新块中的交易，因此，它并不会导致区块验证的不一致。一个有效的块需要有效的工作量证明，因此并不鼓励出块节点去接受一个具有很高“cycles”值，但是无效的转帐交易。
+节点可以将其*cyclemax*设定为不同的值，*cyclemax*仅影响当前的出块节点是否接受打包这笔交易，而不影响其他节点接受新块中的交易，因此，它并不会导致区块验证的不一致。一个有效的块需要有效的工作量证明，因此并不鼓励出块节点去接受一个具有很高*cycles* 值，但是无效的转帐交易。
 
 The following table shows the runtime differences in Bitcoin, Ethereum and the Nervos CKB.
 
@@ -552,7 +552,7 @@ The following table shows the runtime differences in Bitcoin, Ethereum and the N
 
 Here's a summary of the computational complexity of different parts of the consensus process for Bitcoin, Ethereum and Nervos CKB (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png) means cycle limit)
 
-以下是比特币、以太坊和Nervos CKB在达成共识过程中不同部分的计算复杂性总结（![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png)指“cycle”上限）
+以下是比特币、以太坊和Nervos CKB在达成共识过程中不同部分的计算复杂性总结（![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png)指*cycle*上限）
 
 |          |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/43.png)     |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/44.png)         |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/45.png)          |![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/46.png)          | ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/47.png)         |
 | -------- | ------------- | ---------------- | ---------------- | ---------------- | ---------------- |
