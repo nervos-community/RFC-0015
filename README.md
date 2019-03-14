@@ -8,6 +8,10 @@
 
 ---
 
+## 提案目录结构
+
+![Screenshot](https://github.com/hujianping/RFC-CN/blob/master/2D1FD8A824DC5A81BD6FF75B22C51AB1.png?raw=true)
+
 ## 1. 代币经济学的设计目标
 
  Public permission-less blockchains are open and distributed systems with diverse groups of participants. A well designed crypto-economics model is to provide incentives so that participants’ pursuit of own economic interests leads to desired emergent behaviors in alignment with the protocol, to contribute to the blockchain network’s success.
