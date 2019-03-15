@@ -141,7 +141,7 @@
 
  Both Bitcoin and Ethereum throttle transaction throughput to make sure participation is not limited to only “super computers” - Bitcoin throttles on bandwidth and Ethereum throttles on computation. However, they haven’t taken effective measures to contain the ever growing global state necessary for consensus participation and independent transaction validation. This is especially a centralization force for high throughout smart contract platforms, where the global state grows even faster. 
 
- 比特币和以太坊都限制了交易吞吐量以确保参与方不仅只有「超级计算机」 - 比特币限制带宽，以太网限制计算能力。然而，他们没有采取有效的方式，来容纳共识参与和交易验证所需而且不断增长的全球状态。尤其是整个智能合约平台有着高度集中的需求，全球状态的增长速度只会更快。
+ 比特币和以太坊都限制了交易吞吐量以确保参与方不仅只有「超级计算机」 - 比特币限制带宽，以太网限制计算能力。然而，他们没有采取有效的方式，来容纳共识参与和交易验证所需而且不断增长的全局状态。尤其是整个智能合约平台有着高度集中的需求，全局状态的增长速度只会更快。
 
  In Bitcoin, the global state is the UTXO set. Bitcoin doesn’t control the growth of the size of the UTXOs directly, but every new UTXO adds overhead to the transaction where it’s created, making the transaction more expensive. 
 
@@ -149,16 +149,16 @@
 
  In Ethereum, the global state is represented with the EVM’s state trie, the data structure that contains the balances and internal states of all accounts. When new accounts or new contract values are created, the size of the global state expands. Ethereum charges fixed amounts of Gas for inserting new values into its state storage and offers fixed amounts of Gas as transaction refund when values are removed. Ethereum’s approach is a step in the right direction, but still has several issues: 
 
- 在以太坊中，全局状态由 EVM 的状态树来表示，该状态是包含所有帐户的余额和内部状态的数据结构。创建新帐户或新的智能合约值时，全球状态的大小就会增加。以太坊收取固定的 Gas 费用用于存入新的数据，并在移除数据的时后提供固定数量的 Gas 作为交易退款。以太坊的方法是朝着正确方向迈出的一步，但仍有几个问题：
+ 在以太坊中，全局状态由 EVM 的状态树来表示，该状态是包含所有帐户的余额和内部状态的数据结构。创建新帐户或新的智能合约值时，全局状态的大小就会增加。以太坊收取固定的 Gas 费用用于存入新的数据，并在移除数据的时后提供固定数量的 Gas 作为交易退款。以太坊的方法是朝着正确方向迈出的一步，但仍有几个问题：
 
 - the growth of the global state is not bounded in any way and can grow infinitely, therefore there’s no certainty in the cost of full node participation
 - the system raises one-time revenue for expanding the state storage, but miners and full nodes have to bear the expense of storage over time
 - there’s no obvious reason why the cost of expanding storage should be priced in fixed Gas amounts, which is used to price a unit of computation
 - the “pay once, occupy forever” state storage model gives very little incentive for users to voluntarily clear state and reduce the size of global state
-- 全球状态的增长不受任何限制，并且可以无限增长，因此全节点的参与成本并不确定
+- 全局状态的增长不受任何限制，并且可以无限增长，因此全节点的参与成本并不确定
 - 该系统为扩大状态存储提高了一次性收费，但矿工和全节点必须承担长期存储费用
 - 没有明显的理由说明为什么扩展存储的成本应该以固定的 Gas 定价（Gas 用于计算一个单位的计算费用）
-- 「一次性支付，永远占用」的状态存储模型的激励很小，很难让用户自愿清除状态和减少全球状态的占用
+- 「一次性支付，永远占用」的状态存储模型的激励很小，很难让用户自愿清除状态和减少全局状态的占用
 
  The Ethereum community is actively working on this problem, and the leading solution is to charge smart contract “state rent” - contracts have to periodically pay fees based on the size of its state. If the rent is not paid, the contract goes to “hibernation” and not accessible before the payment is current again. We see several difficult-to-solve problems with this approach: 
 
@@ -179,13 +179,13 @@
 - the growth of the global state has to be bounded to give predictability for full node participation. Ideally, the cost is well within the range of non-professional participants to keep the network maximally decentralized and censorship resistant.
 - with bounded growth of the global state, the price for expanding it and the rewards for reducing it should be determined by the market. In particular, it’s desirable to have the cost of expanding state storage higher when it’s mostly full, and lower when it’s mostly empty. 
 - the system has to be able to continuously raise revenue from its state users to pay miners for providing this resource. This serves both purposes of balancing miner’s economics and providing incentives for users to clear unnecessary states sooner than later. 
-- 必须限制全球状态的增长，以便为全节点参与是在可预测的状况下。理想情况下，成本能控制在非专业参与者可以负担的范围内，以保持网络最大程度的去中心化与抗审查。
-- 随着全球状态的有限增长，价格的上升与降低将由市场决定。特别是当状态存储空间快满的时后，需要将状态存储的成本提高，而当它大部分为空时，需要降低成本，这是非常吸引人的。
+- 必须限制全局状态的增长，以便为全节点参与是在可预测的状况下。理想情况下，成本能控制在非专业参与者可以负担的范围内，以保持网络最大程度的去中心化与抗审查。
+- 随着全局状态的有限增长，价格的上升与降低将由市场决定。特别是当状态存储空间快满的时后，需要将状态存储的成本提高，而当它大部分为空时，需要降低成本，这是非常吸引人的。
 - 系统需要能够不断收取其状态用户的租金，以支付矿工提供这种资源。这有助于平衡矿工的经济收入，同时让用户被激励去清除不必要的状态。
 
  Just like how Bitcoin throttles and forces pricing on bandwidth, and Ethereum throttles and forces pricing on computation, to keep a blockchain network long term decentralized and sustainable, we have to come up with a way to constrain and price the global state. This is especially important for preservation focused, Store of Assets networks, where usage of the network is not about transactions that mostly happen off-chain, but the cost of ongoing occupation of the global state. 
 
- 就像比特币如何限制带宽，以及以太坊限制计算的定价，来保持区块链网络长期去中心化和可持续，我们必须提出一种约束与全球状态的定价方法。这对于以保护资产为重点的「资产存储」平台来说，这是特别重要的，（其中对于网络中的交易使用不总是发生在线下），而是持续占用全球状态的成本。
+ 就像比特币如何限制带宽，以及以太坊限制计算的定价，来保持区块链网络长期去中心化和可持续，我们必须提出一种约束与全局状态的定价方法。这对于以保护资产为重点的「资产存储」平台来说，这是特别重要的，（其中对于网络中的交易使用不总是发生在线下），而是持续占用全局状态的成本。
 
 ## 6. Nervos CKB 的经济模型
 
@@ -197,7 +197,7 @@
 
  The native token for the Nervos CKB is the “Common Knowledge Byte”, or “CK Byte” for short. The CK Bytes represent cell capacity in bytes and they give owners the ability to occupy a piece of the blockchain’s overall global state. For example, if Alice owns 1000 CK Bytes, she can create a cell with 1000 bytes in capacity, or multiple cells that add up to 1000 bytes in capacity. She can use the 1000 bytes to store assets, application state, or other types of common knowledge. 
 
- Nervos CKB 的原生代币是 「Common Knowledge Byte」，简称「CK Byte」。 CK Byte 代表 Cell 空间，它们让拥有者能够占用区块链的全球状态。例如，如果 Alice 拥有 1000 个 CK Byte，她可以创建一个空间为 1000 Byte 的单元，或者空间合计最多为 1000 Byte 的多个 Cell。她可以使用 1000 个 Byte 来存储资产，App 状态或是其他类型的数据资料。
+ Nervos CKB 的原生代币是 「Common Knowledge Byte」，简称「CK Byte」。 CK Byte 代表 Cell 空间，它们让拥有者能够占用区块链的全局状态。例如，如果 Alice 拥有 1000 个 CK Byte，她可以创建一个空间为 1000 Byte 的单元，或者空间合计最多为 1000 Byte 的多个 Cell。她可以使用 1000 个 Byte 来存储资产，App 状态或是其他类型的数据资料。
  
  A cell's occupied capacity could be equal to or less than its specified capacity. For example, for a 1000 byte cell, 4 bytes would be used to specify its own capacity, 64 bytes for the lock script and 128 bytes for storing state. Then the cell's current occupied capacity is 196 bytes, but with room to grow up to 1000 bytes.
  
@@ -218,7 +218,7 @@
 
   Since the native tokens represent right to expand the global state, the issuance policy of the natives tokens bounds the state growth. As state storage is bounded and becomes a scarce resource like bandwidth in Bitcoin and computation throughput in Ethereum, they can be market priced and traded. State rent adds the necessary time dimension to the fee structure of state storage occupation. Instead of mandating periodic rent payments, we use a two step approach as a “targeted inflation” scheme to collect this rent: 
 
- 由于原生代币代表了占用全球状态的权利，所以代币发行政策会限制状态的增长。由于状态存储受限制并且成为了稀缺资源，就好比比特币的带宽和以太坊的计算吞吐量，它们可以在市场上被定价和交易。状态租金在状态占用的费用结构上，增加了必要的时间维度。我们采用两个步骤作为「目标通胀」框架来收取这笔租金，而不是强制定期收取租金：
+ 由于原生代币代表了占用全局状态的权利，所以代币发行政策会限制状态的增长。由于状态存储受限制并且成为了稀缺资源，就好比比特币的带宽和以太坊的计算吞吐量，它们可以在市场上被定价和交易。状态租金在状态占用的费用结构上，增加了必要的时间维度。我们采用两个步骤作为「目标通胀」框架来收取这笔租金，而不是强制定期收取租金：
 
 - On top of the base issuance, we add the secondary issuance which can be seen as “inflation tax” to all existing token holders. For users who use their CK Bytes to store state, this recurring inflation tax is how they pay state rent to the miners.
 - However, we have also collected rent from the CK Bytes that are not used to store state, and we need to return to them what we collected. We allow those users to deposit and lock their native tokens into a special contract called the NervosDAO. The NervosDAO receives part of the “secondary issuance” to make up for the otherwise unfair dilution. 
@@ -351,7 +351,7 @@
 
  The effective interest rate of lending is determined by the market supply and demand, but the current state of token utilization also plays a big role. Higher utilization of the available global state means less tokens can be made available for lending. This makes the lending interest higher, and makes it more attractive to release state and lock tokens in the NervosDAO to earn income. This serves the purpose to help reduce the global state; lower utilization of the available state means more tokens can be lent out. This makes the lending interest rate lower to encourage adoption. 
 
- 租赁的实际利率由市场供求决定，但代币的占用状况也有著重要的影响。如果全球状态利用率高，代表可用于贷款的代币就更少了。这将使得贷款利息更高，并且使得在 NervosDAO 合约中锁定状态，以获得收入更具吸引力。这有助于减少全球状态。而较低的全球状态利用率代表着有更多的代币可以出租。这将使得贷款利率降低以鼓励使用。
+ 租赁的实际利率由市场供求决定，但代币的占用状况也有著重要的影响。如果全局状态利用率高，代表可用于贷款的代币就更少了。这将使得贷款利息更高，并且使得在 NervosDAO 合约中锁定状态，以获得收入更具吸引力。这有助于减少全局状态。而较低的全局状态利用率代表着有更多的代币可以出租。这将使得贷款利率降低以鼓励使用。
 
 ### 7.6 Nervos Network
 
@@ -383,7 +383,7 @@
 
  In fact, Store of Assets users that occupy global state can be seen as paying an ongoing subscription metered by the size of their state, and the beneficiaries are the miners that provide the security service.
 
- 实际上，占用全球状态的资产存储用户可以被视为根据其状态的规模支付持续订阅的费用，受益人是提供安全服务的矿工。
+ 实际上，占用全局状态的资产存储用户可以被视为根据其状态的规模支付持续订阅的费用，受益人是提供安全服务的矿工。
 
 - Liquidity Income 
 - 流动性收入模型
