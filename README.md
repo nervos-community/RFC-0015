@@ -157,7 +157,7 @@
 - the “pay once, occupy forever” state storage model gives very little incentive for users to voluntarily clear state and reduce the size of global state
 - 全局状态的增长不受任何限制，并且可以无限增长，因此全节点的参与成本并不确定
 - 该系统为扩大状态存储提高了一次性收费，但矿工和全节点必须承担长期存储费用
-- 没有明显的理由说明为什么扩展存储的成本应该以固定的 Gas 定价（Gas 用于计算一个单位的计算费用）
+- 没有明显的理由说明为什么扩展存储的成本应该以固定的 Gas 定价（Gas 用于定价一个计算单位的费用）
 - 「一次性支付，永远占用」的状态存储模型的激励很小，很难让用户自愿清除状态和减少全局状态的占用
 
  The Ethereum community is actively working on this problem, and the leading solution is to charge smart contract “state rent” - contracts have to periodically pay fees based on the size of its state. If the rent is not paid, the contract goes to “hibernation” and not accessible before the payment is current again. We see several difficult-to-solve problems with this approach: 
