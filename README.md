@@ -4,7 +4,7 @@
 
 > 如果你不熟悉 GitHub 的协作流程，请您先参考 [gitbeijing.com](http://gitbeijing.com/)，这里有详尽的解说，这个项目希望可以有你的参与，谢谢第一位 PR 贡献者 Maple!!
 
-> 谢谢 hujianping, Orangem21, mingrui, stwith 的贡献，以及 Virale, u2, fuluwwa 参与讨论，欢迎大家继续提出你们的看法，love u guys!!
+> 谢谢 hujianping, Orangem21, mingrui, stwith 的贡献，以及 Virale, u2 参与讨论，欢迎大家继续提出你们的看法，love u guys!!
 
 ---
 
@@ -16,7 +16,7 @@
 
  Public permission-less blockchains are open and distributed systems with diverse groups of participants. A well designed crypto-economics model is to provide incentives so that participants’ pursuit of own economic interests leads to desired emergent behaviors in alignment with the protocol, to contribute to the blockchain network’s success.
 
- 公有非许可链是开放给所有人自由参与的分布式系统。一个精心设计的加密经济模型，可以将各方参与者的利益与协议的整体利益对齐, 使其在追求自身经济利益的同时也能对整个区块链网络做出贡献。
+ 公有非许可链是开放给所有人自由参与的分布式系统。一个精心设计的加密经济模型，可以将各方参与者的利益与协议的整体利益统一, 使其在追求自身经济利益的同时也能对整个区块链网络做出贡献。
 
  More specifically, the design of a crypto-economic system has to provide answers to the following questions:
 
@@ -28,7 +28,7 @@
 
 - 经济模型如何保障协议的安全性？
 - 经济模式如何维护协议的可持续性？
-- 经济模型如何将不同参与者的经济目标与提高整个网络价值的目标对齐?
+- 经济模型如何将不同参与者的经济目标与提高整个网络价值的目标统一?
 
 
 ## 2. 比特币的加密经济模型
@@ -157,7 +157,7 @@
 - the “pay once, occupy forever” state storage model gives very little incentive for users to voluntarily clear state and reduce the size of global state
 - 全局状态的增长不受任何限制，并且可以无限增长，因此全节点的参与成本并不确定
 - 该系统为扩大状态存储提高了一次性收费，但矿工和全节点必须承担长期存储费用
-- 没有明显的理由说明为什么扩展存储的成本应该以固定的 Gas 定价（Gas 用于定价一个计算单位的费用）
+- 没有明显的理由说明为什么扩展存储的成本应该以固定的 Gas 定价（Gas 用于计算一个单位的计算费用）
 - 「一次性支付，永远占用」的状态存储模型的激励很小，很难让用户自愿清除状态和减少全局状态的占用
 
  The Ethereum community is actively working on this problem, and the leading solution is to charge smart contract “state rent” - contracts have to periodically pay fees based on the size of its state. If the rent is not paid, the contract goes to “hibernation” and not accessible before the payment is current again. We see several difficult-to-solve problems with this approach: 
@@ -197,11 +197,11 @@
 
  The native token for the Nervos CKB is the “Common Knowledge Byte”, or “CK Byte” for short. The CK Bytes represent cell capacity in bytes and they give owners the ability to occupy a piece of the blockchain’s overall global state. For example, if Alice owns 1000 CK Bytes, she can create a cell with 1000 bytes in capacity, or multiple cells that add up to 1000 bytes in capacity. She can use the 1000 bytes to store assets, application state, or other types of common knowledge. 
 
- Nervos CKB 的原生代币是 「Common Knowledge Byte」，简称「CK Byte」。 CK Byte 代表 Cell 空间，它们让拥有者能够占用区块链的全局状态。例如，如果 Alice 拥有 1000 个 CK Byte，她可以创建一个空间为 1000 Byte 的 Cell，或者空间合计最多为 1000 Byte 的多个 Cell。她可以使用 1000 个 Byte 来存储资产，App 状态或是其他类型的数据资料。
+ Nervos CKB 的原生代币是 「Common Knowledge Byte」，简称「CK Byte」。 CK Byte 代表 Cell 空间，它们让拥有者能够占用区块链的全局状态。例如，如果 Alice 拥有 1000 个 CK Byte，她可以创建一个空间为 1000 Byte 的单元，或者空间合计最多为 1000 Byte 的多个 Cell。她可以使用 1000 个 Byte 来存储资产，App 状态或是其他类型的数据资料。
  
  A cell's occupied capacity could be equal to or less than its specified capacity. For example, for a 1000 byte cell, 4 bytes would be used to specify its own capacity, 64 bytes for the lock script and 128 bytes for storing state. Then the cell's current occupied capacity is 196 bytes, but with room to grow up to 1000 bytes.
  
- 一个 Cell 占用的空间应该等于或小于其指定空间。例如，对于一个 1000 Byte 的 Cell，使用 4 Bytes 来指定自己的空间，锁定脚本使用 64 Bytes，存储状态使用 128 Bytes。因此这个 Cell 实际占用 196 Bytes，但是有充足的空间增长至 1000 Bytes。
+ 一个 Cell 中已占用的空间可以等于或者小于这个空间指定的大小。比如说，一个空间为 1000 Byte 的单元，4个 Byte 用来说明它的容量，64个 Byte 用于锁定脚本，128个 Byte 用于存储状态。也就是说，这个 Cell 目前的容量是196个 Byte, 但它还有足够的空间可以使用到1000个 Byte。
 
 ### 6.2 代币发行政策
 
@@ -222,6 +222,7 @@
 
 - On top of the base issuance, we add the secondary issuance which can be seen as “inflation tax” to all existing token holders. For users who use their CK Bytes to store state, this recurring inflation tax is how they pay state rent to the miners.
 - However, we have also collected rent from the CK Bytes that are not used to store state, and we need to return to them what we collected. We allow those users to deposit and lock their native tokens into a special contract called the NervosDAO. The NervosDAO receives part of the “secondary issuance” to make up for the otherwise unfair dilution. 
+
 - 在「基础发行」的基础上，我们添加了「二次发行」，可以将其视为对所有代币持有者的「通胀税」。对于使用CK Byte 存储状态的用户，这种定期的通胀税是他们向矿工支付状态租金的方式。
 - 然而，由于我们对于那些没有使用 CK Byte 存储状态的所有者也收取了租金，所以我们需要将租金归还。我们允许这些用户将他们的原生代币存入并锁定到一个特殊合约中，我们称它为 NervosDAO。 NervosDAO 将接受部分「二级发行」的补偿，以弥补因为不公平造成的稀释。
 
@@ -238,7 +239,7 @@
 
  Miners are compensated with both block rewards and transaction fees. They receive all of the base issuance, and part of the secondary issuance. In the long term when base issuance stops, miners still receive state rent income that’s independent of transactions but tied to the adoption of the common knowledge base. 
 
- 矿工会获得两种出块奖励和交易手续费。他们将会收到所有的「基本发行」，以及部分的「二级发行」。长期来看，当「基础发行」停止后，矿工仍然可以获得状态租赁的收入。
+ 矿工都会获得出块奖励和交易手续费。他们将会收到所有的「基本发行」，以及部分的「二级发行」。长期来看，当「基础发行」停止后，矿工仍然可以获得状态租赁的收入。
 
 ### 6.5 交易手续费支付
 
