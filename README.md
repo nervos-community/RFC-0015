@@ -4,7 +4,7 @@
 
 > 如果你不熟悉 GitHub 的协作流程，请您先参考 [gitbeijing.com](http://gitbeijing.com/)，这里有详尽的解说，这个项目希望可以有你的参与，谢谢第一位 PR 贡献者 Maple!!
 
-> 谢谢 hujianping, Orangem21, mingrui, stwith 的贡献，以及 Virale, u2 参与讨论，欢迎大家继续提出你们的看法，love u guys!!
+> 谢谢 hujianping, Orangem21, mingrui, stwith 的贡献，以及 Virale, u2, fuluwwa 参与讨论，欢迎大家继续提出你们的看法，love u guys!!
 
 ---
 
