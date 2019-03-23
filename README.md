@@ -1,10 +1,12 @@
 # Nervos CKB 加密经济模型提案 - 中文翻译(20190308)
 
-> [此版本与最新版有部分差异，以原版为主](https://github.com/nervosnetwork/rfcs/blob/55ba3a38ed6d5ec028340af40b8c115add6ee897/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md)，欢迎各位提交 PR 一起修正这一份文档，让中文读者可以更容易阅读这份白皮书。
+> [此版本可能与最新版有些微差异，以英文原版为主](https://github.com/nervosnetwork/rfcs/blob/55ba3a38ed6d5ec028340af40b8c115add6ee897/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md)，欢迎各位提交 PR 一起修正这一份文档，让中文读者可以更容易阅读这份白皮书。
 
 > 如果你不熟悉 GitHub 的协作流程，请您先参考 [gitbeijing.com](http://gitbeijing.com/)，这里有详尽的解说，这个项目希望可以有你的参与，谢谢第一位 PR 贡献者 Maple!!
 
 > 谢谢 hujianping, Orangem21, mingrui, stwith 的贡献，以及 Virale, u2, fuluwwa 参与讨论，欢迎大家继续提出你们的看法，love u guys!!
+
+> thanks to ChenPoWei for the [繁体中文校订版](https://github.com/nervos-community/RFC-CN/blob/master/TCN.md)
 
 ---
 
