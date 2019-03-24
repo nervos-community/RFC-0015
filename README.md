@@ -72,11 +72,11 @@
 
  Security and decentralization are two essential properties of a blockchain network, and they come with a high cost that has to be paid to the operators of the network. Bitcoin’s current model has network security entirely paid with transaction fees after all the coins are mined. However, the MoE users have very limited time exposure to the network’s security risk, therefore won’t be willing to pay for it; the SoV users have prolonged exposure to the network’s security risk and are willing to pay for it, but they produce nearly no transactions.
 
- 安全性和去中心化是区块链网络的两个基本属性，维护这两个属性需要付出很高的成本，因此支付给网络维护者(主要是矿工)的奖励必须能够覆盖这些成本。根据比特币当前的模型，当代币开采完毕后，如果矿工仍可赚取足够的交易费，那么比特币网络依然保有安全性。 SoV 用户长期承受网络的安全风险，因此他们会愿意支付高额的交易费，可是他们几乎不产生交易。
+ 安全性和去中心化是区块链网络的两个基本属性，维护这两个属性需要付出很高的成本，因此支付给网络维护者(主要是矿工)的奖励必须能够覆盖这些成本。根据比特币当前的模型，当代币开采完毕后，如果矿工仍可赚取足够的交易费，那么比特币网络依然保有安全性。 然而，MoE 用户需要承受网络安全风险的时间非常有限，因此他们不愿意为此付费。而虽然 SoV 用户愿意支付高额交易费，因为他们暴露于网络安全风险的时间更长，但问题是他们很久才产生一次交易。
 
  Bitcoin’s consensus mechanism incentivize miners to recognize the longest chain as the network’s canonical state. Miner’s ongoing supply of hashing power doesn’t only provide security for the current block, but the immutability of all the blocks before it on the canonical chain. Relying on the SoV users to make one time payments for the ongoing security protection they receive from miners is not sustainable. 
 
- 比特币的共识机制激励矿工去识别并验证最长的链。矿工持续投入的算力不只为最新的区块提供了安全性，也维护了之前所有区块的不可篡改性。仅靠 SoV 用户的一次性付款让矿工持续提供安全保障非长久之策。
+ 比特币的共识机制激励矿工去识别并验证最长的链以当作全网的最新状态。矿工持续投入的算力不只为最新的区块提供了安全性，也维护了之前所有区块的不可篡改性。仅靠 SoV 用户的一次性付款让矿工持续提供安全保障非长久之策。
 
  In a SoV network, relying on inflation to fund network security is more incentive compatible with the users. Inflation based block reward mechanism represents indirect payment from the beneficiary of the network’s ongoing security to the provider of such security, in proportion to the duration that enjoy the service. 
 
@@ -90,7 +90,7 @@
 
  Another significant difference is that transactions on smart contract platforms are much more “portable”. It’s much easier to take advantage of the more advanced scripting capability of smart contract platforms, to develop interoperability protocols to move transactions to a more cost effective transactional blockchain and securely settle back to the main “system of record” blockchains. 
 
- 另一个与支付网络的重大区别是智能合约平台上的交易更加「便携」。利用智能合约平台更高级的脚本优势来开发交互协议，将交易转移到更具成本效益的子链上，并安全地将数据取回主链，现在是更容易了。
+ 另一个与支付网络的重大区别是智能合约平台上的交易更加「便携」。利用智能合约平台更高级的脚本优势来开发交互协议，能够更容易的将交易转移到更具成本效益的「交易为主」子链上，并安全地将数据安顿回「纪录为主」主链。
 
  The economic models of smart contract platforms face similar polarization tendency of payment networks - With their superior interoperable capabilities, smart contract platforms are going to be even more specialized into transactional platforms and preservation platforms. Economically, this bifurcation comes from the fact that the two use cases have different ways of utilizing system resources - transactions consume instantaneous but renewable computation and bandwidth resources, and preservation requires long term occupation of the global state. An economic model optimized for one is unlikely to be optimal for the other. 
 
@@ -113,7 +113,7 @@
 
  One of the most important use cases for smart contract platforms is to issue tokens to represent ownership of assets. These crypto-assets can have their own communities and markets, and their values are independent from the value of their platform tokens. On the other hand, these assets depend on the platform to process transactions and provide security. Payment networks like Bitcoin can be seen as single asset platforms, where smart contract platforms are multi-asset platforms. Similar to the concept of “Store of Value” in the context of Bitcoin, we call the utility that smart contract platforms preserve the value of its crypto-assets “Store of Assets”. 
 
- 智能合约平台最重要的用例之一是发行代币来代表资产的所有权。这些加密资产可以拥有自己的社区和市场，其价值与平台代币的价值是独立的。在另一方面，这些资产依赖于平台来处理交易并提供安全性。像比特币这样的支付网络可以被视为单一资产平台，而智能合约平台则是多资产平台。与比特币背景下的「价值存储」概念类似，我们称智能合约平台的功能是可以保留其加密资产「资产存储」的价值。
+ 智能合约平台最重要的用例之一是发行代币来代表资产的所有权。这些加密资产可以拥有自己的社区和市场，其价值与平台代币的价值是独立的。在另一方面，这些资产依赖于平台来处理交易并提供安全性。像比特币这样的支付网络可以被视为单一资产平台，而智能合约平台则是多资产平台。与比特币背景下的「价值存储（SoV）」概念类似，我们称智能合约平台的功能是可以保留其加密资产「资产存储（SoA）」的价值。
 
  Preservation focused smart contract platforms must have a Store of Assets token economics design. The level of platform security has to grow along with the asset value it preserves. Otherwise as asset value grows, it will be increasingly profitable to “double-spend” assets by attacking the consensus process of the platform. 
 
@@ -170,24 +170,24 @@
 - even a contract is current on its rent payment, it still may not be fully functional because some of its dependent contracts may be behind on their payments. 
 - the user experience for contracts with state rent is sub-optimal
 
-  We believe a well designed mechanism to regulate the state storage has to be able to achieve the following goals: 
-
 - 许多合约，特别是流行的 ERC20 合约，代表了分散的社区，并代表了许多用户的资产所有权。协调所有用户以公平并且有效率的方式支付租金是一个很难的问题。
 - 即使一个合约的租金是已支付的状态，它仍然可能无法运作顺利，因为其他需要调用的合约可能还没付款。
 - 使用状态租赁的合约是次等的用户体验。
+
+  We believe a well designed mechanism to regulate the state storage has to be able to achieve the following goals: 
 
   我们认为，一个精心设计的状态存储机制必须能够实现以下目标：
 
 - the growth of the global state has to be bounded to give predictability for full node participation. Ideally, the cost is well within the range of non-professional participants to keep the network maximally decentralized and censorship resistant.
 - with bounded growth of the global state, the price for expanding it and the rewards for reducing it should be determined by the market. In particular, it’s desirable to have the cost of expanding state storage higher when it’s mostly full, and lower when it’s mostly empty. 
 - the system has to be able to continuously raise revenue from its state users to pay miners for providing this resource. This serves both purposes of balancing miner’s economics and providing incentives for users to clear unnecessary states sooner than later. 
-- 必须限制全局状态的增长，以便为全节点参与是在可预测的状况下。理想情况下，成本能控制在非专业参与者可以负担的范围内，以保持网络最大程度的去中心化与抗审查。
+- 必须限制全局状态的增长，以便为参与全节点提供可预测性。理想情况下，成本能控制在非专业参与者可以负担的范围内，以保持网络最大程度的去中心化与抗审查。
 - 随着全局状态的有限增长，价格的上升与降低将由市场决定。特别是当状态存储空间快满的时后，需要将状态存储的成本提高，而当它大部分为空时，需要降低成本，这是非常吸引人的。
 - 系统需要能够不断收取其状态用户的租金，以支付矿工提供这种资源。这有助于平衡矿工的经济收入，同时让用户被激励去清除不必要的状态。
 
  Just like how Bitcoin throttles and forces pricing on bandwidth, and Ethereum throttles and forces pricing on computation, to keep a blockchain network long term decentralized and sustainable, we have to come up with a way to constrain and price the global state. This is especially important for preservation focused, Store of Assets networks, where usage of the network is not about transactions that mostly happen off-chain, but the cost of ongoing occupation of the global state. 
 
- 就像比特币如何限制带宽，以及以太坊限制计算的定价，来保持区块链网络长期去中心化和可持续，我们必须提出一种约束与全局状态的定价方法。这对于以保护资产为重点的「资产存储」平台来说，这是特别重要的，（其中对于网络中的交易使用不总是发生在线下），而是持续占用全局状态的成本。
+ 就像比特币如何限制带宽，以及以太坊限制计算的定价，来保持区块链网络长期去中心化和可持续，我们必须提出一种对于全局状态的约束与定价方法。对于以保护资产为重点的「资产存储」平台来说，这是特别重要的，因为这种平台关心的不是大部分将发生在链下的交易，而是持续占用全局状态的存储成本。
 
 ## 6. Nervos CKB 的经济模型
 

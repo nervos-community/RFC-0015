@@ -80,9 +80,9 @@ Bitcoin’s consensus mechanism incentivize miners to recognize the longest chai
 
 In a SoV network, relying on inflation to fund network security is more incentive compatible with the users. Inflation based block reward mechanism represents indirect payment from the beneficiary of the network’s ongoing security to the provider of such security, in proportion to the duration that enjoy the service.
 
-安全性和去中心化是區塊鏈網路的兩個基本屬性，維護這兩個屬性需要付出很高的成本，因此支付給網路維護者(主要是礦工)的獎勵必須能夠覆蓋這些成本。根據比特幣當前的模型，當代幣開採完畢後，如果礦工仍可賺取足夠的交易費，那麼比特幣網路依然保有安全性。 SoV 使用者長期承受網路的安全風險，因此他們會願意支付高額的交易費，可是他們幾乎不產生交易。
+安全性和去中心化是區塊鏈網路的兩個基本屬性，維護這兩個屬性需要付出很高的成本，因此支付給網路維護者(主要是礦工)的獎勵必須能夠覆蓋這些成本。根據比特幣當前的模型，當代幣開採完畢後，如果礦工仍可賺取足夠的交易費，那麼比特幣網路依然保有安全性。然而， MoE 使用者需要承受網路安全風險的時間非常有限，因此他們不願意為此付費。而雖然 SoV 使用者願意支付高額交易費，因為他們暴露於網路安全風險的時間更長，但問題是他們很久才產生一次交易。
 
-比特幣的共識機制激勵礦工去識別並驗證最長的鏈。礦工持續投入的算力不只為最新的區塊提供了安全性，也維護了之前所有區塊的不可篡改性。僅靠 SoV 使用者的一次性付款讓礦工持續提供安全保障非長久之策。
+比特幣的共識機制激勵礦工去識別並驗證最長的鏈以當作全網的最新狀態。礦工持續投入的算力不只為最新的區塊提供了安全性，也維護了之前所有區塊的不可篡改性。僅靠 SoV 使用者的一次性付款讓礦工持續提供安全保障非長久之策。
 
 而在 SoV 網路中，如果依靠通脹來為網路安全提供資金對礦工的激勵更持久，對使用者也更友好。基於通脹的區塊獎勵暗含使用者間接地向安全提供者支付費用，並且費用多少與其享受安全服務的時間成正比。
 
@@ -98,7 +98,7 @@ Smart contract platforms like Ethereum come with Turing-complete programmability
 
 Another significant difference is that transactions on smart contract platforms are much more “portable”. It’s much easier to take advantage of the more advanced scripting capability of smart contract platforms, to develop interoperability protocols to move transactions to a more cost effective transactional blockchain and securely settle back to the main “system of record” blockchains.
 
-另一個與支付網路的重大區別是智慧合約平臺上的交易更加「便攜」。利用智慧合約平臺更高階的指令碼優勢來開發互動協議，將交易轉移到更具成本效益的子鏈上，並安全地將資料取回主鏈，現在是更容易了。
+另一個與支付網路的重大區別是智慧合約平臺上的交易更加「便攜」。利用智慧合約平臺更高階的指令碼優勢來開發互動協議，能夠更容易的將交易轉移到更具成本效益的「交易為主」子鏈上，並安全地將資料安頓回「紀錄為主」主鏈。
 
 * * *
 
@@ -132,7 +132,7 @@ One of the most important use cases for smart contract platforms is to issue tok
 
 Preservation focused smart contract platforms must have a Store of Assets token economics design. The level of platform security has to grow along with the asset value it preserves. Otherwise as asset value grows, it will be increasingly profitable to “double-spend” assets by attacking the consensus process of the platform.
 
-智慧合約平臺最重要的用例之一是發行代幣來代表資產的所有權。這些加密資產可以擁有自己的社群和市場，其價值與平臺代幣的價值是獨立的。在另一方面，這些資產依賴於平臺來處理交易並提供安全性。像比特幣這樣的支付網路可以被視為單一資產平臺，而智慧合約平臺則是多資產平臺。與比特幣背景下的「價值儲存」概念類似，我們稱智慧合約平臺的功能是可以保留其加密資產「資產儲存」的價值。
+智慧合約平臺最重要的用例之一是發行代幣來代表資產的所有權。這些加密資產可以擁有自己的社群和市場，其價值與平臺代幣的價值是獨立的。在另一方面，這些資產依賴於平臺來處理交易並提供安全性。像比特幣這樣的支付網路可以被視為單一資產平臺，而智慧合約平臺則是多資產平臺。與比特幣背景下的「價值儲存（SoV）」概念類似，我們稱智慧合約平臺的功能是可以保留其加密資產「資產儲存（SoA）」的價值。
 
 以儲存資產為重點的智慧合約平臺，必須具有「資產儲存」的代幣經濟設計。平臺安全級別必須與平臺上加密資產的價值一起增長。否則隨著平臺上加密資產價值的增長，因為攻擊的利益會增長，平臺本身遭到「雙重花費攻擊」的可能性會大大增加。
 
@@ -216,7 +216,7 @@ We believe a well designed mechanism to regulate the state storage has to be abl
 
 我們認為，一個精心設計的狀態儲存機制必須能夠實現以下目標：
 
--   必須限制全局狀態的增長，以便為全節點參與是在可預測的狀況下。理想情況下，成本能控制在非專業參與者可以負擔的範圍內，以保持網路最大程度的去中心化與抗審查。
+-   必須限制全局狀態的增長，以便為參與全節點提供可預測性。理想情況下，成本能控制在非專業參與者可以負擔的範圍內，以保持網路最大程度的去中心化與抗審查。
 -   隨著全局狀態的有限增長，價格的上升與降低將由市場決定。特別是當狀態儲存空間快滿的時後，需要將狀態儲存的成本提高，而當它大部分為空時，需要降低成本，這是非常吸引人的。
 -   系統需要能夠不斷收取其狀態使用者的租金，以支付礦工提供這種資源。這有助於平衡礦工的經濟收入，同時讓使用者被激勵去清除不必要的狀態。
 
@@ -224,7 +224,7 @@ We believe a well designed mechanism to regulate the state storage has to be abl
 
 Just like how Bitcoin throttles and forces pricing on bandwidth, and Ethereum throttles and forces pricing on computation, to keep a blockchain network long term decentralized and sustainable, we have to come up with a way to constrain and price the global state. This is especially important for preservation focused, Store of Assets networks, where usage of the network is not about transactions that mostly happen off-chain, but the cost of ongoing occupation of the global state.
 
-就像比特幣如何限制頻寬，以及以太坊限制計算的定價，來保持區塊鏈網路長期去中心化和可持續，我們必須提出一種約束與全局狀態的定價方法。這對於以保護資產為重點的「資產儲存」平臺來說，這是特別重要的，（其中對於網路中的交易使用不總是發生線上下），而是持續佔用全局狀態的成本。
+就像比特幣如何限制頻寬，以及以太坊限制計算的定價，來保持區塊鏈網路長期去中心化和可持續，我們必須提出一種對於全局狀態的約束與定價方法。對於以保護資產為重點的「資產儲存」平臺來說，這是特別重要的，因為這種平台關心的不是大部分將發生在鏈下的交易，而是持續佔用全局狀態的存儲成本。
 
 * * *
 
