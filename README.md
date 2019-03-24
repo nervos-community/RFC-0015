@@ -72,7 +72,7 @@
 
  Security and decentralization are two essential properties of a blockchain network, and they come with a high cost that has to be paid to the operators of the network. Bitcoin’s current model has network security entirely paid with transaction fees after all the coins are mined. However, the MoE users have very limited time exposure to the network’s security risk, therefore won’t be willing to pay for it; the SoV users have prolonged exposure to the network’s security risk and are willing to pay for it, but they produce nearly no transactions.
 
- 安全性和去中心化是区块链网络的两个基本属性，维护这两个属性需要付出很高的成本，因此支付给网络维护者(主要是矿工)的奖励必须能够覆盖这些成本。根据比特币当前的模型，当代币开采完毕后，如果矿工仍可赚取足够的交易费，那么比特币网络依然保有安全性。 然而，MoE 用户需要承受网络安全风险的时间非常有限，因此他们不愿意为此付费。而虽然 SoV 用户较愿意支付，因为他们暴露于网络安全风险的时间更长，但问题是他们很久才产生一次交易。
+ 安全性和去中心化是区块链网络的两个基本属性，维护这两个属性需要付出很高的成本，因此支付给网络维护者(主要是矿工)的奖励必须能够覆盖这些成本。根据比特币当前的模型，当代币开采完毕后，如果矿工仍可赚取足够的交易费，那么比特币网络依然保有安全性。 然而，MoE 用户需要承受网络安全风险的时间非常有限，因此他们不愿意为此付费。而虽然 SoV 用户愿意支付高额交易费，因为他们暴露于网络安全风险的时间更长，但问题是他们很久才产生一次交易。
 
  Bitcoin’s consensus mechanism incentivize miners to recognize the longest chain as the network’s canonical state. Miner’s ongoing supply of hashing power doesn’t only provide security for the current block, but the immutability of all the blocks before it on the canonical chain. Relying on the SoV users to make one time payments for the ongoing security protection they receive from miners is not sustainable. 
 
@@ -181,7 +181,7 @@
 - the growth of the global state has to be bounded to give predictability for full node participation. Ideally, the cost is well within the range of non-professional participants to keep the network maximally decentralized and censorship resistant.
 - with bounded growth of the global state, the price for expanding it and the rewards for reducing it should be determined by the market. In particular, it’s desirable to have the cost of expanding state storage higher when it’s mostly full, and lower when it’s mostly empty. 
 - the system has to be able to continuously raise revenue from its state users to pay miners for providing this resource. This serves both purposes of balancing miner’s economics and providing incentives for users to clear unnecessary states sooner than later. 
-- 必须限制全局状态的增长，以便为参与的全节点提供可预测性。理想情况下，成本能控制在非专业参与者可以负担的范围内，以保持网络最大程度的去中心化与抗审查。
+- 必须限制全局状态的增长，以便为参与全节点提供可预测性。理想情况下，成本能控制在非专业参与者可以负担的范围内，以保持网络最大程度的去中心化与抗审查。
 - 随着全局状态的有限增长，价格的上升与降低将由市场决定。特别是当状态存储空间快满的时后，需要将状态存储的成本提高，而当它大部分为空时，需要降低成本，这是非常吸引人的。
 - 系统需要能够不断收取其状态用户的租金，以支付矿工提供这种资源。这有助于平衡矿工的经济收入，同时让用户被激励去清除不必要的状态。
 
