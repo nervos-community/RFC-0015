@@ -98,7 +98,7 @@ Smart contract platforms like Ethereum come with Turing-complete programmability
 
 Another significant difference is that transactions on smart contract platforms are much more “portable”. It’s much easier to take advantage of the more advanced scripting capability of smart contract platforms, to develop interoperability protocols to move transactions to a more cost effective transactional blockchain and securely settle back to the main “system of record” blockchains.
 
-另一個與支付網路的重大區別是智慧合約平臺上的交易更加「便攜」。利用智慧合約平臺更高階的指令碼優勢來開發互動協議，將交易轉移到更具成本效益的子鏈上，並安全地將資料取回主鏈，現在是更容易了。
+另一個與支付網路的重大區別是智慧合約平臺上的交易更加「便攜」。利用智慧合約平臺更高階的指令碼優勢來開發互動協議，能夠更容易的將交易轉移到更具成本效益的「交易為主」子鏈上，並安全地將資料安頓回「紀錄為主」主鏈。
 
 * * *
 
@@ -132,7 +132,7 @@ One of the most important use cases for smart contract platforms is to issue tok
 
 Preservation focused smart contract platforms must have a Store of Assets token economics design. The level of platform security has to grow along with the asset value it preserves. Otherwise as asset value grows, it will be increasingly profitable to “double-spend” assets by attacking the consensus process of the platform.
 
-智慧合約平臺最重要的用例之一是發行代幣來代表資產的所有權。這些加密資產可以擁有自己的社群和市場，其價值與平臺代幣的價值是獨立的。在另一方面，這些資產依賴於平臺來處理交易並提供安全性。像比特幣這樣的支付網路可以被視為單一資產平臺，而智慧合約平臺則是多資產平臺。與比特幣背景下的「價值儲存」概念類似，我們稱智慧合約平臺的功能是可以保留其加密資產「資產儲存」的價值。
+智慧合約平臺最重要的用例之一是發行代幣來代表資產的所有權。這些加密資產可以擁有自己的社群和市場，其價值與平臺代幣的價值是獨立的。在另一方面，這些資產依賴於平臺來處理交易並提供安全性。像比特幣這樣的支付網路可以被視為單一資產平臺，而智慧合約平臺則是多資產平臺。與比特幣背景下的「價值儲存（SoV）」概念類似，我們稱智慧合約平臺的功能是可以保留其加密資產「資產儲存（SoA）」的價值。
 
 以儲存資產為重點的智慧合約平臺，必須具有「資產儲存」的代幣經濟設計。平臺安全級別必須與平臺上加密資產的價值一起增長。否則隨著平臺上加密資產價值的增長，因為攻擊的利益會增長，平臺本身遭到「雙重花費攻擊」的可能性會大大增加。
 
