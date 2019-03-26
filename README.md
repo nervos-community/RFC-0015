@@ -121,15 +121,15 @@
 
  None of the current smart contract platforms are designed as Store of Assets platforms. Their token economics are designed either to facilitate transactions (for example, Ethereum’s native tokens are to pay for the decentralized computation) or to fulfill staking requirements. In either case, the growth in asset value doesn’t necessarily raise miner’s income to provide more security. 
 
- 目前的智能合约平台都不是为了「资产存储」平台而设计的。这些平台的代币经济学旨在促进交易（例如，以太坊的原生代币用于支付去中心化计算的费用）或满足权益证明的要求。在任何一种情况下，资产价值的增长并不一定会提高矿工的收入，而事实是只有确保矿工的持续高收入才能矿工持续投入，从而使得平台获得更多的安全保障。
+ 目前的智能合约平台都不是为了「资产存储」平台而设计的。这些平台的代币经济学旨在促进交易（例如，以太坊的原生代币用于支付去中心化计算的费用）或满足权益证明的要求。在任何一种情况下，资产价值的增长并不一定会提高矿工的收入，而事实是只有确保矿工的持续高收入才能激励矿工持续投入，从而使得平台获得更多的安全保障。
 
  Every multi-asset platform is an ecosystem of independent projects. The security of the platform can be seen as “public goods” that benefit all projects. To make the ecosystem sustainable from a security point of view, there has to be a clear mechanism that the platform captures the economic success of the ecosystem to raise its own level of security. In other words, a Store of Assets platform has to be able to translate the demand of crypto-assets to the revenue of its miners, often through raising the value of the native tokens that miners are compensated in. 
 
- 每个多资产平台都是独立的生态系统。平台的安全性可被视为有益于所有项目的「公用物品」。为了从安全的角度使得生态系统可持续发展，必须有一个明确的机制，即该平台需要能够捕捉到平台上生态系统的成功，以同时提高其自身的安全水平。换句话说，「资产存储」平台必须能将对加密资产的需求转化为其矿工的收入，通常是通过提高对矿工的补偿，让其获得额外的原生代币。
+ 每个多资产平台都是独立的生态系统。平台的安全性可被视为有益于所有项目的「公用物品」。为了从安全的角度使得生态系统可持续发展，必须有一个明确的机制，即该平台需要能够捕捉到平台上生态系统的成功，以同时提高其自身的安全级别。换句话说，「资产存储」平台必须能将对加密资产的需求转化为其矿工的收入，通常是通过提高对矿工的补偿，让其获得额外的原生代币。
 
  Otherwise, the platform’s level of security becomes the ceiling how valuable the assets can become. When the value of an asset rises such that typical transactions can no longer be sufficiently protected by the platform, the liquidity would dry up and demand on the asset will fade.
 
- 否则，平台的安全水平会成为加密资产价值的上限。当资产价值上升，使得平台不再能够充分保护在平台上的交易时，流动性就会枯竭，对资产的需求也会减少。
+ 否则，平台的安全级别会成为加密资产价值的上限。当资产价值上升，平台不再能够充分保护在平台上典型的交易时，流动性就会枯竭，对资产的需求也会减少。
 
  Decentralized multi-assets smart contract platforms have to be Store of Assets to be sustainable. 
 
@@ -151,7 +151,7 @@
 
  In Ethereum, the global state is represented with the EVM’s state trie, the data structure that contains the balances and internal states of all accounts. When new accounts or new contract values are created, the size of the global state expands. Ethereum charges fixed amounts of Gas for inserting new values into its state storage and offers fixed amounts of Gas as transaction refund when values are removed. Ethereum’s approach is a step in the right direction, but still has several issues: 
 
- 在以太坊中，全局状态由 EVM 的状态树来表示，该状态是包含所有帐户的余额和内部状态的数据结构。创建新帐户或新的智能合约值时，全局状态的大小就会增加。以太坊收取固定的 Gas 费用用于存入新的数据，并在移除数据的时后提供固定数量的 Gas 作为交易退款。以太坊的方法是朝着正确方向迈出的一步，但仍有几个问题：
+ 在以太坊中，全局状态由 EVM 的状态树来表示，该状态是包含所有帐户的余额和内部状态的数据结构。创建新帐户或新的智能合约值时，全局状态的大小就会增加。以太坊收取固定的 Gas 费用用于存入新的数据，并在移除数据时提供固定数量的 Gas 作为交易退款。以太坊的方法是朝着正确方向迈出的一步，但仍有几个问题：
 
 - the growth of the global state is not bounded in any way and can grow infinitely, therefore there’s no certainty in the cost of full node participation
 - the system raises one-time revenue for expanding the state storage, but miners and full nodes have to bear the expense of storage over time
@@ -170,9 +170,9 @@
 - even a contract is current on its rent payment, it still may not be fully functional because some of its dependent contracts may be behind on their payments. 
 - the user experience for contracts with state rent is sub-optimal
 
-- 许多合约，特别是流行的 ERC20 合约，代表了分散的社区，并代表了许多用户的资产所有权。协调所有用户以公平并且有效率的方式支付租金是一个很难的问题。
-- 即使一个合约的租金是已支付的状态，它仍然可能无法运作顺利，因为其他需要调用的合约可能还没付款。
-- 使用状态租赁的合约是次等的用户体验。
+- 许多合约，特别是流行的 ERC20 合约，代表了去中心化的社区，并代表了许多用户的资产所有权。协调所有用户以公平并且有效率的方式支付租金是一个很难的问题。
+- 即使一个合约的租金是已支付的状态，它仍然可能无法运作顺利，因为其他需要调用的合约可能会拖欠租金。
+- 使用状态租赁合约的用户体验并不理想。
 
   We believe a well designed mechanism to regulate the state storage has to be able to achieve the following goals: 
 
@@ -183,7 +183,7 @@
 - the system has to be able to continuously raise revenue from its state users to pay miners for providing this resource. This serves both purposes of balancing miner’s economics and providing incentives for users to clear unnecessary states sooner than later. 
 - 必须限制全局状态的增长，以便为参与全节点提供可预测性。理想情况下，成本能控制在非专业参与者可以负担的范围内，以保持网络最大程度的去中心化与抗审查。
 - 随着全局状态的有限增长，价格的上升与降低将由市场决定。特别是当状态存储空间快满的时后，需要将状态存储的成本提高，而当它大部分为空时，需要降低成本，这是非常吸引人的。
-- 系统需要能够不断收取其状态用户的租金，以支付矿工提供这种资源。这有助于平衡矿工的经济收入，同时让用户被激励去清除不必要的状态。
+- 系统需要能够不断收取其状态用户的租金，以支付矿工提供这种资源。这有助于平衡矿工的经济收入，同时激励用户尽早清除不必要的状态。
 
  Just like how Bitcoin throttles and forces pricing on bandwidth, and Ethereum throttles and forces pricing on computation, to keep a blockchain network long term decentralized and sustainable, we have to come up with a way to constrain and price the global state. This is especially important for preservation focused, Store of Assets networks, where usage of the network is not about transactions that mostly happen off-chain, but the cost of ongoing occupation of the global state. 
 
