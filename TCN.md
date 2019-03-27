@@ -88,23 +88,23 @@ In a SoV network, relying on inflation to fund network security is more incentiv
 
 * * *
 
-## 3. 可保值和交易的智慧合約平臺
+## 3. 可保值和交易的智能合約平臺
 
 Smart contract platforms like Ethereum come with Turing-complete programmability and can support a much wider variety of use cases. The native tokens are typically used to price and pay for the cost of decentralized computation. Like the Bitcoin network, smart contract platforms also have the dual functions of preserving value and performing transactions. They differ from the payment networks in that the value they preserve is not only their own native tokens, but also the internal states of decentralized applications, for example, crypto-assets ownership in ERC20 smart contracts.
 
-像以太坊這樣的智慧合約平臺具有圖靈完備的可程式設計性，可以支援更多的應用場景。原生代幣通常用於為去中心化的計算服務定價和費用支付。與比特幣網路一樣，智慧合約平臺也具有資產保值和交易媒介的雙重功能。它們與純支付網路的不同之處在於，它們儲存的價值不僅僅是它們自己的原生代幣，還包括去中心化應用的內部狀態，例如在 ERC20 智慧合約裡的加密資產。
+像以太坊這樣的智能合約平臺具有圖靈完備的可程式設計性，可以支援更多的應用場景。原生代幣通常用於為去中心化的計算服務定價和費用支付。與比特幣網路一樣，智能合約平臺也具有資產保值和交易媒介的雙重功能。它們與純支付網路的不同之處在於，它們儲存的價值不僅僅是它們自己的原生代幣，還包括去中心化應用的內部狀態，例如在 ERC20 智能合約裡的加密資產。
 
 * * *
 
 Another significant difference is that transactions on smart contract platforms are much more “portable”. It’s much easier to take advantage of the more advanced scripting capability of smart contract platforms, to develop interoperability protocols to move transactions to a more cost effective transactional blockchain and securely settle back to the main “system of record” blockchains.
 
-另一個與支付網路的重大區別是智慧合約平臺上的交易更加「便攜」。利用智慧合約平臺更高階的指令碼優勢來開發互動協議，能夠更容易的將交易轉移到更具成本效益的「交易為主」子鏈上，並安全地將資料安頓回「紀錄為主」主鏈。
+另一個與支付網路的重大區別是智能合約平臺上的交易更加「便攜」。利用智能合約平臺更高階的指令碼優勢來開發互動協議，能夠更容易的將交易轉移到更具成本效益的「交易為主」子鏈上，並安全地將資料安頓回「紀錄為主」主鏈。
 
 * * *
 
 The economic models of smart contract platforms face similar polarization tendency of payment networks - With their superior interoperable capabilities, smart contract platforms are going to be even more specialized into transactional platforms and preservation platforms. Economically, this bifurcation comes from the fact that the two use cases have different ways of utilizing system resources - transactions consume instantaneous but renewable computation and bandwidth resources, and preservation requires long term occupation of the global state. An economic model optimized for one is unlikely to be optimal for the other.
 
-智慧合約平臺的經濟模型面臨著類似支付網路的兩極化趨勢 - 由於其良好的互動能力，智慧合約平臺要麼偏向「交易平臺」,要麼偏向「保值平臺」。在經濟上，這種分歧源自這樣的事實：這兩種「平臺」具有不同的系統資源利用方式，處理交易消耗的計算和頻寬是瞬時的，而且這兩種資源是可再生的，但是保值卻需要長期佔用全球共識狀態。為一個方向進行優化的經濟模型不太可能是另一個方向的最佳選擇。
+智能合約平臺的經濟模型面臨著類似支付網路的兩極化趨勢 - 由於其良好的互動能力，智能合約平臺要麼偏向「交易平臺」,要麼偏向「保值平臺」。在經濟上，這種分歧源自這樣的事實：這兩種「平臺」具有不同的系統資源利用方式，處理交易消耗的計算和頻寬是瞬時的，而且這兩種資源是可再生的，但是保值卻需要長期佔用全球共識狀態。為一個方向進行優化的經濟模型不太可能是另一個方向的最佳選擇。
 
 * * *
 
@@ -132,9 +132,9 @@ One of the most important use cases for smart contract platforms is to issue tok
 
 Preservation focused smart contract platforms must have a Store of Assets token economics design. The level of platform security has to grow along with the asset value it preserves. Otherwise as asset value grows, it will be increasingly profitable to “double-spend” assets by attacking the consensus process of the platform.
 
-智慧合約平臺最重要的用例之一是發行代幣來代表資產的所有權。這些加密資產可以擁有自己的社群和市場，其價值與平臺代幣的價值是獨立的。在另一方面，這些資產依賴於平臺來處理交易並提供安全性。像比特幣這樣的支付網路可以被視為單一資產平臺，而智慧合約平臺則是多資產平臺。與比特幣背景下的「價值儲存（SoV）」概念類似，我們稱智慧合約平臺的功能是可以保留其加密資產「資產儲存（SoA）」的價值。
+智能合約平臺最重要的用例之一是發行代幣來代表資產的所有權。這些加密資產可以擁有自己的社群和市場，其價值與平臺代幣的價值是獨立的。在另一方面，這些資產依賴於平臺來處理交易並提供安全性。像比特幣這樣的支付網路可以被視為單一資產平臺，而智能合約平臺則是多資產平臺。與比特幣背景下的「價值儲存（SoV）」概念類似，我們稱智能合約平臺的功能是可以保留其加密資產「資產儲存（SoA）」的價值。
 
-以儲存資產為重點的智慧合約平臺，必須具有「資產儲存」的代幣經濟設計。平臺安全級別必須與平臺上加密資產的價值一起增長。否則隨著平臺上加密資產價值的增長，因為攻擊的利益會增長，平臺本身遭到「雙重花費攻擊」的可能性會大大增加。
+以儲存資產為重點的智能合約平臺，必須具有「資產儲存」的代幣經濟設計。平臺安全級別必須與平臺上加密資產的價值一起增長。否則隨著平臺上加密資產價值的增長，因為攻擊的利益會增長，平臺本身遭到「雙重花費攻擊」的可能性會大大增加。
 
 * * *
 
@@ -142,7 +142,7 @@ None of the current smart contract platforms are designed as Store of Assets pla
 
 Every multi-asset platform is an ecosystem of independent projects. The security of the platform can be seen as “public goods” that benefit all projects. To make the ecosystem sustainable from a security point of view, there has to be a clear mechanism that the platform captures the economic success of the ecosystem to raise its own level of security. In other words, a Store of Assets platform has to be able to translate the demand of crypto-assets to the revenue of its miners, often through raising the value of the native tokens that miners are compensated in.
 
-目前的智慧合約平臺都不是為了「資產儲存」平臺而設計的。這些平臺的代幣經濟學旨在促進交易（例如，以太坊的原生代幣用於支付去中心化計算的費用）或滿足權益證明的要求。在任何一種情況下，資產價值的增長並不一定會提高礦工的收入，而事實是隻有確保礦工的持續高收入才能礦工持續投入，從而使得平臺獲得更多的安全保障。
+目前的智能合約平臺都不是為了「資產儲存」平臺而設計的。這些平臺的代幣經濟學旨在促進交易（例如，以太坊的原生代幣用於支付去中心化計算的費用）或滿足權益證明的要求。在任何一種情況下，資產價值的增長並不一定會提高礦工的收入，而事實是隻有確保礦工的持續高收入才能礦工持續投入，從而使得平臺獲得更多的安全保障。
 
 每個多資產平臺都是獨立的生態系統。平臺的安全性可被視為有益於所有項目的「公用物品」。為了從安全的角度使得生態系統可持續發展，必須有一個明確的機制，即該平臺需要能夠捕捉到平臺上生態系統的成功，以同時提高其自身的安全水平。換句話說，「資產儲存」平臺必須能將對加密資產的需求轉化為其礦工的收入，通常是通過提高對礦工的補償，讓其獲得額外的原生代幣。
 
@@ -154,7 +154,7 @@ Decentralized multi-assets smart contract platforms have to be Store of Assets t
 
 否則，平臺的安全水平會成為加密資產價值的上限。當資產價值上升，使得平臺不再能夠充分保護在平臺上的交易時，流動性就會枯竭，對資產的需求也會減少。
 
-去中心化的多資產智慧合約平臺必須持續的做好「資產儲存」的功能。
+去中心化的多資產智能合約平臺必須持續的做好「資產儲存」的功能。
 
 * * *
 
@@ -162,13 +162,13 @@ Decentralized multi-assets smart contract platforms have to be Store of Assets t
 
 Like other long term store of value systems, a Store of Assets platform has to be neutral and free of risks of censorship and confiscation. These are the properties that made gold the world’s favorite the store of value for thousands of years. For open, permission-less blockchain networks, censorship resistance comes down to having the broadest consensus scope with a low barrier for consensus and full node participation. Comparing to payment networks, running a full node for a smart contract system is more resource intensive, therefore a Store of Assets platform has to take measures to protect the operating cost of full nodes to keep the network sufficiently decentralized.
 
-與其他長期價值儲存的系統一樣，「資產儲存」平臺必須保持中立，並且沒有審查和充公的風險。這些條件使得黃金成為世界上數千年來最受歡迎的價值儲存。對於完全開放無須許可的區塊鏈網路，抗審查的能力主要來自於最廣泛的全球共識，並且讓全節點參與的門檻足夠的低。與支付網路相比，智慧合約平臺執行全節點需要更密集的資源，因此，「資產儲存」平臺必須採取措施來保持全節點的運營成本，以保持網路有足夠的去中心化。
+與其他長期價值儲存的系統一樣，「資產儲存」平臺必須保持中立，並且沒有審查和充公的風險。這些條件使得黃金成為世界上數千年來最受歡迎的價值儲存。對於完全開放無須許可的區塊鏈網路，抗審查的能力主要來自於最廣泛的全球共識，並且讓全節點參與的門檻足夠的低。與支付網路相比，智能合約平臺執行全節點需要更密集的資源，因此，「資產儲存」平臺必須採取措施來保持全節點的運營成本，以保持網路有足夠的去中心化。
 
 * * *
 
 Both Bitcoin and Ethereum throttle transaction throughput to make sure participation is not limited to only “super computers” - Bitcoin throttles on bandwidth and Ethereum throttles on computation. However, they haven’t taken effective measures to contain the ever growing global state necessary for consensus participation and independent transaction validation. This is especially a centralization force for high throughout smart contract platforms, where the global state grows even faster.
 
-比特幣和以太坊都限制了交易吞吐量以確保參與方不僅只有「超級計算機」 - 比特幣限制頻寬，乙太網限制計算能力。然而，他們沒有采取有效的方式，來容納共識參與和交易驗證所需而且不斷增長的全局狀態。尤其是整個智慧合約平臺有著高度集中的需求，全局狀態的增長速度只會更快。
+比特幣和以太坊都限制了交易吞吐量以確保參與方不僅只有「超級計算機」 - 比特幣限制頻寬，乙太網限制計算能力。然而，他們沒有采取有效的方式，來容納共識參與和交易驗證所需而且不斷增長的全局狀態。尤其是整個智能合約平臺有著高度集中的需求，全局狀態的增長速度只會更快。
 
 * * *
 
@@ -185,7 +185,7 @@ In Ethereum, the global state is represented with the EVM’s state trie, the da
 -   there’s no obvious reason why the cost of expanding storage should be priced in fixed Gas amounts, which is used to price a unit of computation
 -   the “pay once, occupy forever” state storage model gives very little incentive for users to voluntarily clear state and reduce the size of global state
 
-在以太坊中，全局狀態由 EVM 的狀態樹來表示，該狀態是包含所有帳戶的餘額和內部狀態的資料結構。建立新帳戶或新的智慧合約值時，全局狀態的大小就會增加。以太坊收取固定的 Gas 費用用於存入新的資料，並在移除資料的時後提供固定數量的 Gas 作為交易退款。以太坊的方法是朝著正確方向邁出的一步，但仍有幾個問題：
+在以太坊中，全局狀態由 EVM 的狀態樹來表示，該狀態是包含所有帳戶的餘額和內部狀態的資料結構。建立新帳戶或新的智能合約值時，全局狀態的大小就會增加。以太坊收取固定的 Gas 費用用於存入新的資料，並在移除資料的時後提供固定數量的 Gas 作為交易退款。以太坊的方法是朝著正確方向邁出的一步，但仍有幾個問題：
 
 -   全局狀態的增長不受任何限制，並且可以無限增長，因此全節點的參與成本並不確定
 -   該系統為擴大狀態儲存提高了一次性收費，但礦工和全節點必須承擔長期儲存費用
@@ -200,7 +200,7 @@ The Ethereum community is actively working on this problem, and the leading solu
 -   even a contract is current on its rent payment, it still may not be fully functional because some of its dependent contracts may be behind on their payments.
 -   the user experience for contracts with state rent is sub-optimal
 
-以太坊社群正在積極解決這個問題，領先的解決方案是收取智慧合約的「狀態租金」 - 合約必須根據其狀態佔用的大小來定期支付費用。如果沒有支付租金，合同將會進入「休眠狀態」，並且在支付租金之前無法訪問。我們看到這種方法有幾個難以解決的問題：
+以太坊社群正在積極解決這個問題，領先的解決方案是收取智能合約的「狀態租金」 - 合約必須根據其狀態佔用的大小來定期支付費用。如果沒有支付租金，合同將會進入「休眠狀態」，並且在支付租金之前無法訪問。我們看到這種方法有幾個難以解決的問題：
 
 -   許多合約，特別是流行的 ERC20 合約，代表了分散的社群，並代表了許多使用者的資產所有權。協調所有使用者以公平並且有效率的方式支付租金是一個很難的問題。
 -   即使一個合約的租金是已支付的狀態，它仍然可能無法運作順利，因為其他需要呼叫的合約可能還沒付款。
@@ -380,7 +380,7 @@ For a purpose of keeping the network decentralized and censorship resistant, we 
 
 In a typical smart contract platform, participants of the network have different interests - users want cheaper transactions, developers want adoption of their applications, miners want higher income, and holders want appreciation of their tokens. Those interests are not well aligned, and oftentimes in conflict - for example, more adoption won’t give cheaper transactions (they’ll be more expensive as more demand is put on the blockchain); cheaper transactions won’t give more income to the miners; higher token price won’t help with transaction cost (the opposite could happen if users don’t adjust their local transaction fee setting). Decentralized computation platforms provide value through processing transactions. The price of their tokens doesn’t materially change the intrinsic value of the network. For example, Ether’s price doubling doesn’t increase or decrease Ethereum’s intrinsic value as a decentralized computation platform. Assuming the gas price doesn’t change, a user can accomplish the same task with the same cost on the network. This makes token holders of Ethereum only take the role of an investor, instead of active contributors.
 
-在典型的智慧合約平臺中，網路的參與者有不同的意圖 - 使用者希望更便宜的交易手續費，開發人員希望他們的 App 被使用，礦工希望獲得更高的收入，持有者希望他們的代幣增值。每一類的參與者的利益並不一樣，而且經常發生矛盾 - 例如，更多的 App 使用不會給予讓交易手續費更便宜（隨著對區塊鏈的需求增加，它們還會更加昂貴）；較便宜的交易不會給礦工帶來更多收入；較高的代幣價格將無助於交易成本（如果使用者不調整其本地交易費用設定，則可能發生相反的情況）。去中心化計算平臺通過處理交易提供價值。他們的代幣價格並沒有實質性地改變網路的內在價值。例如以太坊作為去中心計算平臺，價格的增加或減少並不會影響代幣的內在價值。假設 gasPrice 沒有變化，使用者可以在網路上以相同的成本完成相同的任務。這使得以太坊的代幣持有者只扮演了投資者的角色，而不是積極的貢獻者。
+在典型的智能合約平臺中，網路的參與者有不同的意圖 - 使用者希望更便宜的交易手續費，開發人員希望他們的 App 被使用，礦工希望獲得更高的收入，持有者希望他們的代幣增值。每一類的參與者的利益並不一樣，而且經常發生矛盾 - 例如，更多的 App 使用不會給予讓交易手續費更便宜（隨著對區塊鏈的需求增加，它們還會更加昂貴）；較便宜的交易不會給礦工帶來更多收入；較高的代幣價格將無助於交易成本（如果使用者不調整其本地交易費用設定，則可能發生相反的情況）。去中心化計算平臺通過處理交易提供價值。他們的代幣價格並沒有實質性地改變網路的內在價值。例如以太坊作為去中心計算平臺，價格的增加或減少並不會影響代幣的內在價值。假設 gasPrice 沒有變化，使用者可以在網路上以相同的成本完成相同的任務。這使得以太坊的代幣持有者只扮演了投資者的角色，而不是積極的貢獻者。
 
 * * *
 
@@ -408,7 +408,7 @@ The pro-cyclical loop of the network’s adoption and network’s intrinsic valu
 
 In Ethereum, the top level abstraction is its accounts. Assets are expressed as state owned by smart contract accounts. In the Nervos CKB, assets are the first class abstraction with cells, where ownership is expressed with the lock script of a transaction output, a concept known as “First-Class Assets”. In other words, just like Bitcoin, assets in the Common Knowledge Base are owned by users directly instead of being kept custody in a smart contract.
 
-在以太坊中，頂層的抽象是其帳戶。智慧合約賬戶擁有資產所代表的狀態。在 Nervos CKB 中，資產是 Cell 的頂層的抽象，其中所有權是交易輸出的鎖定指令碼來表示，這個概念稱為「第一級資產」。換句話說，就像比特幣一樣，CKB 中的資產由使用者直接擁有，而不是在智慧合約中被保管。
+在以太坊中，頂層的抽象是其帳戶。智能合約賬戶擁有資產所代表的狀態。在 Nervos CKB 中，資產是 Cell 的頂層的抽象，其中所有權是交易輸出的鎖定指令碼來表示，這個概念稱為「第一級資產」。換句話說，就像比特幣一樣，CKB 中的資產由使用者直接擁有，而不是在智能合約中被保管。
 
 * * *
 
@@ -490,7 +490,7 @@ Nervos CKB 的經濟模型提供了 app 開發人員可以直接使用的模組�
     In a Plasma like layer 2 solution, a typical pattern is that users would deposit native tokens in a smart contract on the layer 1 blockchain in exchange for transaction tokens on the layer 2. A layer 2 operator with sufficient reputation can have users commit to fixed duration deposits, and then use such deposits to provide liquidity to the lending market and earn income. This gives operators of layer 2 solutions an additional revenue stream on top of the fees collected on layer 2.
 
 -   流動性收入模型
-    在類似於 Plasma 的第 2 層解決方案中，典型的模式是使用者將原生代幣抵押在第 1 層區塊鏈的智慧合約中以換取第 2 層上的交易代幣。具有足夠信譽的第 2 層運營商可以讓使用者提交固定時限內的抵押，然後使用這些抵押資產做為貸款，為市場提供流動性並賺取收入。這為第 2 層解決方案的運營商在第 2 層收取的費用之外，提供了額外的收入。
+    在類似於 Plasma 的第 2 層解決方案中，典型的模式是使用者將原生代幣抵押在第 1 層區塊鏈的智能合約中以換取第 2 層上的交易代幣。具有足夠信譽的第 2 層運營商可以讓使用者提交固定時限內的抵押，然後使用這些抵押資產做為貸款，為市場提供流動性並賺取收入。這為第 2 層解決方案的運營商在第 2 層收取的費用之外，提供了額外的收入。
 
 * * *
 
@@ -561,7 +561,7 @@ We use CPC and EVC to represent Complete Processing Cost and Estimation and Veri
 
 Bitcoin allows flexible authorization verification with the Bitcoin Script. Users can script the authorization rules and build smart contracts through ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/009.png) when creating transactions. Bitcoin has a fixed state transition semantic, which is to spend and create new UTXOs. In Bitcoin, the result of the state transitions are already included in transactions, therefore the State Transition Cost (STC) is 0.
 
-比特幣通過Bitcoin Script（比特幣指令碼）完成授權驗證。使用者在構建交易時可以通過scriptPubKey編寫授權規則，建立智慧合約。比特幣有固定的狀態轉換語句，也就是我們通常所說的UTXO模型，我們可以通過花費和建立新的UTXO來實現狀態轉換。在比特幣中，狀態轉換的結果其實已經被包含在交易中了，因此狀態轉換成本（STC）為0。
+比特幣通過Bitcoin Script（比特幣指令碼）完成授權驗證。使用者在構建交易時可以通過scriptPubKey編寫授權規則，建立智能合約。比特幣有固定的狀態轉換語句，也就是我們通常所說的UTXO模型，我們可以通過花費和建立新的UTXO來實現狀態轉換。在比特幣中，狀態轉換的結果其實已經被包含在交易中了，因此狀態轉換成本（STC）為0。
 
 * * *
 
@@ -594,7 +594,7 @@ In total, Bitcoin's cost of processing a transaction roughly scales to the size 
 
 Ethereum comes with Turing-complete scriptability, and gives users more flexibility to customize state transition rules with smart contracts. Ethereum transactions include _gaslimit_ and _gasprice_, and the transaction fees are calculated using the product of their multiplication. Therefore, ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/020.png) is ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/021.png).
 
-以太坊具有圖靈完備的指令碼語言，允許使用者通過智慧合約自定義狀態轉換規則。以太坊的轉賬交易包括Gas Limit和Gas Price，交易手續費為這兩者的乘積。因此![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/020.png)等於![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/021.png)。
+以太坊具有圖靈完備的指令碼語言，允許使用者通過智能合約自定義狀態轉換規則。以太坊的轉賬交易包括Gas Limit和Gas Price，交易手續費為這兩者的乘積。因此![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/020.png)等於![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/021.png)。
 
 * * *
 
