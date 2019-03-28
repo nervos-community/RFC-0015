@@ -279,7 +279,7 @@
 
   The economic model of the Nervos CKB is designed specifically to preserve assets and other types of common knowledge. Let’s bring back the 3 high level design goals and examine our design in this context: 
 
- Nervos CKB 的经济模型专门用于保存资产价值和各种类型的数据。让我们回顾 3 个重要的经济模型设计目标，并在此背景下检查我们的设计：
+ Nervos CKB 的经济模型专门设计用于保存资产以及各种类型通用知识数据的价值。让我们回顾 3 个重要的经济模型设计目标，并在此背景下检查我们的设计：
 
 - How can the economic model ensure the security of the protocol?
 - How can the economic model ensure long term sustainability of the protocol?
@@ -296,14 +296,14 @@
 - Our native tokens represent claim to capacity in the state storage. This means the demand to holding assets on the platform directly puts demand on owning the native tokens. This creates an effective value capture mechanism into the native tokens from the assets they preserve. This is the only sustainable way that a “Store of Assets” platform can grow its security budget over time, instead of entirely basing it on speculation and altruism. 
 - The secondary issuance makes sure miner compensation is predictable and based on preservation demand instead of transactional demand. It also eliminates potential incentive incompatibility of the Nakamoto Consensus nodes after block reward stops. The NervosDAO serves as the counter-force to the inflationary effects of secondary issuance, to ensure long term token holders are not diluted by this issuance.
 
- 我们为了确保 Nervos CKB 成为「资产存储」协议并保证安全性而做出主要的设计选择是：
+ 为了确保 Nervos CKB 成为「资产存储」协议，并且保障协议的安全性，我们选择的主要设计是：
 
-- 我们的原生代币代表了对状态存储的空间。这意味着如果想在平台上持有资产，同时也要求拥有原生代币。这代表了在平台上持有资产等于创造了对原生代币的需求，从而创建了一个有效的值捕获机制到原生代币中。这是「资产存储」平台随着时间的推移，可以持续增加安全预算的唯一方式，而不是基于投机和利他主义。
-- 二次发行确保对矿工的补偿是可预测的，并且基于保存价值的需求而不是可交易的需求。它还消除了出块奖励停止后如中本聪协议的共识节点，存在的激励矛盾问题。 NervosDAO 是「二级发行」所导致通胀效应的反制力量，以确保长期持有代币的人不会因为「二级发行」而被稀释。
+- 我们的原生代币代表相应状态存储空间的主张权。这意味着，如果想在平台上通过状态空间持有资产，必须拥有对应状态空间的原生代币。因此，在平台上持有资产，直接创造了原生代币的需求。通过对资产的价值保存，原生代币打造出有效的值捕获机制。正是这种机制，「资产存储」平台可以随着时间的推移持续增加安全预算，而不是基于投机和利他主义。
+- 二级发行可以保证矿工的补偿是可预测的，并且是基于价值保存的需求，而不是交易的需求。同时，二级发行也消除如中本聪协议的共识节点在出块奖励停止后潜在的激励矛盾问题。 对于「二级发行」造成的通胀效应，NervosDAO 提供对应的反制力量，确保代币长期持有者的代币价值不会因为「二级发行」而被稀释。
 
   For a purpose of keeping the network decentralized and censorship resistant, we believe it’s important to limit the resource requirements of consensus and full nodes. We protect the operating cost of nodes by regulating the throughput of computation and bandwidth, similar to how it’s accomplished with Bitcoin and Ethereum. We regulate the state storage with a combination of a “cap and trade” pricing scheme and opportunity cost based cost model for storage users. 
 
- 为了保持网络的去中心化和抗审查能力，我们认为降低参与共识以及成为主节点所需要的资源门槛是非常重要的。我们通过调节计算和带宽的吞吐量来保护节点的运营成本，类似于比特币和以太坊的实现方式。我们透过「总量管制」的定价框架，与基于存储用户的成本模型的机会成本这两种方式，来管制了状态存储。
+ 为了保持网络的去中心化和抗审查能力，我们认为降低参与共识以及成为主节点所需要的资源门槛是非常重要的。我们通过调节计算和带宽的吞吐量来保护节点的运营成本，类似于比特币和以太坊的实现方式。甚至，我们透过「总量管制」的定价框架，与基于存储用户成本模型的机会成本这两种方式的结合，进行了状态存储的管制。
 
 
 ### 7.2 让网络中每一类参与者的利益一致
@@ -321,53 +321,53 @@
 
  As the network grows to secure more assets and common knowledge, more native tokens of the Nervos CKB are going to become occupied. This accrues value to the native tokens by reducing circulating supply and providing positive support to the market price of the tokens. The higher price and increased share of secondary issuance motivate miners to expand operations and make the network more secure, increasing the intrinsic value of the network and the native tokens, attracting more and higher value preservation usage.
 
- 随着网络的发展得以保护更多的资产和共同知识，更多的 Nervos CKB 原生代币所对应的空间将被占用。这减少了流通量与供应量并同时提供原生代币的市场价格支撑，将会逐渐累积 CKB 的价值。更高的代币价格，以及增加的二次发行份额将可以激励矿工扩大规模并使得网络更加安全，也同时增加了整个网络和原生代币的内在价值，吸引更多和更高价值的资产存储用例。
+ 随着网络的发展，更多资产和通用知识的价值得到安全地保障，相应地，更多的 Nervos CKB 原生代币将占用对应的存储空间。这样，原生代币的流通量和供应量将被减少，同时，其市场价格会获得有效地支撑，进而，CKB的价值得到增加。更高的代币价格和二次发行增加的收益份额，可以激励矿工扩大规模，并确保网络更加安全，同时，也增加整个网络和原生代币的内在价值，吸引更丰富和更高价值的资产存储使用场景。
 
  The pro-cyclical loop of the network’s adoption and network’s intrinsic value provides a powerful growth engine for the network. Together with how the network’s value accrues to the native tokens and gets captured by long term holders, it makes the network’s native token an excellent candidate for store of value. Compared to Bitcoin as a monetary store of value, the Nervos CKB is similarly designed to be secure and long term decentralized. We believe Nervos CKB has a more balanced and sustainable economic model than Bitcoin, and also comes with intrinsic utility of securing crypto-assets and common knowledge. 
 
- 网络采用的顺向循环和网络的内在价值为其本身提供了强大的增长引擎。连同网络如何逐渐累积价值，到原生代币如何被长期持有者捕获，都使得网络中的原生代币成为价值存储的绝佳候选者。与比特币作为货币存储价值相比，Nervos CKB 同样设计为安全且长期去中心化的。我们认为 Nervos CKB 拥有比比特币更加平衡和可持续的经济模型，并且还具有保护加密资产及数据的功用。
+ 网络对顺向循环的使用以及其内在的价值，为其本身提供了强大的增长引擎。随着网络通过各种方式积累原生代币的价值，并由长期持有者获取对应的价值，网络中的原生代币会成为价值存储的绝佳候选者。与比特币作为货币存储价值相比，Nervos CKB 同样设计为安全且长期去中心化的。我们相信 Nervos CKB 拥有比比特币更加平衡和可持续的经济模型，并且具有保护加密资产及通用知识价值的本质功能。
 
 ### 7.4 开发者在「一级资产」平台中的成本
 
   In Ethereum, the top level abstraction is its accounts. Assets are expressed as state owned by smart contract accounts. In the Nervos CKB, assets are the first class abstraction with cells, where ownership is expressed with the lock script of a transaction output, a concept known as “First-Class Assets”. In other words, just like Bitcoin, assets in the Common Knowledge Base are owned by users directly instead of being kept custody in a smart contract. 
 
- 在以太坊中，顶层的抽象是其帐户。智能合约账户拥有资产所代表的状态。在 Nervos CKB 中，资产是 Cell 的顶层的抽象，其中所有权是交易输出的锁定脚本来表示，这个概念称为「第一级资产」。换句话说，就像比特币一样，CKB 中的资产由用户直接拥有，而不是在智能合约中被保管。
+ 在以太坊中，顶层的抽象是账户。智能合约账户拥有资产所代表的状态。在 Nervos CKB 中，资产是 Cell 顶层的抽象，其所有权由交易输出的锁定脚本来表示，这个概念称为「第一级资产」。换句话说，就像比特币一样，CKB 中的资产由用户直接拥有，而不是在智能合约中被保管。
 
   The “First Class Asset” design allows the state storage cost of owning assets put not on developers, but on individual users. For example, a developer could create a User Defined Token with 400 bytes of code as validation rules, and every record of asset ownership would take 64 bytes. Even if the assets were to have 10,000 owners, the developer would still only need to use 400 CK Bytes. 
 
- 「第一级资产」的设计允许开发者可以不用拥有资产，以及负担状态存储的成本，而是可以由其他独立的用户承担。举个例子，开发人员创建了一个用户自定义代币的验证规则，使用了 400 CK Bytes 的代码，同時每个资产所有权的记录都将占用 64 个字节。即使资产拥有 10,000 个所有者，开发人员仍然只需要使用 400 CK Bytes。
+ 「第一级资产」的设计允许开发者可以不用拥有资产，以及负担状态存储的成本，而是由具体独立的用户承担。举例而言，开发人员使用 400 CK Bytes 的代码，创建了一个用户自定义代币的验证规则，每个资产所有权的记录都将占用 64 个字节。即使资产拥有 10,000 个所有者，开发人员仍然只需要使用 400 CK Bytes。
 
  For developers, we expect the capital cost of building projects on the CKB is moderate even in a scenario that the price of the native tokens were to go up degrees of magnitude higher. For users, the cost of the 64 CK Bytes to own an asset on the Nervos CKB would also be trivial for a long time even in the most aggressive adoption assumption of the platform. 
 
- 对于开发者而言，我们预计即使在原生代币的价格上升幅度较大的情况下，在 CKB 上建设项目的成本也是适中的。对于用户来说，即使平台在被大幅度采用的假设下，64 CK Bytes 在 Nervos CKB 上的拥有成本也很低。
+ 对于开发者而言，我们预计即使在原生代币的价格上升幅度较大的情况下，在 CKB 上构建项目的成本也是适中的。对于用户来说，即使平台在被大幅度采用的假设下，64 CK Bytes 在 Nervos CKB 上的拥有成本也很低。
 
  In the future where those cost were to become meaningfully expensive, it’s always possible for developers to rely on lending to bootstrap their projects, and for users to move their assets off the Common Knowledge Base on to other transaction blockchains in the Nervos Network if they’re willing to take the corresponding trade-offs. Please see the “Nervos Network” section for more details. 
 
- 在未来这些开发成本变得非常昂贵的情况下，开发者仍然可以依靠租赁来继续他们的项目，如果他们愿意采取对应的取舍，用户可以将他们的资产从 CKB 转移到 Nervos Network 中的其他交易区块链。相关信息请参考「7.6 Nervos Network」部分。
+ 在未来这些开发成本或拥有成本变得非常昂贵的情况下，开发者仍然可以依靠租赁来启动他们的项目，用户可以在愿意采取取舍的情况下，将 CKB 上面的资产转移到 Nervos Network 中的其他交易型区块链。相关信息请参考「7.6 Nervos Network」部分。
 
 ### 7.5 租赁
 
  Even Nervos CKB will support native token lending to improve the liquidity of the CK Bytes, thanks to the programming ability provided by CKB-VM and the Cell model. Since the utility of the native token is realized through possession instead of transactions, it’s possible to have risk-free un-collateralized lending for CK Bytes locked for known duration of time. Entrepreneurs can borrow the CK Bytes they need with much lower capital cost for a period such as 6 months to work on prototypes and prove their business model. Long term users can lend out their tokens to earn extra income. 
 
- 实际上 Nervos CKB 也将支持原生代币的租赁，以改善 CK Bytes 的流动性，这归功于 CKB-VM 和 Cell 模型提供的编程能力。由于原生代币的功能是通过空间占用而不是交易来实现的，因此可以在已知的一定时间内锁定 CK Bytes 进行无风险的无担保借贷。开发者可以在 6 个月的时间内以较低的资金成本借入他们需要的 CK Bytes 来处理产品原型并证明他们的商业模式。长期的代币持有者也可以出租他们的代币来赚取额外收入。
+ 实际上 Nervos CKB 也将支持原生代币的租赁，以改善 CK Bytes 的流动性，这归功于 CKB-VM 和 Cell 模型提供的编程能力。由于原生代币的功能是通过空间占用而不是交易来实现的，因此，可以在已知的一定时间内锁定 CK Bytes 进行无风险的无担保借贷。开发者可以在 6 个月这样的时间内，以较低的资金成本借入他们需要的 CK Bytes 来完成产品原型并证明他们的商业模式。长期的代币持有者也可以出租他们的代币来赚取额外收入。
 
  The effective interest rate of lending is determined by the market supply and demand, but the current state of token utilization also plays a big role. Higher utilization of the available global state means less tokens can be made available for lending. This makes the lending interest higher, and makes it more attractive to release state and lock tokens in the NervosDAO to earn income. This serves the purpose to help reduce the global state; lower utilization of the available state means more tokens can be lent out. This makes the lending interest rate lower to encourage adoption. 
 
- 租赁的实际利率由市场供求决定，但代币的占用状况也有著重要的影响。如果全局状态利用率高，代表可用于贷款的代币就更少了。这将使得贷款利息更高，并且使得在 NervosDAO 合约中锁定状态，以获得收入更具吸引力。这有助于减少全局状态。而较低的全局状态利用率代表着有更多的代币可以出租。这将使得贷款利率降低以鼓励使用。
+ 租赁的实际利率由市场供求决定，但代币的当前占用状况也有着重要的影响。高利用率的全局状态，意味着可用于租赁的代币更少。这将会推高租赁利息，加大吸引全网状态空间的释放，并推动 NervosDAO 合约的状态锁定，以获取额外的收入。与此同时，这有助于降低全局状态的利用。而较低的全局状态利用率意味着更多的代币可以出租。无形中，租赁利率会被降低，并促进使用的需求。
 
 ### 7.6 Nervos Network
 
  The Nervos CKB is the base layer of the Nervos Network with the highest security, decentralization, transaction cost and state storage cost. Just like how Bitcoin and Ethereum could scale off-chain with lightening network and plasma solutions, Nervos CKB also embraces off-chain scaling solutions and allow users to preserve and transact assets off-chain. When using off-chain solutions, users and developers can choose their own trade-offs between cost, security, latency and liveness properties. 
 
- Nervos CKB 是 Nervos Network 的基础层，具有最高的安全性，去中心化，交易成本和状态存储成本。就像比特币和以太坊可以通过 lightening network 和 plasma 来进行链下的扩容方案，Nervos CKB 也采用了链下扩容解决方案，并允许用户在链下保存和交易资产。当使用链下解决方案时，用户和开发者可以在成本，安全性，延迟和活性之间做出权衡。
+ Nervos CKB 是 Nervos Network 的基础层，具有最高级别的安全性，去中心化，交易成本和状态存储成本。正如比特币和以太坊可以通过 lightening network 和 plasma 方案来进行链下扩容，Nervos CKB 同样拥有链下扩容解决方案，并允许用户在链下保存和交易资产。当使用链下解决方案时，用户和开发者可以在成本，安全性，延迟和活跃度之间做出权衡。
 
  Owning and transacting assets on the Nervos CKB come with the highest capital and transaction cost, but is also the most secure. It’s best suited for high value assets and long term asset preservation; Layer 2 solutions can provide scaling for both transaction throughput and state storage, but they would come with either weakened security assumptions or mandate extra steps of repudiation, and often require participants to be online within a time window. If both are acceptable (likely for owning and transacting low value assets for short duration), the Nervos CKB can be used as security anchor to other transaction blockchains, to effectively magnify both its transaction and state storage capacities. 
 
- 在 Nervos CKB 上拥有资产和交易资产需要最高的资本和交易成本，但也是最安全的。它最适合高价值资产和长期资产保值的用途。第 2 层解决方案可以为交易吞吐量和状态存储提供扩展，但它们会带有较弱的安全性证明，或强制要求额外的步骤，而且通常会要求参与者在一定的时间范围内在线。如果两者都可以接受（可能用于短期拥有和交易低价值资产），Nervos CKB 可以被用作其他交易区块链的安全之锚，以有效地放大其交易量和状态存储空间。
+ 在 Nervos CKB 上持有资产和交易资产需要最高的资本和交易成本，但这也是最安全的。这最适合于高价值资产和长期资产的存储用途。第 2 层解决方案可以为交易吞吐量和状态存储提供扩展，但它们会带有相对较弱的安全性证明，或者会要求额外的强制步骤，而且通常会要求参与者在一定的时间范围内在线。如果这两者都可以接受（可能用于短期持有和交易低价值资产），Nervos CKB 可以被用作其他交易型区块链的安全之锚，以有效地放大其交易量和状态存储空间。
 
  If operators of transaction blockchains don’t want to introduce extra security assumptions, they can mandate that high value assets to be issued on the CKB, and low value assets to be issued on transactional blockchains. Then they can use CK Bytes on the CKB to store periodic block commits, challenges and proofs from the transactional blockchains - critical common knowledge for secure off-chain transaction repudiation. If a transaction chain doesn’t mind introducing extra layer of security assumption with a committee-based consensus protocol, they could also have their validators bond CK Bytes on the CKB to explicitly adjust security parameters.
 
- 如果交易区块链的系统不想引入额外的安全证明，他们可以在 CKB 上抵押高价值的资产，并在交易区块链上发行低价值资产。然后，他们可以在 CKB 上使用 CK Bytes 来存储周期性的区块提交，这是交易区块链的挑战和证明 - 这是链下交易安全的关键常识。如果交易链不介意使用基于委员会的共识协议引入额外的安全性证明层，他们也可以让他们的验证节点在 CKB 上绑定 CK Bytes 以明确地调整安全的参数。
+ 假如交易型区块链的系统不希望引入额外的安全性证明，它们可以要求在 CKB 上发行高价值的资产，而在交易型区块链上面发行低价值的资产。然后，他们可以在 CKB 上使用 CK Bytes 来存储周期性的区块提交，带着交易型区块链的挑战和证明 - 这是链下交易安全的关键常识。如果交易型链不介意使用基于委员会的共识协议，引入额外的安全性证明层，他们也可以让他们的验证节点在 CKB 上绑定 CK Bytes 以明确地调整安全性的参数。
 
 
 ## 8. 代币经济学的应用
