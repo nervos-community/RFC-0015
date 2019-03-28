@@ -299,7 +299,7 @@
  为了确保 Nervos CKB 成为「资产存储」协议，并且保障协议的安全性，我们选择的主要设计是：
 
 - 我们的原生代币代表相应状态存储空间的主张权。这意味着，如果想在平台上通过状态空间持有资产，必须拥有对应状态空间的原生代币。因此，在平台上持有资产，直接创造了原生代币的需求。通过对资产的价值保存，原生代币打造出有效的值捕获机制。正是这种机制，「资产存储」平台可以随着时间的推移持续增加安全预算，而不是基于投机和利他主义。
-- 二次发行可以保证矿工的补偿是可预测的，并且是基于价值保存的需求，而不是交易的需求。同时，二级发行也消除如中本聪协议的共识节点在出块奖励停止后潜在的激励矛盾问题。 对于「二级发行」造成的通胀效应，NervosDAO 提供对应的反制力量，确保代币长期持有者的代币价值不会因为「二级发行」而被稀释。
+- 二级发行可以保证矿工的补偿是可预测的，并且是基于价值保存的需求，而不是交易的需求。同时，二级发行也消除如中本聪协议的共识节点在出块奖励停止后潜在的激励矛盾问题。 对于「二级发行」造成的通胀效应，NervosDAO 提供对应的反制力量，确保代币长期持有者的代币价值不会因为「二级发行」而被稀释。
 
   For a purpose of keeping the network decentralized and censorship resistant, we believe it’s important to limit the resource requirements of consensus and full nodes. We protect the operating cost of nodes by regulating the throughput of computation and bandwidth, similar to how it’s accomplished with Bitcoin and Ethereum. We regulate the state storage with a combination of a “cap and trade” pricing scheme and opportunity cost based cost model for storage users. 
 
@@ -367,7 +367,7 @@
 
  If operators of transaction blockchains don’t want to introduce extra security assumptions, they can mandate that high value assets to be issued on the CKB, and low value assets to be issued on transactional blockchains. Then they can use CK Bytes on the CKB to store periodic block commits, challenges and proofs from the transactional blockchains - critical common knowledge for secure off-chain transaction repudiation. If a transaction chain doesn’t mind introducing extra layer of security assumption with a committee-based consensus protocol, they could also have their validators bond CK Bytes on the CKB to explicitly adjust security parameters.
 
- 假如交易型区块链的系统不希望引入额外的安全性证明，它们可以要求在 CKB 上发行高价值的资产，而在交易型区块链上面发行低价值的资产。然后，他们可以在 CKB 上使用 CK Bytes 来存储周期性的区块提交，带着交易型区块链的挑战和证明 - 这是链下交易安全的关键常识。如果交易型链不介意使用基于委员会的共识协议，引入额外的安全性证明层，他们也可以让他们的验证节点在 CKB 上绑定 CK Bytes 以显式地调整安全性的参数。
+ 假如交易型区块链的系统不希望引入额外的安全性证明，它们可以要求在 CKB 上发行高价值的资产，而在交易型区块链上面发行低价值的资产。然后，他们可以在 CKB 上使用 CK Bytes 来存储周期性的区块提交，带着交易型区块链的挑战和证明 - 这是链下交易安全的关键常识。如果交易型链不介意使用基于委员会的共识协议，引入额外的安全性证明层，他们也可以让他们的验证节点在 CKB 上绑定 CK Bytes 以明确地调整安全性的参数。
 
 
 ## 8. 代币经济学的应用
