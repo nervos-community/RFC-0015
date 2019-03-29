@@ -43,11 +43,11 @@
 
  The native tokens of the Bitcoin network function both as a utility token and an asset. When bitcoins function as a utility, they can be used to pay transaction fees; when they function as an asset, they can be used to preserve value over time. Those two use cases are often referred to as the “Medium of Exchange” (MoE) use case and the “Store of Value” (SoV) use case. The two use cases are not mutually exclusive. They are both important for the network to function. However, it’s important to study the economic motives of the users of both use cases as a guide to analyze the sustainability of the Bitcoin network.
 
- 比特币的原生代币既是功能代币，也是储值资产。当比特币作为功能代币时，可用于支付交易费用，当作为储值资产时，可用来保存价值。通常我们用术语 MoE (Medium of Exchange, 交易媒介) 和 SoV (Store of Value, 价值存储)分别指代这两种用途。MoE 和 SoV 的功能并不冲突，它们对比特币网络的正常运行都发挥着重要的作用，研究这两种用途的经济动机对分析比特币网络的可持续性具有重要的指导意义。
+ 比特币的原生代币既是功能代币，也是储值资产。当比特币作为功能代币时，可用于支付交易费用，当作为储值资产时，可用来保存价值。通常我们用术语 MoE (Medium of Exchange, 交易媒介) 和 SoV (Store of Value, 价值存储) 分别指代这两种用例。两者并不冲突，它们对比特币网络的正常运行都发挥着重要的作用。然而，研究这两种用例背后不同的经济动机，对分析比特币网络的可持续性具有重要的指导意义。
 
  The Bitcoin protocol constraints the network’s transaction throughput with a fixed block size. Users bid with fees on the limited throughput to have their transactions processed. With this auction like mechanism, transaction fees are determined by the transaction demand - the more demand there is on the network, the higher the transaction fee a user has to pay to beat the competition to have their transaction included.
 
- 在比特币协议中，对区块大小的限制制约了整个网络的交易处理能力，用户需要通过类似拍卖的机制竞争有限的交易处理资源。拍卖价格也就是交易费由实际的交易需求决定，当交易需求增加时，为了击败竞拍对手，交易费的价格也会水涨船高。
+ 比特币协议中对区块大小的限制制约了整个网络的交易处理能力，因此用户需要通过类似拍卖的机制竞争有限的交易处理资源。拍卖价格也就是交易费由实际的交易需求决定，当交易需求增加时，为了击败竞拍对手，交易费的价格也会水涨船高。
 
 ### 2.1 比特币作为交易媒介网络
 
@@ -57,14 +57,14 @@
 
  It’s challenging for Bitcoin to become a dominant MoE network. If the protocol calibrates its block time and the block size, therefore fixing the supply of transactions, the success of the network will necessarily increase the cost of transactions, reducing its competitiveness among other similar purposed blockchains as well as its own forks; If the protocol aims to keep the transaction cost low and increase the supply of transactions with faster block time or bigger blocks, it could compromise both security and decentralization through higher fork rate and increased cost of consensus participation. 
 
- 比特币要成为一个 MoE 主导的网络是很有挑战性的。如果协议限制了出块时间和区块大小，那么网络的交易处理能力会非常受限，因此网络的繁荣必然会导致交易成本增加，而这将反过来降低网络的竞争力，这种情况也存在于其他类似的区块链协议以及比特币分叉链中。如果协议致力于维持较低的交易成本，通过设置更快的出块时间或更大的区块大小来提高交易处理能力，这会导致更频繁的分叉或者更高的参与共识成本，实际上这相当于在去中心化与安全性上做了妥协。
+ 比特币要成为一个 MoE 主导的网络是很有挑战性的。如果协议限制了出块时间和区块大小，那么网络的交易处理能力会非常受限，因此网络的繁荣必然会导致交易成本增加，而这将反过来降低比特币网络与其他类似的区块链协议甚至是与比特币分叉链之间的竞争力。如果协议致力于维持较低的交易成本，通过设置更快的出块时间或更大的区块大小来提高交易处理能力，这会导致更频繁的分叉或者更高的参与共识成本，实际上这相当于在去中心化与安全性上做了妥协。
 
 
 ### 2.2 比特币作为价值存储的网络
 
  Store of Value users view the Bitcoin network as a protocol to provide security to its native cryptocurrency as an asset that can preserve value over time. They see the Medium of Exchange use case as the necessary function to go in and out of this asset. A store of value user, especially the ones who hold the cryptocurrency for a long time, doesn’t care much about the transaction cost, as they can amortize it over time. They do care about the value of a Bitcoin, which depends on the network’s security and decentralization - if the network becomes less secure and can be attacked easily, it’ll stop being perceived as a store of value and the tokens will lose value; if the network becomes centralized, Bitcoin as an asset no longer has independent value, but has to assume counter-party risk. 
 
- 而 SoV 用户则将比特币网络看作一种为原生代币提供安全保障的协议，他们相信原生代币可以长期保值，而 MoE 是一种不可或缺的功能。SoV 用户，特别是长期持币者，并不在乎交易成本，因为交易成本会随着持有时间的累积被摊薄。SoV 用户关注的是比特币本身的价值，而这依赖于网络的安全性和去中心化程度 - 如果网络不够安全，攻击很容易，那么价值将无法被储存，比特币也将一文不值; 如果网络算力过于集中，比特币作为一种资产不再具有独立价值，并将面临保管方风险。
+ 而 SoV 用户则将比特币网络看作一种为原生代币提供安全保障的协议，他们相信原生代币可以长期保值，而 MoE 是一种不可或缺的功能。SoV 用户，特别是长期持币者，并不在乎交易成本，因为交易成本会随着持有时间的累积被分摊。SoV 用户关注的是比特币本身的价值，而这依赖于网络的安全性和去中心化程度 - 如果网络变得不够安全、易受攻击，那么价值将无法被储存，比特币也将一文不值; 如果网络算力过于集中，比特币作为一种资产不再具有独立价值，并将面临保管方风险。
 
  For Bitcoin to succeed as a SoV network, it has to continue to keep its monetary policy stable and its network secure and decentralized. However, Bitcoin’s monetary policy has a hard cap, and after all the coins are mined, the network can only pay for the miners with transaction fees. It’s still an open question whether this model could be sustainable, especially considering Store of Value networks themselves tend not to produce many transactions. 
 
@@ -96,7 +96,7 @@
 
  The economic models of smart contract platforms face similar polarization tendency of payment networks - With their superior interoperable capabilities, smart contract platforms are going to be even more specialized into transactional platforms and preservation platforms. Economically, this bifurcation comes from the fact that the two use cases have different ways of utilizing system resources - transactions consume instantaneous but renewable computation and bandwidth resources, and preservation requires long term occupation of the global state. An economic model optimized for one is unlikely to be optimal for the other. 
 
- 智能合约平台的经济模型面临着类似支付网络的两极化趋势 - 由于其良好的交互能力，智能合约平台要么偏向「交易平台」,要么偏向「保值平台」。在经济上，这种分歧源自这样的事实：这两种「平台」具有不同的系统资源利用方式，处理交易消耗的计算和带宽是瞬时的，而且这两种资源是可再生的，但是保值却需要长期占用全球共识状态。为一个方向进行优化的经济模型不太可能是另一个方向的最佳选择。
+ 智能合约平台的经济模型面临着类似支付网络的两极化趋势 - 由于其良好的交互能力，智能合约平台要么偏向「交易平台」,要么偏向「保值平台」。在经济上，这种分歧源自这样的事实：这两种「平台」具有不同的系统资源利用方式，处理交易消耗的计算和带宽是瞬时的，而且这两种资源是可再生的，但是保值却需要长期占用全球共识状态。所以，为其中一个方向而设计优化的经济模型不太可能适用于另一个方向。
 
  Competitive transactional platforms need to prioritize for low transaction cost . Transactional users are willing to accept less-optimal security, because of their only moment-in-time, limited exposure to security risk. They’re willing to accept the possibility of censored transactions, as long as there are options to take their transactions elsewhere. A transactional platform that invests in either security or censorship resistance will have higher cost of transactions, reflected either with higher transaction fees or high capital cost for stakes in a “stake for access” model, making the network less competitive. 
 
@@ -104,11 +104,11 @@
 
  This is especially true when a well designed inter-blockchain protocol can allow trust-less state transfers and fraud repudiation of transactions. We already can see examples of transactional users prioritizing cost over security in centralized crypto-asset exchanges and not-so-decentralized blockchains - despite their flaws, they’re still popular because of their transactional efficiency.
 
- 当设计良好的跨链协议可以允许无信任的状态转移与抗交易作恶时，这样的状况就更明显了。我们已经可以看到很多的例子反映了 MoE 用户会优先考虑低成本的手续费而不是更高的安全性，他们往往选择在中心化的交易所和没那么去中心化的区块链上交易。尽管这些网络环境存在安全缺陷，但由于交易效率的原因，它们仍然很受欢迎。
+ 尤其是在设计良好的跨链协议可以允许无信任的状态转移与抗交易作恶时，这样的状况就更明显。我们已经可以看到很多的例子反映了 MoE 用户会优先考虑低成本的手续费而不是更高的安全性，他们往往选择在中心化的交易所和没那么去中心化的区块链上交易。而由于交易效率的原因，尽管它们缺点重重但仍然很受欢迎。
 
  Competitive preservation platforms need to be sustainably secure and censorship resistant. It requires an economic model designed not around transactions that happen moment-in-time, but around the ongoing occupation of the global state, and have users pay for the network infrastructure metered in their consumption of this critical resource.
 
- 但是，有竞争力的保值平台需要具有可持续的安全性和抗审查性。因此需要设计一种不是基于即时交易而是基于对世界状态的占用而设计的经济模型，让用户为网络基础设施的关键资源的消耗付费。
+ 但是，有竞争力的保值平台需要具有可持续的安全性和抗审查性。因此需要设计一种不是基于即时交易而是基于对世界状态的占用而设计的经济模型，并且让用户为网络基础设施的关键资源的消耗付费。
 
 
 ## 4. 资产存储
@@ -119,7 +119,7 @@
 
  Preservation focused smart contract platforms must have a Store of Assets token economics design. The level of platform security has to grow along with the asset value it preserves. Otherwise as asset value grows, it will be increasingly profitable to “double-spend” assets by attacking the consensus process of the platform. 
 
- 以保存资产为重点的智能合约平台，必须具有「资产存储」的代币经济设计。平台安全级别必须与平台上加密资产的价值一起增长。否则随着平台上加密资产价值的增长，因为攻击的利益会增长，平台本身遭到「双重花费攻击」的可能性会大大增加。
+ 以保存资产为重点的智能合约平台，必须具有「资产存储」的代币经济设计。平台安全级别必须与平台上加密资产的价值一起增长。否则随着平台上加密资产价值的增长，因为攻击的利益也会增长，平台本身遭到「双花攻击」的可能性会大大增加。
 
  None of the current smart contract platforms are designed as Store of Assets platforms. Their token economics are designed either to facilitate transactions (for example, Ethereum’s native tokens are to pay for the decentralized computation) or to fulfill staking requirements. In either case, the growth in asset value doesn’t necessarily raise miner’s income to provide more security. 
 
@@ -136,20 +136,21 @@
  Decentralized multi-assets smart contract platforms have to be Store of Assets to be sustainable. 
 
  去中心化的多资产智能合约平台必须持续的做好「资产存储」的功能。
+ 
 
 ## 5. 去中心化与状态限制的需求
 
  Like other long term store of value systems, a Store of Assets platform has to be neutral and free of risks of censorship and confiscation. These are the properties that made gold the world’s favorite the store of value for thousands of years. For open, permission-less blockchain networks, censorship resistance comes down to having the broadest consensus scope with a low barrier for consensus and full node participation. Comparing to payment networks, running a full node for a smart contract system is more resource intensive, therefore a Store of Assets platform has to take measures to protect the operating cost of full nodes to keep the network sufficiently decentralized. 
 
- 与其他长期价值存储的系统一样，「资产存储」平台必须保持中立，并且没有审查和充公的风险。这些条件使得黄金成为世界上数千年来最受欢迎的价值存储。对于完全开放无须许可的区块链网络，抗审查的能力主要来自于最广泛的全球共识，并且让全节点参与的门槛足够的低。与支付网络相比，智能合约平台运行全节点需要更密集的资源，因此，「资产存储」平台必须采取措施来保持全节点的运营成本，以保持网络有足够的去中心化。
+ 与其他长期价值存储的系统一样，「资产存储」平台必须保持中立，并且确保没有审查和充公的风险。这些条件使得黄金成为世界上数千年来最受欢迎的价值存储。对于完全开放无须许可的区块链网络，抗审查的能力主要来自于最广泛的全球共识，并且让全节点参与的门槛足够的低。与支付网络相比，智能合约平台运行全节点需要更密集的资源，因此，「资产存储」平台必须采取措施来保持全节点的运营成本，以保持网络有足够的去中心化。
 
  Both Bitcoin and Ethereum throttle transaction throughput to make sure participation is not limited to only “super computers” - Bitcoin throttles on bandwidth and Ethereum throttles on computation. However, they haven’t taken effective measures to contain the ever growing global state necessary for consensus participation and independent transaction validation. This is especially a centralization force for high throughout smart contract platforms, where the global state grows even faster. 
 
- 比特币和以太坊都限制了交易吞吐量以确保参与方不仅只有「超级计算机」 - 比特币限制带宽，以太网限制计算能力。然而，他们没有采取有效的方式，来容纳共识参与和交易验证所需而且不断增长的全局状态。尤其是整个智能合约平台有着高度集中的需求，全局状态的增长速度只会更快。
+ 比特币和以太坊都限制了交易吞吐量以确保参与方不仅只有「超级计算机」 - 比特币限制带宽，以太网限制计算能力。然而，他们没有采取有效的方式，来容纳共识参与和交易验证所需的不断增长的全局状态。尤其是整个智能合约平台有着高度集中的需求，全局状态的增长速度只会更快。
 
  In Bitcoin, the global state is the UTXO set. Bitcoin doesn’t control the growth of the size of the UTXOs directly, but every new UTXO adds overhead to the transaction where it’s created, making the transaction more expensive. 
 
- 在比特币中，全局状态是 UTXO 的集合。比特币不会直接控制 UTXO 大小的增长，但每个新增的 UTXO 都会增加交易费用。
+ 在比特币中，全局状态是 UTXO 的集合。比特币不会直接控制 UTXO 大小的增长，但每个新增的 UTXO 都会增加交易费用，使交易成本变得更高。
 
  In Ethereum, the global state is represented with the EVM’s state trie, the data structure that contains the balances and internal states of all accounts. When new accounts or new contract values are created, the size of the global state expands. Ethereum charges fixed amounts of Gas for inserting new values into its state storage and offers fixed amounts of Gas as transaction refund when values are removed. Ethereum’s approach is a step in the right direction, but still has several issues: 
 
@@ -159,14 +160,15 @@
 - the system raises one-time revenue for expanding the state storage, but miners and full nodes have to bear the expense of storage over time
 - there’s no obvious reason why the cost of expanding storage should be priced in fixed Gas amounts, which is used to price a unit of computation
 - the “pay once, occupy forever” state storage model gives very little incentive for users to voluntarily clear state and reduce the size of global state
+
 - 全局状态的增长不受任何限制，并且可以无限增长，因此全节点的参与成本并不确定
 - 该系统为扩大状态存储提高了一次性收费，但矿工和全节点必须承担长期存储费用
-- 没有明显的理由说明为什么扩展存储的成本应该以固定的 Gas 定价（Gas 用于定价一个计算单位的费用）
-- 「一次性支付，永远占用」的状态存储模型的激励很小，很难让用户自愿清除状态和减少全局状态的占用
+- 没有充分的理由说明为什么扩展存储的成本应该以固定数量的 Gas 定价（Gas 用于计算一个单位的计算费用）
+- 「一次性支付，永远占用」的状态存储模型的激励很小，很难让用户自愿清除状态并减少全局状态的占用
 
  The Ethereum community is actively working on this problem, and the leading solution is to charge smart contract “state rent” - contracts have to periodically pay fees based on the size of its state. If the rent is not paid, the contract goes to “hibernation” and not accessible before the payment is current again. We see several difficult-to-solve problems with this approach: 
 
- 以太坊社区正在积极解决这个问题，领先的解决方案是收取智能合约的「状态租金」 - 合约必须根据其状态占用的大小来定期支付费用。如果没有支付租金，合同将会进入「休眠状态」，并且在支付租金之前无法访问。我们看到这种方法有几个难以解决的问题：
+ 以太坊社区正在积极解决这个问题，主要的解决方案是收取智能合约的「状态租金」 - 合约必须根据其状态占用的大小来定期支付费用。如果没有支付租金，合同将会进入「休眠状态」，并且在支付租金之前无法访问。可以看出，这种方案也有几个难以解决的问题：
 
 - many contracts, especially popular ERC20 contracts, represent decentralized communities and express asset ownership of many users. It’s a difficult problem to coordinate all the users to pay for state rent in a fair and efficient way. 
 - even a contract is current on its rent payment, it still may not be fully functional because some of its dependent contracts may be behind on their payments. 
@@ -183,6 +185,7 @@
 - the growth of the global state has to be bounded to give predictability for full node participation. Ideally, the cost is well within the range of non-professional participants to keep the network maximally decentralized and censorship resistant.
 - with bounded growth of the global state, the price for expanding it and the rewards for reducing it should be determined by the market. In particular, it’s desirable to have the cost of expanding state storage higher when it’s mostly full, and lower when it’s mostly empty. 
 - the system has to be able to continuously raise revenue from its state users to pay miners for providing this resource. This serves both purposes of balancing miner’s economics and providing incentives for users to clear unnecessary states sooner than later. 
+
 - 必须限制全局状态的增长，以便为参与全节点提供可预测性。理想情况下，成本能控制在非专业参与者可以负担的范围内，以保持网络最大程度的去中心化与抗审查。
 - 随着全局状态的有限增长，价格的上升与降低将由市场决定。特别是当状态存储空间快满的时后，需要将状态存储的成本提高，而当它大部分为空时，需要降低成本，这是非常吸引人的。
 - 系统需要能够不断收取其状态用户的租金，以支付矿工提供这种资源。这有助于平衡矿工的经济收入，同时激励用户尽早清除不必要的状态。
@@ -205,7 +208,7 @@
  
  A cell's occupied capacity could be equal to or less than its specified capacity. For example, for a 1000 byte cell, 4 bytes would be used to specify its own capacity, 64 bytes for the lock script and 128 bytes for storing state. Then the cell's current occupied capacity is 196 bytes, but with room to grow up to 1000 bytes.
  
- 一个 Cell 占用的空间应该等于或小于其指定空间。例如，对于一个 1000 Byte 的 Cell，使用 4 Bytes 来指定自己的空间，锁定脚本使用 64 Bytes，存储状态使用 128 Bytes。因此这个 Cell 实际占用 196 Bytes，但是有充足的空间增长至 1000 Bytes。
+ 一个 Cell 中已占用的空间可以等于或者小于这个空间指定的大小。比如说，一个空间为 1000 Byte 的单元，4个 Byte 用于说明它的容量，64个 Byte 用于锁定脚本，128个 Byte 用于存储状态。也就是说，这个 Cell 目前的容量是196个 Byte, 但它还有足够的空间可以使用到1000个 Byte。
 
 ### 6.2 代币发行政策
 
