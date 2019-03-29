@@ -361,21 +361,21 @@ The economics of the consensus process is designed to incentivize nodes to parti
 
 컨센서스 프로세스의 경제성은 노드가 합의 프로세스에 참여하도록 유도하고 노드가 트랜잭션의 우선순위를 정할 때 사용할 수 있는 측정 값을 제공하도록 설계되었습니다. 핵심은 합의 된 노드가 "블록을 생성할 기회가 있다면, 이 거래가 다음 단계에 포함될 가치가 있는가?"라는 대답에 도움이 되도록 설계되었습니다.
 A block producing node can do a cost/benefit analysis to answer this question. The benefit of including a transaction is to be able to collect its transaction fee, and the cost of including a transaction in a block has three parts:
-Fee Estimation Cost ( ): this is the cost to estimate the maximum possible income if a node where to include a transaction
-Transaction Verification Cost ( ): blocks containing invalid transactions will be rejected by the consensus process, therefore block producing nodes have to verify transactions before including them in a new block.
-State Transition Cost (): after a block is produced, the block producing node has to perform local state transitions defined by state machines of the transactions in the block.
+Fee Estimation Cost (![123](https://user-images.githubusercontent.com/48978617/55233713-b0f06180-526c-11e9-9a56-461977e807f9.png)): this is the cost to estimate the maximum possible income if a node where to include a transaction
+Transaction Verification Cost (![222](https://user-images.githubusercontent.com/48978617/55234069-9965a880-526d-11e9-85fc-5ee6a8275ef0.png) ): blocks containing invalid transactions will be rejected by the consensus process, therefore block producing nodes have to verify transactions before including them in a new block.
+State Transition Cost (![12334](https://user-images.githubusercontent.com/48978617/55234105-b306f000-526d-11e9-9a58-50ea73899796.png)): after a block is produced, the block producing node has to perform local state transitions defined by state machines of the transactions in the block.
 
 블록을 생성하는 노드는 위 질문에 대답하기 위해 비용/편익 분석을 수행할 수 있습니다. 거래를 포함하는 것의 이점은 트랜잭션 수수료를 회수 할 수 있고 블록에 거래를 포함하는 비용은 아래와 같은 세 부분으로 나뉩니다. : 
-수수료 추정 비용 (Fee Estimation Cost :  ): 노드가 트랜잭션을 포함할 경우 가능한 최대 수입을 추정하는 비용입니다.
-트랜잭션 검증 비용 (Transaction Verification Cost :  ): 잘못된 트랜잭션을 포함하는 블록은 합의 프로세스에 의해 거부되므로 노드를 생성하는 블록은 새로운 블록에 트랜잭션을 포함하기 전에 트랜잭션을 확인해야 합니다.
-상태 이전 비용 (State Transition Cost : ): 블록이 생성된 후, 블록을 생성하는 노드는 블록 내 트랜잭션 상태머신에 의해 정의된 로컬 상태 이전을 수행해야 합니다. 
+수수료 추정 비용 (Fee Estimation Cost :![123](https://user-images.githubusercontent.com/48978617/55233713-b0f06180-526c-11e9-9a56-461977e807f9.png) ): 노드가 트랜잭션을 포함할 경우 가능한 최대 수입을 추정하는 비용입니다.
+트랜잭션 검증 비용 (Transaction Verification Cost :![222](https://user-images.githubusercontent.com/48978617/55234069-9965a880-526d-11e9-85fc-5ee6a8275ef0.png)): 잘못된 트랜잭션을 포함하는 블록은 합의 프로세스에 의해 거부되므로 노드를 생성하는 블록은 새로운 블록에 트랜잭션을 포함하기 전에 트랜잭션을 확인해야 합니다.
+상태 이전 비용 (State Transition Cost :![12334](https://user-images.githubusercontent.com/48978617/55234105-b306f000-526d-11e9-9a58-50ea73899796.png) ): 블록이 생성된 후, 블록을 생성하는 노드는 블록 내 트랜잭션 상태머신에 의해 정의된 로컬 상태 이전을 수행해야 합니다. 
 
-In particular, transaction verification,  has two possible steps:
-: Authorization Verification Cost
-: State Transition Verification Cost
-특히, 트랜잭션 검증 비용  에는 두가지 가능한 단계가 있습니다. :
-: Authorization Verification Cost : 인증검증비용 
-: State Transition Verification Cost : 상태 전이 검증 비용
+In particular, transaction verification, ![222](https://user-images.githubusercontent.com/48978617/55234069-9965a880-526d-11e9-85fc-5ee6a8275ef0.png) has two possible steps:
+![12314](https://user-images.githubusercontent.com/48978617/55234241-0c6f1f00-526e-11e9-8cbc-d6dd9987c3ec.png): Authorization Verification Cost
+![2131415](https://user-images.githubusercontent.com/48978617/55234323-42140800-526e-11e9-902c-a3aff9e9e496.png): State Transition Verification Cost
+특히, 트랜잭션 검증 비용  에는 두가지 가능한 단계가 있습니다.![222](https://user-images.githubusercontent.com/48978617/55234069-9965a880-526d-11e9-85fc-5ee6a8275ef0.png) :
+![12314](https://user-images.githubusercontent.com/48978617/55234241-0c6f1f00-526e-11e9-8cbc-d6dd9987c3ec.png): Authorization Verification Cost : 인증검증비용 
+![2131415](https://user-images.githubusercontent.com/48978617/55234323-42140800-526e-11e9-902c-a3aff9e9e496.png): State Transition Verification Cost : 상태 전이 검증 비용
 
 We use CPC and EVC to represent Complete Processing Cost and Estimation and Verification Cost:
 CPC: Complete Processing Cost
@@ -383,70 +383,91 @@ EVC: Estimation and Verification Cost;
 
 우리는 CPC 및 EVC를 사용하여 전체 처리 비용 및 추정 및 검증 비용을 나타냅니다. 
 CPC: 전체 처리 비용
+![1224141](https://user-images.githubusercontent.com/48978617/55234473-96b78300-526e-11e9-9066-714c77795106.png)
 
 EVC: 추정 및 검증 비용
+![31345113](https://user-images.githubusercontent.com/48978617/55234480-98814680-526e-11e9-9871-47bc3f7842ba.png)
 
 
 비트코인의 트랜잭션 비용 분석
 Bitcoin allows flexible authorization verification with the Bitcoin Script. Users can script the authorization rules and build smart contracts throughwhen creating transactions. Bitcoin has a fixed state transition semantic, which is to spend and create new UTXOs. In Bitcoin, the result of the state transitions are already included in transactions, therefore the State Transition Cost (STC) is 0.
+
 비트코인은 Bitcoin Script를 통해 인증확인을 수행합니다. 트랜잭션을 구축할 때 사용자는 scriptPubkey를 통해 권한 부여 규칙을 작성하여 스마트 계약을 작성할 수 있습니다. 비트코인은 UTXO 모델이라고 불리는 고정된 상태 전이를 가지고 있습니다. 우리는 새로운 UTXO를 소비하고 작성함으로써 상태 전이를 구현할 수 있습니다. 비트코인에서는 상태전이의 결과가 실제로 트랜잭션에 포함되었으므로 상태전이 비용(STC)은 0입니다.
 
-Bitcoin uses the amount difference of the inputs and outputs to express transaction fees. Therefore, the cost of estimating transaction fees scales to  where  is the total number of inputs and outputs.
-비트코인은 입력 및 출력 사이의 차이로 거래에 대한 트랜잭션 수수료를 나타냅니다. 따라서 수수료의 예상 비용은입니다. 그중 은 입력 및 출력의 총수량입니다.
-Authorization verification in Bitcoin requires running scripts of all inputs. Because the Bitcoin Script prohibits JUMP/looping, the computation complexity can roughly scale to the length of the input scripts, as, where  is the number of inputs and  is the average script length of an input. Therefore, the total cost of  roughly scales to the size of total transaction.
-비트코인 스크립트는 건너뛰기와 루핑을 금지하기 때문에 모든 입력 스크립트를 실해해야 하므로 입력의 수를 입력하여 각 입력 스크립트 길이 계산 복잡도를 예측할 수 있습니다. 따라서 전체 권한 검증 비용은 모든 트랜잭션의 크기로 대략 추정할 수 있습니다. 
-Bitcoin's state transition rules are simple, and nodes only have to verify the total input amount is the same as the total output amount. Therefore, the  in Bitcoin is the same as , also scaling to .\
-비트코인 상태변환에 대한 규칙은 매우 간단하며 노드는 총입력 수가 출력의 총 개수와 동일한지 획인해야 합니다. 따라서 비트코인의 상태변환와  확인 비용은 거의 동일합니다.
+Bitcoin uses the amount difference of the inputs and outputs to express transaction fees. Therefore, the cost of estimating transaction fees scales to ![1221124124](https://user-images.githubusercontent.com/48978617/55234624-e5651d00-526e-11e9-919a-4de16e16a343.png)  where ![31212415151](https://user-images.githubusercontent.com/48978617/55234626-e7c77700-526e-11e9-8ca4-2f8f994c2d01.png)is the total number of inputs and outputs.
+비트코인은 입력 및 출력 사이의 차이로 거래에 대한 트랜잭션 수수료를 나타냅니다. 따라서 수수료의 예상 비용은![1221124124](https://user-images.githubusercontent.com/48978617/55234624-e5651d00-526e-11e9-919a-4de16e16a343.png)입니다. 그중![31212415151](https://user-images.githubusercontent.com/48978617/55234626-e7c77700-526e-11e9-8ca4-2f8f994c2d01.png)은 입력 및 출력의 총수량입니다.
+
+Authorization verification in Bitcoin requires running scripts of all inputs. Because the Bitcoin Script prohibits JUMP/looping, the computation complexity can roughly scale to the length of the input scripts, as![515677](https://user-images.githubusercontent.com/48978617/55234902-7b994300-526f-11e9-8b28-ad55db4af62b.gif), where![576567567](https://user-images.githubusercontent.com/48978617/55234909-7dfb9d00-526f-11e9-8436-0354ac7bc969.png)is the number of inputs and![123241531515](https://user-images.githubusercontent.com/48978617/55234960-a84d5a80-526f-11e9-9d22-92bfa80e381f.gif)is the average script length of an input. Therefore, the total cost of![166171](https://user-images.githubusercontent.com/48978617/55234963-aa171e00-526f-11e9-9876-36c03ac49201.png) roughly scales to the size of total transaction.
+비트코인 스크립트는 건너뛰기와 루핑을 금지하기 때문에 모든 입력 스크립트를 실해해야 하므로 입력의 ![515677](https://user-images.githubusercontent.com/48978617/55234902-7b994300-526f-11e9-8b28-ad55db4af62b.gif)수를 입력하여 각![576567567](https://user-images.githubusercontent.com/48978617/55234909-7dfb9d00-526f-11e9-8436-0354ac7bc969.png) 입력 스크립트 길이![123241531515](https://user-images.githubusercontent.com/48978617/55234960-a84d5a80-526f-11e9-9d22-92bfa80e381f.gif) 계산 복잡도를 예측할 수 있습니다. 따라서 전체 권한 검증 비용![166171](https://user-images.githubusercontent.com/48978617/55234963-aa171e00-526f-11e9-9876-36c03ac49201.png)은 모든 트랜잭션의 크기로 대략 추정할 수 있습니다. 
+
+Bitcoin's state transition rules are simple, and nodes only have to verify the total input amount is the same as the total output amount. Therefore, the ![12414](https://user-images.githubusercontent.com/48978617/55235206-59ec8b80-5270-11e9-83b7-8b506d5361c8.png)
+  in Bitcoin is the same as![123](https://user-images.githubusercontent.com/48978617/55233713-b0f06180-526c-11e9-9a56-461977e807f9.png), also scaling to![31212415151](https://user-images.githubusercontent.com/48978617/55234626-e7c77700-526e-11e9-8ca4-2f8f994c2d01.png).\
+비트코인 상태변환에 대한 규칙은 매우 간단하며 노드는 총입력 수가 출력의 총 개수와 동일한지 획인해야 합니다. 따라서 비트코인의 상태변환![12414](https://user-images.githubusercontent.com/48978617/55235206-59ec8b80-5270-11e9-83b7-8b506d5361c8.png)와 ![123](https://user-images.githubusercontent.com/48978617/55233713-b0f06180-526c-11e9-9a56-461977e807f9.png)확인 비용은 거의![31212415151](https://user-images.githubusercontent.com/48978617/55234626-e7c77700-526e-11e9-8ca4-2f8f994c2d01.png)동일합니다.
+
 In total, Bitcoin's cost of processing a transaction roughly scales to the size of the transaction: 
 요약하면 비트코인 처리 트랜잭션의 총 비용은 대략 트랜잭션 크기를 계산할 수 있습니다.
-
+![516161232](https://user-images.githubusercontent.com/48978617/55235344-afc13380-5270-11e9-948e-c3ffb806ebe4.png)
 
 이더리움 트랜잭션 비용 분석
-Ethereum comes with Turing-complete scriptability, and gives users more flexibility to customize state transition rules with smart contracts. Ethereum transactions include gaslimit and gasprice, and the transaction fees are calculated using the product of their multiplication. Therefore,  is .
-이더리움은 튜링 완전 스크립트 작성 기능을 제공하며 사용자가 스마트 계약을 통해 상태 전이 규칙을 정의 할 수있는 유연성을 제공합니다. 이더리움 거래에는 가스 제한 및 가스 가격이 포함되며 거래 수수료는 곱셈의 곱을 사용하여 계산됩니다. 그러므로,  는 가 된다. 
+Ethereum comes with Turing-complete scriptability, and gives users more flexibility to customize state transition rules with smart contracts. Ethereum transactions include gaslimit and gasprice, and the transaction fees are calculated using the product of their multiplication. Therefore,![124125151](https://user-images.githubusercontent.com/48978617/55235412-daab8780-5270-11e9-822b-9126ba9beb2b.png)is![51611214151](https://user-images.githubusercontent.com/48978617/55235417-dc754b00-5270-11e9-8109-65970832531c.png)
+ .
+이더리움은 튜링 완전 스크립트 작성 기능을 제공하며 사용자가 스마트 계약을 통해 상태 전이 규칙을 정의 할 수있는 유연성을 제공합니다. 이더리움 거래에는 가스 제한 및 가스 가격이 포함되며 거래 수수료는 곱셈의 곱을 사용하여 계산됩니다. 그러므로,![124125151](https://user-images.githubusercontent.com/48978617/55235412-daab8780-5270-11e9-822b-9126ba9beb2b.png)는 ![51611214151](https://user-images.githubusercontent.com/48978617/55235417-dc754b00-5270-11e9-8109-65970832531c.png)가 된다. 
 Unlike Bitcoin, Ethereum's transactions only include the computation commands of state transitions, instead of the results of the state transitions. Therefore, Ethereum's transaction verification is limited to authorization verification, and doesn't have state transition verification. The rules of authorization verification in Ethereum are:
 
 비트코인과 달리 이더리움의 거래에는 상태 전이의 결과 대신 상태 전이의 연산 명령만을 포함합니다. 따라서, 이더리움의 거래 검증은 승인 검증에 만 국한 되며 상태 전이 검증은 없습니다. 이더리움의 승인 검증 규칙은 다음과 같습니다. 
-Verify the validility of the Secp256k1 signatures, with computation complexity of 
-Verify the nonce match of the transaction and the account that starts the transaction, with computation complexity of 
-Verify the account that starts transaction has enough ether to pay for the transaction fees and the amount transferred. This requires access to the account's current balance. Ignoring the global state size's impact on account access, we can assume the complexity of this step is also .
-의 계산의 복잡성과 함께 Secp256k1 서명의 유효성을 확인하십시오. 
-의 계산의 복잡성과 함께 거래를 시작하는 계정과 거래의 nonce와 일치 여부를 확인합니다. 
-거래를 시작하는 계정에 거래 수수료와 이체 된 금액을 지불할 수 있는 충분한 이더리움이 있는지 확인하십시오. 이것은 계정의 현재 잔액에 대한 접근을 필요로 합니다. 계정 접근에 대한 전역 상태 크기의 영향을 무시하면서, 우리는 의  단계에 대한 복잡성도 가정할 수 있습니다. 
-Based on the above, the overall authorization verification complexity in Ethereum is .
-위의 내용을 기반으로, 이더리움의 전반적인 승인 검증의 복잡성은 입니다. 
-Since every byte of the transaction data comes with cost , the larger  is, the more gas it needs, up to the gaslimit specified. Therefore,
-거래 데이터의 모든 바이트는 비용 와 함께 제공되기 때문에, 가 클수록 가스 제한 까지 더 많은 가스가 필요하다. 그러므로,
+Verify the validility of the Secp256k1 signatures, with computation complexity of ![234](https://user-images.githubusercontent.com/48978617/55235507-0d558000-5271-11e9-86ba-df625c088c0f.gif)
+Verify the nonce match of the transaction and the account that starts the transaction, with computation complexity of ![51611214151](https://user-images.githubusercontent.com/48978617/55235417-dc754b00-5270-11e9-8109-65970832531c.png)
+Verify the account that starts transaction has enough ether to pay for the transaction fees and the amount transferred. This requires access to the account's current balance. Ignoring the global state size's impact on account access, we can assume the complexity of![51611214151](https://user-images.githubusercontent.com/48978617/55235417-dc754b00-5270-11e9-8109-65970832531c.png) this step is also![51611214151](https://user-images.githubusercontent.com/48978617/55235417-dc754b00-5270-11e9-8109-65970832531c.png) .
 
+![234](https://user-images.githubusercontent.com/48978617/55235507-0d558000-5271-11e9-86ba-df625c088c0f.gif)의 계산의 복잡성과 함께 Secp256k1 서명의 유효성을 확인하십시오. 
+![51611214151](https://user-images.githubusercontent.com/48978617/55235417-dc754b00-5270-11e9-8109-65970832531c.png)의 계산의 복잡성과 함께 거래를 시작하는 계정과 거래의 nonce와 일치 여부를 확인합니다. 
+거래를 시작하는 계정에 거래 수수료와 이체 된 금액을 지불할 수 있는 충분한 이더리움이 있는지 확인하십시오. 이것은 계정의 현재 잔액에 대한 접근을 필요로 합니다. 계정 접근에 대한 전역 상태 크기의 영향을 무시하면서, 우리는 ![51611214151](https://user-images.githubusercontent.com/48978617/55235417-dc754b00-5270-11e9-8109-65970832531c.png)의  단계에 대한 복잡성도 가정할 수 있습니다. 
 
+Based on the above, the overall authorization verification complexity in Ethereum is![234](https://user-images.githubusercontent.com/48978617/55235507-0d558000-5271-11e9-86ba-df625c088c0f.gif) .
+위의 내용을 기반으로, 이더리움의 전반적인 승인 검증의 복잡성은![234](https://user-images.githubusercontent.com/48978617/55235507-0d558000-5271-11e9-86ba-df625c088c0f.gif) 입니다. 
 
-Ethereum comes with a Turing complete VM, and the computation of the result state could include logic of any complexity. Ethereum transaction's  caps the upper bound of computation, therefore 。To summarize all the above:
-이더리움에는 튜링완전 VM이 제공되며, 결과 상태 계산에는 모든 복잡성의 논리가 포함될 수 있습니다. 이더리움 트랜잭션의   은 계산 상한선을 초과하므로 가 됩니다. 위 모든 것을 요약하면 다음과 같습니다.
+Since every byte of the transaction data comes with cost![111121](https://user-images.githubusercontent.com/48978617/55235745-9a003e00-5271-11e9-8a53-2c82296add5d.png) , the larger ![5112313](https://user-images.githubusercontent.com/48978617/55235796-b69c7600-5271-11e9-992e-4214ba369838.png) is, the more gas it needs, up to the gaslimit![12415151](https://user-images.githubusercontent.com/48978617/55235749-9bca0180-5271-11e9-9b5d-6574221827bc.png)specified. Therefore,
+거래 데이터의 모든 바이트는 비용![111121](https://user-images.githubusercontent.com/48978617/55235745-9a003e00-5271-11e9-8a53-2c82296add5d.png) 와 함께 제공되기 때문에,  ![5112313](https://user-images.githubusercontent.com/48978617/55235796-b69c7600-5271-11e9-992e-4214ba369838.png)가 클수록 가스 제한![12415151](https://user-images.githubusercontent.com/48978617/55235749-9bca0180-5271-11e9-9b5d-6574221827bc.png)까지 더 많은 가스가 필요하다. 그러므로,
 
+![155121231](https://user-images.githubusercontent.com/48978617/55236116-873a3900-5272-11e9-8416-592d3780dad8.png)
 
+Ethereum comes with a Turing complete VM, and the computation of the result state could include logic of any complexity. Ethereum transaction's  caps the upper bound of computation, therefore![12415125123](https://user-images.githubusercontent.com/48978617/55236258-e8faa300-5272-11e9-8451-eec57247b24c.png)
+ 。To summarize all the above:
+이더리움에는 튜링완전 VM이 제공되며, 결과 상태 계산에는 모든 복잡성의 논리가 포함될 수 있습니다. 이더리움 트랜잭션의   은 계산 상한선을 초과하므로 ![12415125123](https://user-images.githubusercontent.com/48978617/55236258-e8faa300-5272-11e9-8451-eec57247b24c.png)
+가 됩니다. 위 모든 것을 요약하면 다음과 같습니다.
 
+![414124151451234](https://user-images.githubusercontent.com/48978617/55236539-82c25000-5273-11e9-9329-fcb018b04445.png)
+![124125 1231](https://user-images.githubusercontent.com/48978617/55236542-83f37d00-5273-11e9-9d71-b82b4df82ad9.png)
+![5135131314](https://user-images.githubusercontent.com/48978617/55236545-848c1380-5273-11e9-95c2-48a0f23c504b.png)
 
-Different from Bitcoin,  for the Ethereum nodes is less than . This is because Ethereum nodes only compute the result state after transactions are included in the block. This is also the reason that transaction results on Ethereum could be invalid, (e.g. exceptions in contract invocation or the gas limit is exceeded), but the Bitcoin blockchain only has successfully executed transactions and valid results.
+Different from Bitcoin,  EVC for the Ethereum nodes is less thanCPC . This is because Ethereum nodes only compute the result state after transactions are included in the block. This is also the reason that transaction results on Ethereum could be invalid, (e.g. exceptions in contract invocation or the gas limit is exceeded), but the Bitcoin blockchain only has successfully executed transactions and valid results.
 
-비트코인과 달리 이더리움 노드의 는 보다 작습니다. 이는 트랜잭션이 블록에 포함 된 후에만 이더리움 노드가 결과 상태를 계산하기 때문입니다. 이것은 또한 이더리움의 거래 결과가 무효가 될 수 있는 이유이기도 합니다. (예 : 계약 요청의 예외 또는 가스 한도 초과) 그러나 비트코인 블록체인은 트랜잭션과 유효한 결과만 성공적으로 실행했습니다.
+비트코인과 달리 이더리움 노드의 EVC는 CPC보다 작습니다. 이는 트랜잭션이 블록에 포함 된 후에만 이더리움 노드가 결과 상태를 계산하기 때문입니다. 이것은 또한 이더리움의 거래 결과가 무효가 될 수 있는 이유이기도 합니다. (예 : 계약 요청의 예외 또는 가스 한도 초과) 그러나 비트코인 블록체인은 트랜잭션과 유효한 결과만 성공적으로 실행했습니다.
 
 Nervos CKB의 트랜잭션 비용 분석
-Nervos CKB's transactions are structured with inputs and outputs, similar to Bitcoin's. Therefore, the  and  for the Nervos CKB are the same as those of Bitcoin's:
-Nervos CKB의 트랜잭션은 비트코인과 유사하게 입력과 출력으로 구성됩니다. 따라서 Nervos CKB의 와 는 비트코인의 와 와 동일합니다.
-
+Nervos CKB's transactions are structured with inputs and outputs, similar to Bitcoin's. Therefore, the FEC and STC for the Nervos CKB are the same as those of Bitcoin's:
+Nervos CKB의 트랜잭션은 비트코인과 유사하게 입력과 출력으로 구성됩니다. 따라서 Nervos CKB의 FEC와 STC는 비트코인의 FEC와 STC와 동일합니다.
+![3124124515](https://user-images.githubusercontent.com/48978617/55236702-e3ea2380-5273-11e9-9c5a-33ca22a35a0d.png)
+![5231235125](https://user-images.githubusercontent.com/48978617/55236704-e482ba00-5273-11e9-8a29-aed9384276a3.png)
 
 Because CKB transactions include the result of the transactions as outputs, therefore:
 CKB 트랜잭션은 트랜잭션 결과를 출력으로 포함하기 때문에 다음과 같습니다. :
+![531251251616](https://user-images.githubusercontent.com/48978617/55236709-e6e51400-5273-11e9-947e-d6ff50532f1e.png)
 
 
 계산상의 복잡성을 측정하는 Cycle
 We introduce "cycle" as a unit of measurement for computation complexity in the CKB, similar to the "gas" concept in Ethereum. Nervos CKB's VM is a RISC-V CPU simulator, therefore cycles here refer to real CPU computation cycles in the VM. The cycle number for an instruction represents the relative computation cost of that instruction. Transactions in the Nervos CKB require the sender to specify the number of cycles required for its verification. Nodes can opt to set an acceptable cycle upper bound cyclemax, and only process transactions with fewer cycles. We'll also introduce cycles to a block, with its value equal to the sum of all specified transaction cycles. The value of cycles in a block can't exceed the value blockcyclesmax, which are set and can be automatically adjusted by the system.
+
 우리는 이더리움의‘Gas’개념과 비슷한 CKB의 계산 복잡도 측정 기준으로 사이클을 소개합니다. Nervos CKB의 가상머신은 RISC-V CPU 에뮬레이터로 이는 참조되는 cycle은 실제로 가상머신에서 실제 CPU 작업의 계산주기입니다. 명령을 실행하는데 필요한 cycle 수는 명령의 상대적인 비용입니다. Nervos CKB의 트랜잭션은 보낸 사람이 확인할 필요가 있는 cycle 수를 지정해야하며 노드는 cycle수를 허용하는 상한 cycle max를 설정할 수 있으며 적은 수의 cycle를 필요하는 트랜잭션만 전송합니다. 또한 값이 지정된 모든 트랜잭션의 cycle 합계와 동일한 블록에 cycle를 도입할 것입니다.블록의 cycle값은 초기에 설정된 blockcyclemax 값을 초과할 수 없으며 시스템에서 자동으로 조정될 수 있습니다.
 Nodes can set their cyclemax to different values. cyclemax only impacts how a block producing node accepts new transactions, not how a node accepts transactions in a new block. Therefore, it's not going to cause inconsistency in the validation of blocks. A valid block needs valid proof of work, and this cost discourages a block producing node to include an invalid transaction with high cycles value.
+
 노드는 자신의 cycle max를 다른 값으로 설정할 수 있으며 cycle max는 현재 노드가 컨펌된 트랜잭션을 받아들이는지 여부에만 영향을 미치며 다른 노드는 새 블록에서 트랜잭션을 받아들이지 않아므로 블록컨펌의 유효가 불일치가 발생되지 않습니다. 유효한 블록은 작업량 증명의 유효한 증거가 필요하기 때문에 블록 생성 노드가 높은 cycle값을 갖고 유효하지 않은 트랜잭션을 포함하는 것을 방지합니다. 
+
 The following table shows the runtime differences in Bitcoin, Ethereum and the Nervos CKB.
 Nervos CKB의 차이점은 다음과 같습니다.
+![51251231](https://user-images.githubusercontent.com/48978617/55236773-0a0fc380-5274-11e9-9855-d7173d9a6061.jpg)
 
 Here's a summary of the computational complexity of different parts of the consensus process for Bitcoin, Ethereum and Nervos CKB ( means cycle limit)
 다음 표는 합의에 도달하는 과정에서 비트코인, 이더리움 및 Nervos CKB의 각 부분의 계산 복잡성을 요약한 것입니다. (cycle의 상한선 참조)
+![1351234131](https://user-images.githubusercontent.com/48978617/55236778-0c721d80-5274-11e9-9203-15487a3dad05.jpg)
 
