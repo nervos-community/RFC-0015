@@ -1,5 +1,9 @@
 # Nervos CKB 크립토 이코노미 모델 제안 - (20190328)
 
+## 제안서 디렉토리 구조
+
+  ![Screenshot](https://github.com/hujianping/RFC-CN/blob/master/Nervos%20CKB%20%ED%81%AC%EB%A6%BD%ED%86%A0%20%EC%9D%B4%EC%BD%94%EB%85%B8%EB%AF%B8%20%EB%AA%A8%EB%8D%B8%20%EC%A0%9C%EC%95%88.png?raw=true)
+
 ## 1. 토큰이코노미의 설계 목표
 Public permission-less blockchains are open and distributed systems with diverse groups of participants. A well designed crypto-economics model is to provide incentives so that participants’ pursuit of own economic interests leads to desired emergent behaviors in alignment with the protocol, to contribute to the blockchain network’s success.
 
