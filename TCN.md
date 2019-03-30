@@ -240,13 +240,13 @@ Nervos Common Knowledge Base（簡稱 Nervos CKB）是一個以儲存價值為�
 
 The native token for the Nervos CKB is the “Common Knowledge Byte”, or “CK Byte” for short. The CK Bytes represent cell capacity in bytes and they give owners the ability to occupy a piece of the blockchain’s overall global state. For example, if Alice owns 1000 CK Bytes, she can create a cell with 1000 bytes in capacity, or multiple cells that add up to 1000 bytes in capacity. She can use the 1000 bytes to store assets, application state, or other types of common knowledge.
 
-Nervos CKB 的原生代幣是 「Common Knowledge Byte」，簡稱「CK Byte」。 CK Byte 代表 Cell 空間，它們讓擁有者能夠佔用區塊鏈的全局狀態。例如，如果 Alice 擁有 1000 個 CK Byte，她可以建立一個空間為 1000 Byte 的 Cell，或者空間合計最多為 1000 Byte 的多個 Cell。她可以使用 1000 個 Byte 來儲存資產，App 狀態或是其他類型的資料資料。
+Nervos CKB 的原生代幣是 「Common Knowledge Byte」，簡稱「CK Byte」。 CK Byte 代表 Cell 空間，它們讓擁有者能夠佔用區塊鏈的全局狀態。例如，如果 Alice 擁有 1000 個 CK Byte，她可以建立一個空間為 1000 Byte 的 Cell，或者空間合計最多為 1000 Byte 的多個 Cell。她可以使用 1000 個 Byte 來儲存資產、App 狀態或是其他類型的資料資料。
 
 * * *
 
 A cell's occupied capacity could be equal to or less than its specified capacity. For example, for a 1000 byte cell, 4 bytes would be used to specify its own capacity, 64 bytes for the lock script and 128 bytes for storing state. Then the cell's current occupied capacity is 196 bytes, but with room to grow up to 1000 bytes.
 
- 一個 Cell 佔用的空間應該等於或小於其指定空間。例如，對於一個 1000 Byte 的 Cell，使用 4 Bytes 來指定自己的空間，鎖定指令碼使用 64 Bytes，儲存狀態使用 128 Bytes。因此這個 Cell 實際佔用 196 Bytes，但是有充足的空間增長至 1000 Bytes。
+ 一個 Cell 佔用的空間應該等於或小於其指定空間。例如，對於一個 1000 Byte 的 Cell，使用 4 Bytes 來指定自己的空間，鎖定指令碼使用 64 Bytes，儲存狀態使用 128 Bytes。因此這個 Cell 實際佔用 196 Bytes，但是仍有充足的空間，最多可以使用至 1000 Bytes。
 
 * * *
 
@@ -256,7 +256,7 @@ There are two types of native token issuance. The “base issuance” has a fini
 
 The “secondary issuance” is designed to collect state rent, and has issuance rate that’s constant over time. After base issuance stops, there will only be secondary issuance.
 
-有兩種類型的原生代幣發行政策。 「基礎發行」的總供給量有限，發行時間表與比特幣類似 - 基本發行數量大約每 4 年減半一次，直到所有「基礎發行」的代幣被挖出來。所有「基礎發行」代幣都會獎勵給礦工，作為保護網路的激勵措施。
+有兩種類型的原生代幣發行政策。 「基礎發行」的總供給量有限，發行時間表與比特幣類似 - 基礎發行數量大約每 4 年減半一次，直到所有「基礎發行」的代幣被挖出來。所有「基礎發行」代幣都會獎勵給礦工，作為保護網路的激勵措施。
 
 「二級發行」的設計則是為了收取狀態租金，每年的發行數量是不變的。「基礎發行」停止後，「二級發行」仍會繼續。
 
@@ -271,20 +271,20 @@ Since the native tokens represent right to expand the global state, the issuance
 
 由於原生代幣代表了佔用全局狀態的權利，所以代幣發行政策會限制狀態的增長。由於狀態儲存受限制並且成為了稀缺資源，就好比比特幣的頻寬和以太坊的計算吞吐量，它們可以在市場上被定價和交易。狀態租金在狀態佔用的費用結構上，增加了必要的時間維度。我們採用兩個步驟作為「目標通脹」框架來收取這筆租金，而不是強制定期收取租金：
 
--   在「基礎發行」的基礎上，我們添加了「二次發行」，可以將其視為對所有代幣持有者的「通脹稅」。對於使用CK Byte 儲存狀態的使用者，這種定期的通脹稅是他們向礦工支付狀態租金的方式。
+-   在「基礎發行」的基礎上，我們添加了「二級發行」，可以將其視為對所有代幣持有者的「通脹稅」。對於使用CK Byte 儲存狀態的使用者，這種定期的通脹稅是他們向礦工支付狀態租金的方式。
 -   然而，由於我們對於那些沒有使用 CK Byte 儲存狀態的所有者也收取了租金，所以我們需要將租金歸還。我們允許這些使用者將他們的原生代幣存入並鎖定到一個特殊合約中，我們稱它為 NervosDAO。 NervosDAO 將接受部分「二級發行」的補償，以彌補因為不公平造成的稀釋。
 
 * * *
 
 Let's suppose at the time of a secondary issuance event, 60% of all CK Bytes are used to store state, 35% of all CK Bytes are deposited and locked in the NervosDAO, and 5% of all CK Bytes are kept liquid. Then 60% of the secondary issuance goes to the miners, 35% of the issuance goes to the NervosDAO to be distributed to the locked tokens proportionally. The use of the rest of the secondary issuance - in this example, 5% of the that issuance - is determined by the community through the governance mechanism. Before the community can reach agreement, this part of the secondary issuance is going to be burned.
 
-假設在「二級發行」時，所有 CK Byte 的 60％ 用於儲存狀態，所有 CK Byte 的 35％ 被存放並鎖定在 NervosDAO 的合約中，剩下的 CK Byte 中的 5％ 保持流動性。那每次進行二級發行出塊獎勵的時候，60％ 的「二級發行」會獎勵給礦工，35％ 的會進入 NervosDAO 按比例分配給鎖定的代幣（使用者），最後剩下的 5％ 既沒有佔用也沒有鎖幣的部分是歸交治理機制處理；在治理沒有完善的方案前燒掉。
+假設在「二級發行」時，所有 CK Byte 的 60％ 用於儲存狀態，所有 CK Byte 的 35％ 被存放並鎖定在 NervosDAO 的合約中，剩下的 CK Byte 中的 5％ 保持流動性。那每次進行「二級發行」出塊獎勵的時候，60％ 的「二級發行」會獎勵給礦工，35％ 的會進入 NervosDAO 按比例分配給鎖定的代幣（使用者），最後剩下的 5％ 既沒有佔用也沒有鎖幣的部分，將交由社群訂定的治理機制處理；在社群未達到機制的共識之前，這部分的「二級發行」將會燒毀。
 
 * * *
 
 For long term token holders, as long as they lock their tokens in the NervosDAO, the inflationary effect of secondary issuance is only nominal. For them it’s as if the secondary issuance doesn’t exist and they’re holding hard-capped tokens like Bitcoin.
 
-對於長期代幣的持有者，只要他們將代幣鎖定在 NervosDAO 合約中，「二次發行」的通脹效應只是名義上的。對他們而言，就像二次發行不存在一樣，他們持有的代幣，就會像比特幣這樣有硬頂的設計。
+對於長期代幣的持有者，只要他們將代幣鎖定在 NervosDAO 合約中，「二級發行」的通脹效應只是名義上的。對他們而言，就像二級發行不存在一樣，他們持有的代幣，就會像比特幣這樣有硬頂的設計。
 
 * * *
 
@@ -292,7 +292,7 @@ For long term token holders, as long as they lock their tokens in the NervosDAO,
 
 Miners are compensated with both block rewards and transaction fees. They receive all of the base issuance, and part of the secondary issuance. In the long term when base issuance stops, miners still receive state rent income that’s independent of transactions but tied to the adoption of the common knowledge base.
 
-礦工會獲得兩種出塊獎勵和交易手續費。他們將會收到所有的「基本發行」，以及部分的「二級發行」。長期來看，當「基礎發行」停止後，礦工仍然可以獲得狀態租賃的收入。
+礦工會獲得兩種出塊獎勵和交易手續費。他們將會收到所有的「基礎發行」，以及部分的「二級發行」。長期來看，當「基礎發行」停止後，礦工仍然可以獲得狀態租賃的收入。
 
 * * *
 
@@ -312,13 +312,13 @@ To ensure decentralization, the Nervos CKB restricts both computation and bandwi
 
 The number of units of computation (called “cycles”) also needs to be submitted as part of the transaction. Nervos CKB is an “off-chain computation, on-chain verification” platform, therefore the cycles of computation are known by the client who submits the transaction. When producing blocks, miners order transactions based on both transaction fees and the number of computation cycles necessary for transaction validation, maximizing its per-computation-cycle income within the computation and bandwidth throughput restrictions.
 
-計算的單位數量（計算迴圈數）也需要作為交易的一部分來提交。 Nervos CKB 是一種「鏈下計算，鏈上驗證」的平臺，因此提交交易的客戶端知道計算迴圈數。在出塊時，礦工根據交易費用和交易驗證所需的計算迴圈來制訂這個交易，最大化每一個計算迴圈數和頻寬吞吐量限制內的收入。
+計算的單位數量（計算迴圈數）也需要作為交易的一部分來提交。 Nervos CKB 是一種「鏈下計算，鏈上驗證」的平臺，因此提交交易的客戶端知道計算迴圈數。在出塊時，礦工根據交易費用和交易驗證所需的計算迴圈來排序每筆交易，以在有限的計算和帶寬吞吐量下，最大化每一個計算迴圈的收入。
 
 * * *
 
 In the Nervos CKB, the transaction fees can be paid with the native tokens, user defined tokens or a combination of both.
 
-在 Nervos CKB 中，可以使用原生代幣，或者「使用者自定義代幣」來支付交易手續費，而兩種的結合也可以用來支付手續費。
+在 Nervos CKB 中，手續費的支付可以透過原生代幣、「用戶自定義代幣」，或是兩者結合使用。
 
 * * *
 
@@ -365,8 +365,8 @@ The main design choices we made to ensure security of the Nervos CKB as a “Sto
 
 我們為了確保 Nervos CKB 成為「資產儲存」協議並保證安全性而做出主要的設計選擇是：
 
--   我們的原生代幣代表了對狀態儲存的空間。這意味著如果想在平臺上持有資產，同時也要求擁有原生代幣。這代表了在平臺上持有資產等於創造了對原生代幣的需求，從而建立了一個有效的值捕獲機制到原生代幣中。這是「資產儲存」平臺隨著時間的推移，可以持續增加安全預算的唯一方式，而不是基於投機和利他主義。
--   二次發行確保對礦工的補償是可預測的，並且基於儲存價值的需求而不是可交易的需求。它還消除了出塊獎勵停止後如中本聰協議的共識節點，存在的激勵矛盾問題。 NervosDAO 是「二級發行」所導致通脹效應的反制力量，以確保長期持有代幣的人不會因為「二級發行」而被稀釋。
+-   我們的原生代幣代表了對狀態儲存的空間。這意味著如果想在平臺上持有資產，同時也要求擁有原生代幣。這代表了在平臺上持有資產等於創造了對原生代幣的需求，從而建立了一個有效的價值捕獲機制到原生代幣中。這是「資產儲存」平臺隨著時間的推移，可以持續增加安全預算的唯一方式，而不是基於投機和利他主義。
+-   二級發行確保對礦工的補償是可預測的，並且基於儲存價值的需求而不是可交易的需求。它還消除了出塊獎勵停止後如中本聰協議的共識節點，存在的激勵矛盾問題。 NervosDAO 是「二級發行」所導致通脹效應的反制力量，以確保長期持有代幣的人不會因為「二級發行」而被稀釋。
 
 * * *
 
@@ -394,7 +394,7 @@ In the Nervos CKB, Store of Assets users want security of their assets; develope
 
 As the network grows to secure more assets and common knowledge, more native tokens of the Nervos CKB are going to become occupied. This accrues value to the native tokens by reducing circulating supply and providing positive support to the market price of the tokens. The higher price and increased share of secondary issuance motivate miners to expand operations and make the network more secure, increasing the intrinsic value of the network and the native tokens, attracting more and higher value preservation usage.
 
-隨著網路的發展得以保護更多的資產和共同知識，更多的 Nervos CKB 原生代幣所對應的空間將被佔用。這減少了流通量與供應量並同時提供原生代幣的市場價格支撐，將會逐漸累積 CKB 的價值。更高的代幣價格，以及增加的二次發行份額將可以激勵礦工擴大規模並使得網路更加安全，也同時增加了整個網路和原生代幣的內在價值，吸引更多和更高價值的資產儲存用例。
+隨著網路的發展得以保護更多的資產和共同知識，更多對應著儲存空間的 Nervos CKB 原生代幣將被佔用，這減少了流通量與供應量，提供了原生代幣的市場價格支撐，並逐漸累積 CKB 的價值。更高的代幣價格，以及增加的二級發行份額將可以激勵礦工擴大規模並使得網路更加安全，也同時增加了整個網路和原生代幣的內在價值，吸引更多和更高價值的資產儲存用例。
 
 * * *
 
@@ -420,7 +420,7 @@ The “First Class Asset” design allows the state storage cost of owning asset
 
 For developers, we expect the capital cost of building projects on the CKB is moderate even in a scenario that the price of the native tokens were to go up degrees of magnitude higher. For users, the cost of the 64 CK Bytes to own an asset on the Nervos CKB would also be trivial for a long time even in the most aggressive adoption assumption of the platform.
 
-對於開發者而言，我們預計即使在原生代幣的價格上升幅度較大的情況下，在 CKB 上建設項目的成本也是適中的。對於使用者來說，即使平臺在被大幅度採用的假設下，64 CK Bytes 在 Nervos CKB 上的擁有成本也很低。
+對於開發者而言，我們預計即使在原生代幣價格上升幅度較大的情況下，在 CKB 上建設項目的成本也是適中的。對於使用者來說，即使平臺在被大幅度採用的假設下，64 CK Bytes 在 Nervos CKB 上的擁有成本也很低。
 
 * * *
 
@@ -448,7 +448,7 @@ The effective interest rate of lending is determined by the market supply and de
 
 The Nervos CKB is the base layer of the Nervos Network with the highest security, decentralization, transaction cost and state storage cost. Just like how Bitcoin and Ethereum could scale off-chain with lightening network and plasma solutions, Nervos CKB also embraces off-chain scaling solutions and allow users to preserve and transact assets off-chain. When using off-chain solutions, users and developers can choose their own trade-offs between cost, security, latency and liveness properties.
 
-Nervos CKB 是 Nervos Network 的基礎層，具有最高的安全性，去中心化，交易成本和狀態儲存成本。就像比特幣和以太坊可以通過 lightening network 和 plasma 來進行鏈下的擴容方案，Nervos CKB 也採用了鏈下擴容解決方案，並允許使用者在鏈下儲存和交易資產。當使用鏈下解決方案時，使用者和開發者可以在成本，安全性，延遲和活性之間做出權衡。
+Nervos CKB 是 Nervos Network 的基礎層，具有最高的安全性，去中心化，交易成本和狀態儲存成本。就像比特幣和以太坊可以通過 lightening network 和 plasma 來進行鏈下的擴容方案，Nervos CKB 也採用了鏈下擴容解決方案，並允許使用者在鏈下儲存和交易資產。當使用鏈下解決方案時，使用者和開發者可以在成本、安全性、延遲和活性之間做出權衡。
 
 * * *
 
