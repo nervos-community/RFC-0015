@@ -10,7 +10,7 @@
 
 ## 提案目錄結構
 
-![Screenshot](https://github.com/hujianping/RFC-CN/blob/master/2D1FD8A824DC5A81BD6FF75B22C51AB1.png?raw=true)
+![Screenshot](https://raw.githubusercontent.com/hujianping/RFC-CN/master/Nervos%20CKB%E5%8A%A0%E5%AF%86%E7%B6%93%E6%BF%9F%E6%A8%A1%E5%9E%8B%E6%8F%90%E6%A1%88.png)
 
 ## 1. 代幣經濟學的設計目標
 
