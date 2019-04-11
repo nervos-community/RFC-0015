@@ -354,11 +354,12 @@
 
  Even Nervos CKB will support native token lending to improve the liquidity of the CK Bytes, thanks to the programming ability provided by CKB-VM and the Cell model. Since the utility of the native token is realized through possession instead of transactions, it’s possible to have risk-free un-collateralized lending for CK Bytes locked for known duration of time. Entrepreneurs can borrow the CK Bytes they need with much lower capital cost for a period such as 6 months to work on prototypes and prove their business model. Long term users can lend out their tokens to earn extra income. 
 
- 租赁的实际利率由市场供求决定，但代币的占用状况也有著重要的影响。如果全局状态利用率高，代表可用于贷款的代币就更少了。这将使得租赁利率更高，在 NervosDAO 合约中释放状态，锁定代币以获得收入，变得更具吸引力。这有助于减少全局状态。而较低的全局状态利用率代表着有更多的代币可以出租。这将使得贷款利率降低以鼓励使用。
-
+ 实际上 Nervos CKB 也将支持原生代币的租赁，以改善 CK Bytes 的流动性，这归功于 CKB-VM 和 Cell 模型提供的编程能力。由于原生代币的功能是通过空间占用而不是交易来实现的，因此，可以在已知的一定时间内锁定 CK Bytes 进行无风险的无担保借贷。开发者可以在 6 个月这样的时间内，以较低的资金成本借入他们需要的 CK Bytes 来完成产品原型并证明他们的商业模式。长期的代币持有者也可以出租他们的代币来赚取额外收入。
+ 
  The effective interest rate of lending is determined by the market supply and demand, but the current state of token utilization also plays a big role. Higher utilization of the available global state means less tokens can be made available for lending. This makes the lending interest higher, and makes it more attractive to release state and lock tokens in the NervosDAO to earn income. This serves the purpose to help reduce the global state; lower utilization of the available state means more tokens can be lent out. This makes the lending interest rate lower to encourage adoption. 
 
- 租赁的实际利率由市场供求决定，但代币的当前占用状况也有着重要的影响。高利用率的全局状态，意味着可用于租赁的代币更少。这将会推高租赁利息，加大吸引全网状态空间的释放，并推动 NervosDAO 合约的状态锁定，以获取额外的收入。与此同时，这有助于降低全局状态的利用。而较低的全局状态利用率意味着更多的代币可以出租。无形中，租赁利率会被降低，并促进使用的需求。
+ 租赁的实际利率由市场供求决定，但代币的占用状况也有著重要的影响。如果全局状态利用率高，代表可用于贷款的代币就更少了。这将使得租赁利率更高，在 NervosDAO 合约中释放状态，锁定代币以获得收入，变得更具吸引力。这有助于减少全局状态。而较低的全局状态利用率代表着有更多的代币可以出租。这将使得贷款利率降低以鼓励使用。
+
 
 ### 7.6 Nervos Network
 
