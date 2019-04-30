@@ -518,9 +518,9 @@ A block producing node can do a cost/benefit analysis to answer this question. T
 
 為了回答這個問題，出塊節點可以進行一個成本/收益分析。節點在下一個塊中加入這筆交易能夠獲得的收益，就是這筆交易的轉賬手續費。而把這筆交易加入塊中需要付出的成本主要包含以下三個部分：
 
--   手續費估算成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) )：這是節點在將未完成交易加入下一個塊的過程中，評估具體打包哪一筆未完成交易可以獲得最大收入的成本。
+-   手續費估算成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) )：這是節點在將待定交易加入下一個塊的過程中，評估具體打包哪一筆待定交易可以獲得最大收入的成本。
 
--   交易驗證成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) )：如果塊中包含無效交易將在共識過程中被拒絕，因此出塊節點必須在把未完成交易加入新塊之前驗證每筆交易。
+-   交易驗證成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) )：如果塊中包含無效交易將在共識過程中被拒絕，因此出塊節點必須在把待定交易加入新塊之前驗證每筆交易。
 
 -   狀態轉換成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/003.png))：在一個新塊生成後，出塊節點必須根據該區塊中包含的所有交易轉賬內容，通過狀態機完成本地狀態轉換。
 
@@ -546,7 +546,7 @@ We use CPC and EVC to represent Complete Processing Cost and Estimation and Veri
 
 -   EVC: Estimation and Verification Cost;
 
-我們採用CPC和EVC來表示全部處理成本和估算驗證成本：
+我們採用CPC和EVC來表示完整處理成本和估算驗證成本：
 
 -   CPC：完整處理成本
 
@@ -567,7 +567,7 @@ Bitcoin allows flexible authorization verification with the Bitcoin Script. User
 
 Bitcoin uses the amount difference of the inputs and outputs to express transaction fees. Therefore, the cost of estimating transaction fees scales to ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/010.png) where ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/011.png) is the total number of inputs and outputs.
 
-比特幣通過輸入和輸出間的金額差異來表示該筆交易的交易手續費。因此手續費估算成本記為![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/010.png)，其中![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/011.png)是輸入和輸出總的數量。
+比特幣通過輸入和輸出間的金額差異來表示該筆交易的交易手續費。因此手續費估算成本記為![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/010.png)，其中![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/011.png)是輸入和輸出的總數量。
 
 * * *
 
@@ -620,7 +620,7 @@ Based on the above, the overall authorization verification complexity in Ethereu
 
 Since every byte of the transaction data comes with cost ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png), the larger ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png) is, the more gas it needs, up to the _gaslimit_ ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)specified. Therefore,
 
-由於交易資料的每個位元組都有成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png)，![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png)越大，需要的gas也就越多，但是最多不超過Gas Limint![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)specified，因此：
+由於交易資料的每個位元組都有成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png)，![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png)越大，需要的gas也就越多，但是最多不超過給定的Gas Limit![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)，因此：
 
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/54.png)
 
@@ -666,13 +666,13 @@ Because CKB transactions include the result of the transactions as outputs, ther
 
 We introduce "cycle" as a unit of measurement for computation complexity in the CKB, similar to the "gas" concept in Ethereum. Nervos CKB's VM is a RISC-V CPU simulator, therefore cycles here refer to real CPU computation cycles in the VM. The cycle number for an instruction represents the relative computation cost of that instruction. Transactions in the Nervos CKB require the sender to specify the number of cycles required for its verification. Nodes can opt to set an acceptable cycle upper bound _cyclemax_, and only process transactions with fewer cycles. We'll also introduce _cycles_ to a block, with its value equal to the sum of all specified transaction cycles.  The value of _cycles_ in a block can't exceed the value _blockcyclesmax_, which are set and can be automatically adjusted by the system.
 
-我們引入_cycles_ 作為CKB中計算複雜度的衡量單位，類似於以太坊中“Gas”的概念。Nervos CKB的虛擬機器是RISC-V CPU模擬器，這裡指的_cycles_ 其實就是虛擬機器中實際CPU工作的計算週期。執行一個指令的所需的_cycles_ 數量，就是該指令的相對計算成本。在Nervos CKB中的交易需要傳送方指定其所需要驗證的_cycles_ 數量，節點可以選擇設定接受_cycles_ 數量的上限_cyclemax_，進而只處理具有需要較少_cycles_ 運算的轉帳交易。我們還將在塊中引入_cycles_ ，其值等於所有指定事務的_cycles_ 總和。塊中_cycles_ 的值不能超過_blockcyclemax_的值，這些值已經被初始設定並且可以隨著系統自動調整。
+我們引入 _cycles_ 作為CKB中計算複雜度的衡量單位，類似於以太坊中“Gas”的概念。Nervos CKB的虛擬機器是RISC-V CPU模擬器，這裡指的 _cycles_ 其實就是虛擬機器中實際CPU工作的計算循環。執行一個指令的所需的 _cycles_ 數量，就是該指令的相對計算成本。在Nervos CKB中的交易需要傳送方指定其所需要驗證的 _cycles_ 數量，節點可以選擇設定接受 _cycles_ 數量的上限 _cyclemax_ ，進而只處理具有需要較少 _cycles_ 運算的轉帳交易。我們還將在塊中引入 _cycles_ ，其值等於所有指定事務的 _cycles_ 總和。塊中 _cycles_ 的值不能超過 _blockcyclemax_ 的值，這些值已經被初始設定並且可以隨著系統自動調整。
 
 * * *
 
 Nodes can set their _cyclemax_ to different values. _cyclemax_ only impacts how a block producing node accepts new transactions, not how a node accepts transactions in a new block. Therefore, it's not going to cause inconsistency in the validation of blocks. A valid block needs valid proof of work, and this cost discourages a block producing node to include an invalid transaction with high _cycles_ value.
 
-節點可以將其_cyclemax_設定為不同的值，_cyclemax_僅影響當前的出塊節點是否接受打包這筆交易，而不影響其他節點接受新塊中的交易，因此，它並不會導致區塊驗證的不一致。一個有效的塊需要有效的工作量證明，因此並不鼓勵出塊節點去接受一個具有很高_cycles_ 值，但是無效的轉帳交易。
+網路中各個節點可以將其 _cyclemax_ 設定為不同的值， _cyclemax_ 僅影響當前的出塊節點是否接受打包這筆交易，而不影響其他節點接受新塊中的交易，因此，它並不會導致區塊驗證的不一致。一個有效的塊需要有效的工作量證明，因此並不鼓勵出塊節點去接受一個具有很高 _cycles_ 值，但是無效的轉帳交易。
 
 * * *
 
@@ -690,7 +690,7 @@ The following table shows the runtime differences in Bitcoin, Ethereum and the N
 
 Here's a summary of the computational complexity of different parts of the consensus process for Bitcoin, Ethereum and Nervos CKB (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png) means cycle limit)
 
-下表是比特幣、以太坊和Nervos CKB在達成共識過程中不同部分的計算複雜性總結（![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png)指_cycles_上限）
+下表是比特幣、以太坊和Nervos CKB在達成共識過程中不同部分的計算複雜性總結（![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/55.png)指 _cycles_ 上限）
 
 |          | ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/43.png) | ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/44.png) | ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/45.png) | ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/46.png) | ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/47.png) |
 | -------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
