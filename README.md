@@ -419,11 +419,11 @@ A block producing node can do a cost/benefit analysis to answer this question. T
 
 - Fee Estimation Cost (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) ): this is the cost to estimate the maximum possible income if a node where to include a transaction
 
-- 手续费估算成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) )：节点在将未完成交易加入下一个区块的过程中，评估具体打包哪一笔未完成交易可以获得最大收入对应的估算成本。
+- 手续费估算成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) )：节点在将待定交易加入下一个区块的过程中，评估具体打包哪一笔待定交易可以获得最大收入对应的估算成本。
 
 - Transaction Verification Cost (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) ): blocks containing invalid transactions will be rejected by the consensus process, therefore block producing nodes have to verify transactions before including them in a new block.
 
-- 交易验证成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) )：包含无效交易的区块，将会被共识处理过程拒绝，因此，出块节点在将未完成交易加入新块之前，必须验证每笔交易。
+- 交易验证成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) )：包含无效交易的区块，将会被共识处理过程拒绝，因此，出块节点在将待定交易加入新块之前，必须验证每笔交易。
 
 - State Transition Cost (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/003.png)）: after a block is produced, the block producing node has to perform local state transitions defined by state machines of the transactions in the block.
 
