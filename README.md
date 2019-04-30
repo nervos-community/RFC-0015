@@ -319,7 +319,7 @@
 
  In the Nervos CKB, Store of Assets users want security of their assets; developers want more adoption, reflected in more assets preserved; miners want higher income and token holders want price appreciation of their tokens. Higher token price supports everyone’s objective - the network would be more secure, miners get higher income, and token holders get better return. Aligning all participants’ incentives allows the network to best harness network effects to grow its intrinsic value. It also produces a more cohesive community and makes the system less prune to governance challenges.
 
- 在 Nervos CKB 中，存储资产的用户希望其资产安全；开发者希望 App 得到更多地使用，并与之相应，保存更多的资产价值；矿工们希望获得更高的收入，而代币持有者希望他们的代币价格升值。更高的代币价格支撑着每个人的利益 - 网络变得更加安全，矿工得到更高额的收入，代币持有者得到更丰厚的回报。梳理齐整所有参与者的激励，将使得全网可以最好地利用网络效应来增强其内在价值。此外，这也会培养出一个更具凝聚力的社区，使得整个Nervos系统面临更少的治理挑战。
+ 在 Nervos CKB 中，存储资产的用户希望其资产安全；开发者希望(其产品)得到更多地使用，并与之相应，保存更多的资产价值；矿工们希望获得更高的收入，而代币持有者希望他们的代币价格升值。更高的代币价格支撑着每个人的利益 - 网络变得更加安全，矿工得到更高额的收入，代币持有者得到更丰厚的回报。梳理齐整所有参与者的激励，将使得全网可以最好地利用网络效应来增强其内在价值。此外，这也会培养出一个更具凝聚力的社区，使得整个Nervos系统面临更少的治理挑战。
 
 
 ### 7.3 引导网络效应和网络增长
