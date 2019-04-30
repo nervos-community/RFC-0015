@@ -549,7 +549,7 @@ We introduce "cycle" as a unit of measurement for computation complexity in the 
 
 Nodes can set their *cyclemax* to different values. *cyclemax* only impacts how a block producing node accepts new transactions, not how a node accepts transactions in a new block. Therefore, it's not going to cause inconsistency in the validation of blocks. A valid block needs valid proof of work, and this cost discourages a block producing node to include an invalid transaction with high *cycles* value.
 
-节点可以将其*cyclemax*设定为不同的值。*cyclemax*仅影响当前的出块节点是否接受打包这笔交易，而非影响节点对于新块包含的交易的接受能力，因此，它并不会导致区块验证的不一致。有效的区块要求有效的工作量证明，正因如此，出块节点不大可能接受一个具有很高*cycles* 值，但确是无效的转帐交易。
+节点可以将其*cyclemax*设定为不同的值。*cyclemax*仅影响当前的出块节点是否接受打包这笔交易，而非影响节点对于新块包含的交易的接受能力，因此，它并不会导致区块验证的不一致。有效的区块要求有效的工作量证明，正因如此，出块节点不大可能接受一个具有很高*cycles* 值，但却是无效的转帐交易。
 
 The following table shows the runtime differences in Bitcoin, Ethereum and the Nervos CKB.
 
