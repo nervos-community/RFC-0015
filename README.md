@@ -92,7 +92,7 @@
 
  Another significant difference is that transactions on smart contract platforms are much more “portable”. It’s much easier to take advantage of the more advanced scripting capability of smart contract platforms, to develop interoperability protocols to move transactions to a more cost effective transactional blockchain and securely settle back to the main “system of record” blockchains. 
 
- 另一个与支付网络的重大区别是智能合约平台上的交易更加「便携」。利用智能合约平台更高级的脚本优势来开发交互协议，能够更容易的将交易转移到更具成本效益的「交易为主」子链上，并安全地将数据安顿回「纪录为主」主链。
+ 另一个与支付网络的重大区别是智能合约平台上的交易更加「便携」。利用智能合约平台更高级的脚本优势来开发交互协议，能够更容易的将交易转移到更具成本效益的「交易为主」子链上，并安全地将数据安置回「纪录为主」主链。
 
  The economic models of smart contract platforms face similar polarization tendency of payment networks - With their superior interoperable capabilities, smart contract platforms are going to be even more specialized into transactional platforms and preservation platforms. Economically, this bifurcation comes from the fact that the two use cases have different ways of utilizing system resources - transactions consume instantaneous but renewable computation and bandwidth resources, and preservation requires long term occupation of the global state. An economic model optimized for one is unlikely to be optimal for the other. 
 
