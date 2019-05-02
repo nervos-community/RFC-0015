@@ -92,7 +92,7 @@
 
  Another significant difference is that transactions on smart contract platforms are much more “portable”. It’s much easier to take advantage of the more advanced scripting capability of smart contract platforms, to develop interoperability protocols to move transactions to a more cost effective transactional blockchain and securely settle back to the main “system of record” blockchains. 
 
- 另一个与支付网络的重大区别是智能合约平台上的交易更加「便携」。利用智能合约平台更高级的脚本优势来开发交互协议，能够更容易的将交易转移到更具成本效益的「交易为主」子链上，并安全地将数据安顿回「纪录为主」主链。
+ 另一个与支付网络的重大区别是智能合约平台上的交易更加「便携」。利用智能合约平台更高级的脚本优势来开发交互协议，能够更容易的将交易转移到更具成本效益的「交易为主」子链上，并安全地将数据安置回「纪录为主」主链。
 
  The economic models of smart contract platforms face similar polarization tendency of payment networks - With their superior interoperable capabilities, smart contract platforms are going to be even more specialized into transactional platforms and preservation platforms. Economically, this bifurcation comes from the fact that the two use cases have different ways of utilizing system resources - transactions consume instantaneous but renewable computation and bandwidth resources, and preservation requires long term occupation of the global state. An economic model optimized for one is unlikely to be optimal for the other. 
 
@@ -204,11 +204,11 @@
 
  The native token for the Nervos CKB is the “Common Knowledge Byte”, or “CK Byte” for short. The CK Bytes represent cell capacity in bytes and they give owners the ability to occupy a piece of the blockchain’s overall global state. For example, if Alice owns 1000 CK Bytes, she can create a cell with 1000 bytes in capacity, or multiple cells that add up to 1000 bytes in capacity. She can use the 1000 bytes to store assets, application state, or other types of common knowledge. 
 
- Nervos CKB 的原生代币是 「Common Knowledge Byte」，简称「CK Byte」。 CK Byte 代表 Cell 空间，它们让拥有者能够占用区块链的全局状态。例如，如果 Alice 拥有 1000 个 CK Byte，她可以创建一个空间为 1000 Byte 的 Cell，或者空间合计最多为 1000 Byte 的多个 Cell。她可以使用 1000 个 Byte 来存储资产、App 状态或是其他类型的数据资料。
+ Nervos CKB 的原生代币是 「Common Knowledge Byte」，简称「CK Byte」。 CK Byte 代表 Cell 空间，它们让拥有者能够占用区块链的全局状态。例如，如果 Alice 拥有 1000 个 CK Bytes，她可以创建一个空间为 1000 Bytes 的 Cell，或者空间合计最多为 1000 Bytes 的多个 Cell。她可以使用 1000 个 Bytes 来存储资产、应用程序状态或是其他类型的数据资料。
  
  A cell's occupied capacity could be equal to or less than its specified capacity. For example, for a 1000 byte cell, 4 bytes would be used to specify its own capacity, 64 bytes for the lock script and 128 bytes for storing state. Then the cell's current occupied capacity is 196 bytes, but with room to grow up to 1000 bytes.
  
- 一个 Cell 中已占用的空间可以等于或者小于这个空间被指定的大小。比如说，一个空间为 1000 Byte 的 Cell，4个 Byte 用于表示它所能使用的容量，64个 Byte 用于锁定脚本，128个 Byte 用于存储状态。也就是说，这个 Cell 目前已被占用的容量是196个 Byte ，但它还有足够的空间，最多可以使用到1000个 Byte。
+ 一个 Cell 中已占用的空间可以等于或者小于这个空间被指定的大小。比如说，一个空间为 1000 Bytes 的 Cell，4个 Bytes 用于表示它所能使用的容量，64个 Bytes 用于锁定脚本，128个 Bytes 用于存储状态。也就是说，这个 Cell 目前已被占用的容量是196个 Bytes ，但它还有足够的空间，最多可以使用到1000个 Bytes。
 
 ### 6.2 代币发行政策
 
@@ -319,7 +319,7 @@
 
  In the Nervos CKB, Store of Assets users want security of their assets; developers want more adoption, reflected in more assets preserved; miners want higher income and token holders want price appreciation of their tokens. Higher token price supports everyone’s objective - the network would be more secure, miners get higher income, and token holders get better return. Aligning all participants’ incentives allows the network to best harness network effects to grow its intrinsic value. It also produces a more cohesive community and makes the system less prune to governance challenges.
 
- 在 Nervos CKB 中，存储资产的用户希望其资产安全；开发者希望 App 得到更多地使用，并与之相应，保存更多的资产价值；矿工们希望获得更高的收入，而代币持有者希望他们的代币价格升值。更高的代币价格支撑着每个人的利益 - 网络变得更加安全，矿工得到更高额的收入，代币持有者得到更丰厚的回报。梳理齐整所有参与者的激励，将使得全网可以最好地利用网络效应来增强其内在价值。此外，这也会培养出一个更具凝聚力的社区，使得整个Nervos系统面临更少的治理挑战。
+ 在 Nervos CKB 中，存储资产的用户希望其资产安全；开发者希望(其产品)得到更多地使用，并与之相应，保存更多的资产价值；矿工们希望获得更高的收入，而代币持有者希望他们的代币价格升值。更高的代币价格支撑着每个人的利益 - 网络变得更加安全，矿工得到更高额的收入，代币持有者得到更丰厚的回报。梳理齐整所有参与者的激励，将使得全网可以最好地利用网络效应来增强其内在价值。此外，这也会培养出一个更具凝聚力的社区，使得整个Nervos系统面临更少的治理挑战。
 
 
 ### 7.3 引导网络效应和网络增长
