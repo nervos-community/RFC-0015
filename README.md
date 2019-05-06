@@ -411,7 +411,7 @@ Nervos CKB采用的是基于中本聪共识的工作量证明（PoW）共识机�
 
 The economics of the consensus process is designed to incentivize nodes to participate in the consensus process and provide measurements that nodes can use to prioritize transactions.  At the core, it's designed to help consensus nodes answer the question: "Is this transaction worth to be included in the next block if I had the opportunity to produce the block?"
 
-达成共识的经济学设计，不仅旨在激励所有参与达成共识过程的节点，而且，也向节点提供用来确认事务优先级的衡量标准。设计的核心，在于帮助共识节点回答一个问题：“如果有机会生产下一个区块，这笔交易值不值得加入这个区块？”
+达成共识的经济学设计，不仅旨在激励所有参与达成共识过程的节点，而且，也向节点提供用来确认交易优先级的衡量标准。设计的核心，在于帮助共识节点回答一个问题：“如果有机会生产下一个区块，这笔交易值不值得加入这个区块？”
 
 A block producing node can do a cost/benefit analysis to answer this question. The benefit of including a transaction is to be able to collect its transaction fee, and the cost of including a transaction in a block has three parts:
 
@@ -419,11 +419,11 @@ A block producing node can do a cost/benefit analysis to answer this question. T
 
 - Fee Estimation Cost (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) ): this is the cost to estimate the maximum possible income if a node where to include a transaction
 
-- 手续费估算成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) )：节点在将未完成交易加入下一个区块的过程中，评估具体打包哪一笔未完成交易可以获得最大收入对应的估算成本。
+- 手续费估算成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/001.png) )：节点在将待定交易加入下一个区块的过程中，评估具体打包哪一笔待定交易可以获得最大收入对应的估算成本。
 
 - Transaction Verification Cost (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) ): blocks containing invalid transactions will be rejected by the consensus process, therefore block producing nodes have to verify transactions before including them in a new block.
 
-- 交易验证成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) )：包含无效交易的区块，将会被共识处理过程拒绝，因此，出块节点在将未完成交易加入新块之前，必须验证每笔交易。
+- 交易验证成本(![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/002.png) )：包含无效交易的区块，将会被共识处理过程拒绝，因此，出块节点在将待定交易加入新块之前，必须验证每笔交易。
 
 - State Transition Cost (![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/003.png)）: after a block is produced, the block producing node has to perform local state transitions defined by state machines of the transactions in the block.
 
@@ -443,7 +443,7 @@ In particular, transaction verification, ![](https://raw.githubusercontent.com/J
 
 We use CPC and EVC to represent Complete Processing Cost and Estimation and Verification Cost:
 
-我们采用CPC和EVC来表示全部处理成本和估算验证成本：
+我们采用CPC和EVC来表示完整处理成本和估算验证成本：
 
 - CPC: Complete Processing Cost
 - CPC：完整处理成本
@@ -462,7 +462,7 @@ Bitcoin allows flexible authorization verification with the Bitcoin Script. User
 
 Bitcoin uses the amount difference of the inputs and outputs to express transaction fees. Therefore, the cost of estimating transaction fees scales to ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/010.png) where ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/011.png) is the total number of inputs and outputs.
 
-比特币通过输入和输出之间的金额差异来表示该笔交易的交易手续费。因此，手续费估算成本记为![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/010.png)，其中![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/011.png)是输入和输出总的数量。
+比特币通过输入和输出之间的金额差异来表示该笔交易的交易手续费。因此，手续费估算成本记为![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/010.png)，其中![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/011.png)是输入和输出的总数量。
 
 Authorization verification in Bitcoin requires running scripts of all inputs. Because the Bitcoin Script prohibits JUMP/looping, the computation complexity can roughly scale to the length of the input scripts, as![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/012.gif), where ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/013.png) is the number of inputs and ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/014.gif) is the average script length of an input. Therefore, the total cost of ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/015.png) roughly scales to the size of total transaction.
 
@@ -473,6 +473,7 @@ Bitcoin's state transition rules are simple, and nodes only have to verify the t
 比特币的状态转换规则十分简单，节点仅仅需要验证输入的总数与输出的总数是否相等即可。因此，比特币的状态转换验证成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/016.png)和![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/017.png)一样，约等于![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/018.gif)。
 
 In total, Bitcoin's cost of processing a transaction roughly scales to the size of the transaction:
+
 综上，比特币处理交易的总成本可以通过交易的大小进行粗略计算：
 
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/019.png)
@@ -503,7 +504,7 @@ Based on the above, the overall authorization verification complexity in Ethereu
 
 Since every byte of the transaction data comes with cost ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png), the larger ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png) is, the more gas it needs, up to the *gaslimit* ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)specified. Therefore,
 
-由于交易数据的每个字节都有成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png)，![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png)越大，需要的gas越多，但是最多不能超过Gas Limint![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)specified，因此：
+由于交易数据的每个字节都有成本![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/025.png)，![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/026.png)越大，需要的gas越多，但是最多不能超过给定的Gas Limit![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/027.png)，因此：
 
 ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/54.png)
 
@@ -519,7 +520,7 @@ Ethereum comes with a Turing complete VM, and the computation of the result stat
 
 Different from Bitcoin, ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/33.png) for the Ethereum nodes is less than ![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/34.png). This is because Ethereum nodes only compute the result state after transactions are included in the block. This is also the reason that transaction results on Ethereum could be invalid, (e.g. exceptions in contract invocation or the gas limit is exceeded),  but the Bitcoin blockchain only has successfully executed transactions and valid results.
 
-不同于比特币，以太坊节点的![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/33.png)小于![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/34.png)。这是因为，以太坊节点只在交易被包含进入区块之后，才会计算状态结果。另外，这也是以太坊中交易结果可能无效的原因（比如出现合约调用异常或者计算超出Gas Limit），而比特币在出块中就会执行交易转帐过程，并生成有效的结果。
+不同于比特币，以太坊节点的![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/33.png)小于![](https://raw.githubusercontent.com/Jack0814/Picture/master/Img%202/34.png)。这是因为，以太坊节点只在交易被包含进入区块之后，才会计算状态结果。另外，这也是以太坊中交易结果可能无效的原因（比如出现合约调用异常或者计算超出Gas Limit），而比特币区块链则只会包含成功执行的交易以及有效的结果。
 
 
 ### Nervos CKB's Transaction Cost Analysis
@@ -545,11 +546,11 @@ Because CKB transactions include the result of the transactions as outputs, ther
 
 We introduce "cycle" as a unit of measurement for computation complexity in the CKB, similar to the "gas" concept in Ethereum. Nervos CKB's VM is a RISC-V CPU simulator, therefore cycles here refer to real CPU computation cycles in the VM. The cycle number for an instruction represents the relative computation cost of that instruction. Transactions in the Nervos CKB require the sender to specify the number of cycles required for its verification. Nodes can opt to set an acceptable cycle upper bound *cyclemax*, and only process transactions with fewer cycles. We'll also introduce *cycles* to a block, with its value equal to the sum of all specified transaction cycles.  The value of *cycles* in a block can't exceed the value *blockcyclesmax*, which are set and can be automatically adjusted by the system.
 
-我们引入*cycles* 作为CKB中计算复杂度的衡量单位，类似于以太坊中“Gas”的概念。Nervos CKB的虚拟机是RISC-V CPU模拟器，因此，这里的*cycles* 其实就是虚拟机中实际CPU工作的计算周期。执行一个指令所需的*cycles* 数量，就是该指令的相对计算成本。在Nervos CKB中的交易，要求发送方指定验证该笔交易需要的*cycles* 数量。节点可以选择和设置接受*cycles* 数量的上限*cyclemax*，进而只处理需要较少*cycles* 数量的交易。此外，我们在区块中引入*cycles* ，其值等于所有指定事务的*cycles* 总和。区块中的*cycles* 值不能超过*blockcyclemax*的值。这些值会进行初始化设置，并且由系统进行自动调整。
+我们引入*cycles* 作为CKB中计算复杂度的衡量单位，类似于以太坊中“Gas”的概念。Nervos CKB的虚拟机是RISC-V CPU模拟器，因此，这里的*cycles* 其实就是虚拟机中实际CPU工作的计算循环。执行一个指令所需的*cycles* 数量，就是该指令的相对计算成本。在Nervos CKB中的交易，要求发送方指定验证该笔交易需要的*cycles* 数量。节点可以选择和设置接受*cycles* 数量的上限*cyclemax*，进而只处理需要较少*cycles* 数量的交易。此外，我们在区块中引入*cycles* ，其值等于所有指定交易的*cycles* 总和。区块中的*cycles* 值不能超过*blockcyclemax*的值。这些值会进行初始化设置，并且由系统进行自动调整。
 
 Nodes can set their *cyclemax* to different values. *cyclemax* only impacts how a block producing node accepts new transactions, not how a node accepts transactions in a new block. Therefore, it's not going to cause inconsistency in the validation of blocks. A valid block needs valid proof of work, and this cost discourages a block producing node to include an invalid transaction with high *cycles* value.
 
-节点可以将其*cyclemax*设定为不同的值。*cyclemax*仅影响当前的出块节点是否接受打包这笔交易，而非影响节点对于新块包含的交易的接受能力，因此，它并不会导致区块验证的不一致。有效的区块要求有效的工作量证明，正因如此，出块节点不大可能接受一个具有很高*cycles* 值，但确是无效的转帐交易。
+网络中各个节点可以将其*cyclemax*设定为不同的值。*cyclemax*影响的是一个「出块节点」如何接受新的「待定交易」，而非影响一个节点如何接受新块中已包含的交易，因此，它并不会导致区块验证的不一致。有效的区块要求有效的工作量证明，正因如此，出块节点不大可能接受一个具有很高*cycles* 值，但却是无效的转帐交易。
 
 The following table shows the runtime differences in Bitcoin, Ethereum and the Nervos CKB.
 
