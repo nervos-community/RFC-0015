@@ -245,7 +245,7 @@
 
  Miners are compensated with both block rewards and transaction fees. They receive all of the base issuance, and part of the secondary issuance. In the long term when base issuance stops, miners still receive state rent income that’s independent of transactions but tied to the adoption of the common knowledge base. 
 
- 矿工会获得两种出块奖励和交易手续费。他们将会收到所有的「基础发行」，以及部分的「二级发行」。长期来看，当「基础发行」停止后，矿工仍然可以获得状态租赁的收入。
+ 矿工会获得出块奖励和交易手续费。他们将会收到所有的「基础发行」，以及部分的「二级发行」。长期来看，当「基础发行」停止后，矿工仍然可以获得状态租赁的收入。
 
 ### 6.5 交易手续费支付
 
